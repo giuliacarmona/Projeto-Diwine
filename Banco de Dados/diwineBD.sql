@@ -1,73 +1,88 @@
-create database diwine;
-use diwine;
+-- *** CRIANDO E USANDO BANCO DE DADOS ***--
+create database diwineBD;
+use diwineBD;
 
-create table Empresa (
-idEmpresa int primary key auto_increment,
-nome varchar(60), -- Nome da Empresa
-CNPJCPF varchar(30), -- CPF/CNPJ
-Ambiente varchar(40), -- Ambiente onde estão armazenados os vinhos e sensores
-StatusDePendencia varchar(30)); -- Se a empresa esta Aprovada ou em Análise 
 
-insert into Empresa values
-
-(null,'Empresa A','30.395.080/0001-40', 'Ambiente Y', 'Em Análise'),
-(null,'Empresa B','45.395.000/0001-39', 'Ambiente Z', 'Aprovado'),
-(null,'Empresa C','26.495.100/0001-39', 'Ambiente W', 'Em Análise'),
-(null,'Empresa D','46.375.009/0001-39', 'Ambiente I', 'Em Análise');
-
-select *from empresa;
-
-create table Ambiente (
-id int primary key auto_increment,
-Nome varchar(40), -- nome do ambiente 
-Setor varchar(40), -- setor onde esta localizado certos ambientes
-DestinoAlerta varchar(60) -- destino onde chegará a mensagem alerta
+-- *** CRIANDO TABELA 'LOTE' ***--
+create table lote (
+idLote			int primary key auto_increment, 				-- Identificação do Lote
+tipoVinho		varchar(40) not null,							-- Branco, Tinto, Rosé
+tempoMaturacao 	char(2),										-- 5, 10, 20 anos
+dataIncio		DATE											-- EX: 03-05-2018
 );
 
 
-insert into ambiente values
-(null, 'Ambiente X', 'Setor Y', '(11)94561-5205'),
-(null, 'Ambiente Z', 'Setor Y', 'empresaB.corp@email.com'),
-(null, 'Ambiente K', 'Setor I', '(53)93361-5205');
-
-select *from ambiente;
-
-
-create table Sensor (
-idSensor int primary key auto_increment,
-Tipo varchar(40), -- Temperatura, luminosidade, umidade
-tempo int, -- Tempo de Funcionamento do sensor para Tabela em minutos
-Dados int, -- dados do sensor
-Estado varchar(15) -- ligado ou desligado
+-- *** CRIANDO TABELA 'AMBIENTE' ***--
+create table ambiente (
+idAmbiente		int primary key auto_increment					-- Identificação do Ambiente
 );
 
 
+-- *** CRIANDO TABELA 'SENSOR' E INSERINDO DADOS ***--
+create table sensor (
+idSensor 		int primary key auto_increment,					-- Identificação do Ambiente
+tipoSensor	 	varchar(100),									-- Umidade ou Temperatura
+atualizacao		varchar(40),									-- A cada 10, 15 ou 30 Minutos
+min				char(2),										-- Temp. ou Umid. Minima
+max				char(3),										-- Temp. ou Umid. Máxima
+media			varchar(5)										-- Armazena a média das temperaturas
+);
 
 insert into Sensor values
-(null, 'Temperatura', 15, 10,'ligado'),
-(null, 'Umidade', 80, 10,'ligado'),
-(null, 'luminosidade', 0, 0,'desligado');
-
-select *from sensor;
+	(null, 'Temperatura', 15, 12, 18, '0'),
+	(null, 'Umidade', 30, 65, 75, '0');
 
 
-create table Vinho (
-idVinho int primary key auto_increment,
-Tipo varchar(30), -- Tipos de vinhos 
-Recipiente varchar(30), -- Recipientes onde estão armazenados os vinhos
-TempoMaturacao varchar(40), -- Tempo que o vinho ficará maturando
-DataDeEntrada date, -- data de entrada do vinho
-DatadeSaida date); -- data de saída do vinho
+-- *** CRIANDO TABELA 'EMPRESA' E INSERINDO DADOS ***--
+create table empresa (
+idEmpresa		int primary key	auto_increment,					-- Identificação da Empresa
+nomeFantasia	varchar(40),									-- Nome da Empresa
+CNPJ			varchar(18) not null							-- CNPJ da Empresa
+);
+insert into empresa values
+	(null, 'Empresa A', '30.395.080/0001-40'),
+	(null, 'Empresa B', '45.395.000/0001-39'),
+	(null, 'Empresa C', '26.495.100/0001-39'),
+	(null, 'Empresa D', '46.375.009/0001-39');
 
 
+-- *** CRIANDO TABELA 'FUNCIONARIO E INSERINDO DADOS' ***--
+create table funcionario (
+idFunc			int primary key auto_increment,					-- Identificação do funcionário Responsável
+nomeFunc		varchar(60),									-- Nome Completo
+CPF				varchar(14) not null,							-- CPF
+cargo			varchar(40),									-- Cargo que ele ocupa na empresa
+email			varchar(40) not null,							-- E-mail cadastro e utilizado para realizar o login
+celular			varchar(14)										-- Telefone para contato
+);
+insert into funcionario values
+	(null, 'José Silva', '555.555.555-55', 'Técnico de Manutenção', 'jose.silva@empresab.com', '(11)94002-8922');
+    
+    
+-- *** INSERINDO UMA COLUNA NA TABELA 'LOTE' ***--
+alter table lote add column tipoBarril varchar(40) not null; 	-- Barril de Carvalaho, Ovo de Concreto ou Tanque de Aço
+desc lote;
 
 
-insert into Vinho values 
-(null, 'branco', 'Barril', '2 anos', '2020/10/12', '2022/10/12'),
-(null, 'tinto', 'TanqueDeAço', '2 anos', '2021/10/12', '2023/10/12'),
-(null, 'seco', 'Barril', '2 anos', '2022/10/12', '2024/10/12');
-
-select *from vinho;
+-- *** INSERINDO DADOS NA TABELA 'LOTE' ***--
+insert into lote values
+	(null, 'tinto', '10', '2018-03-05', 'Barril de Carvalho');
 
 
+-- *** INSERINDO DUAS COLUNA NA TABELA 'ambiente' ***--
+alter table ambiente add column nomeAmbiente varchar(40);		-- Nome que o usuário deseja dar ao ambiente
+alter table ambiente add column alertaMensagem varchar(100);	-- Mensagem de Alerta caso a temperatura ou umidade ultrapsse o limite máximo
+desc ambiente;
 
+-- *** INSERINDO DADOS NA TABELA 'AMBIENTE' ***--
+insert into ambiente values
+	(null, 'Setor 1 - Tinto', '0'),
+    (null, 'Setor 2 - Branco', '0'),
+    (null, 'Setor 3 - Rosé', '0');
+
+-- *** SELECT * FROM DAS TABELAS ***--
+select * from ambiente;
+select * from lote;
+select * from empresa;
+select * from funcionario;
+select * from sensor;
