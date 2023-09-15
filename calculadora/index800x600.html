@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body
+    style="background-image: url(https://optimizer.dooca.store/2179/files/vinho-de-mesa-ou-vinho-fino-3-blog-setembro-22.jpg);">
+
+    <h1 style="text-align: center; color: wheat;" font-size: 50px;>Calculadora|Diwine</h1>
+
+
+    <div id="calculadora" align="center">
+        <div id="divInput">
+            <strong>Valor Inicial do Barril de Vinho</strong><br><input type="text" id="input_valorVinho"> <br>
+            <strong>Quantidade de Barris</strong><br><input type="text" id="input_qtdvinho"><br>
+        </div>
+
+        <div id="divtitulo">Em média a valorização do vinho seria:</div>
+
+        <div id="msg" class="centralizado">
+            <p>Maturação sem a Diwine:</p>
+
+        </div>
+
+
+        <div id="msgvs">
+            <p>Maturação com a Diwine:</p>
+
+        </div>
+
+        <button id="button_calcular" onclick="calcular()">Calcular</button>
+
+    </div>
+
+</body>
+
+
+
+<script>
+
+
+
+
+    function calcular() {
+        var valorbarril = Number(input_valorVinho.value);
+
+
+
+        var qtdbarril = Number(input_qtdvinho.value);
+
+        var valorizaçãoAnual = 1.10;
+
+        var valorbarrilDW = Number(valorbarril * 1.15);
+
+
+        msg.innerHTML = `
+        <p>Maturação sem a Diwine:</p>
+        <p style="color: red;">Em 2 anos: R$${parseInt(valorbarril * qtdbarril * valorizaçãoAnual ** 2)} </p>
+
+        <p style="color: red;">Em 5 anos: R$${parseInt(valorbarril * qtdbarril * valorizaçãoAnual ** 5)}  </p>
+ 
+        <p style="color: red;">Em 10 anos: R$${parseInt(valorbarril * qtdbarril * valorizaçãoAnual ** 10)}</p>
+
+        <p>A partir de uma valorização do vinho de 10% ao ano.</p>
+        `// Calculo de juros compostos no vinho e a exibição da mensagem sem o projeto
+
+
+        msgvs.innerHTML = `
+        <p>Maturação com a Diwine</p>
+        <p style="color: green;">Em 2 anos: R$${parseInt(valorbarrilDW * qtdbarril * valorizaçãoAnual ** 2)}</p>
+       
+
+        <p style="color: green;">Em 5 anos: R$${parseInt(valorbarrilDW * qtdbarril * valorizaçãoAnual ** 5)}</p>
+
+
+        <p style="color: green;">Em 10 anos: R$${parseInt(valorbarrilDW * qtdbarril * valorizaçãoAnual ** 10)}</p>
+        <p>A partir de uma valorização do vinho de 10% ao ano <strong style="color: green;">mais um acrécimo de até 20%.</strong></p>
+        `// Calculo de juros compostos no vinho e a exibição da mensagem com o projeto
+
+
+
+
+    }
+
+
+
+
+
+
+
+</script>
+
+<style>
+    #calculadora {
+
+        position: absolute;
+        bottom: 448px;
+        left: -155px;
+    }
+
+    #divInput {
+        position: relative;
+        left: 248px;
+
+        width: 651px;
+        height: 90px;
+
+        background-color: rgba(109, 22, 16, 0.84);
+        text-align: center;
+        border: 1px solid black;
+        color: antiquewhite;
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+
+        padding-top: 10px;
+    }
+
+
+
+    #button_calcular {
+        position: relative;
+        float: left;
+        left: -390px;
+        bottom: -231px;
+        border-radius: 2px;
+
+        width: 137px;
+        height: 29px;
+
+        color: antiquewhite;
+
+        background-color: #DDB247;
+        border-radius: 6px;
+
+        font-size: 20px;
+    }
+
+    #divtitulo {
+        position: relative;
+        left: 248px;
+        padding-top: 5px;
+        padding-right: 0px;
+        padding-bottom: 8px;
+        padding-left: 20px;
+
+        width: 631px;
+        height: 25px;
+
+        background-color: #DDB247;
+
+        text-align: center;
+        color: antiquewhite;
+        border: 1px solid black;
+
+        font-size: 22px;
+    }
+
+    #msg {
+
+        float: left;
+
+        padding-top: 5px;
+        padding-right: 0px;
+        padding-bottom: 17px;
+        padding-left: 20px;
+
+        border: 1px solid black;
+
+        width: 299px;
+        height: 200px;
+        margin-left: 626px;
+
+        background-color: #E2D7BFFC;
+        text-align: left;
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
+
+    #msgvs {
+        position: relative;
+        float: left;
+        left: 10px;
+
+        padding-top: 5px;
+        padding-right: px;
+        padding-bottom: 16px;
+        padding-left: 20px;
+
+        border: 1px solid black;
+
+        width: 300px;
+        height: 200px;
+
+        background-color: #E2D7BFFC;
+        text-align: left;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+
+    input {
+        width: 300px;
+
+    }
+</style>
+
+</html>
