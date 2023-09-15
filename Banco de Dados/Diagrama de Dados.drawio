@@ -1,0 +1,37 @@
+<mxfile host="Electron" modified="2023-09-15T17:42:50.358Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.6.5 Chrome/114.0.5735.243 Electron/25.3.1 Safari/537.36" etag="uXxx7zhmPJH71VulFO0K" version="21.6.5" type="device">
+  <diagram name="Página-1" id="pYw0w-oy14e__bl6GrdO">
+    <mxGraphModel dx="1707" dy="1693" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Np1vx91RXIW3ROfDd1wV-3" value="&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;DADOS DO LOTE&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Identificação do lote&lt;/span&gt;&lt;/div&gt;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Tipo do vinho&lt;/span&gt;&lt;/div&gt;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Data de início&lt;/span&gt;&lt;/div&gt;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Tempo de Maturação&lt;/span&gt;&lt;/div&gt;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Tipo do Barril&lt;/span&gt;&lt;/div&gt;&lt;/span&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="460" y="-880" width="150" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="Np1vx91RXIW3ROfDd1wV-4" value="&lt;div style=&quot;&quot;&gt;SENSOR&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;Indentificação do Sensor&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;Tipo do Sensor&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;Atualização&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;Métrica miníma&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;Métrica Máxima&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;Média&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="180" y="-1135" width="180" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="Np1vx91RXIW3ROfDd1wV-9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Np1vx91RXIW3ROfDd1wV-6" target="Np1vx91RXIW3ROfDd1wV-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Np1vx91RXIW3ROfDd1wV-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="Np1vx91RXIW3ROfDd1wV-6" target="Np1vx91RXIW3ROfDd1wV-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Np1vx91RXIW3ROfDd1wV-11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Np1vx91RXIW3ROfDd1wV-6" target="Np1vx91RXIW3ROfDd1wV-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Np1vx91RXIW3ROfDd1wV-6" value="&lt;div style=&quot;&quot;&gt;AMBIENTE&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;Identificação do Ambiente&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;Nome do Ambiente&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;Mensagem de Alerta&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="190" y="-880" width="160" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="Np1vx91RXIW3ROfDd1wV-12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Np1vx91RXIW3ROfDd1wV-7" target="Np1vx91RXIW3ROfDd1wV-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Np1vx91RXIW3ROfDd1wV-7" value="&lt;div style=&quot;&quot;&gt;EMPRESA&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;Identificação da Empresa&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;Nome fantasia&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;CNPJ&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-67.5" y="-865" width="165" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="Np1vx91RXIW3ROfDd1wV-8" value="&lt;div style=&quot;&quot;&gt;FUNCIONÁRIO&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;Identificação do Funcionário&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;Nome completo&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;CPF&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;Cargo na Empresa&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;Celular&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;E-mail&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-80" y="-1130" width="190" height="160" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
