@@ -2,7 +2,6 @@
 create database diwineBD;
 use diwineBD;
 
-
 -- *** CRIANDO TABELA 'LOTE' ***--
 create table lote (
 idLote			int primary key auto_increment, 				-- Identificação do Lote
@@ -11,12 +10,10 @@ tempoMaturacao 	char(2),										-- 5, 10, 20 anos
 dataIncio		DATE											-- EX: 03-05-2018
 );
 
-
 -- *** CRIANDO TABELA 'AMBIENTE' ***--
 create table ambiente (
 idAmbiente		int primary key auto_increment					-- Identificação do Ambiente
 );
-
 
 -- *** CRIANDO TABELA 'SENSOR' E INSERINDO DADOS ***--
 create table sensor (
