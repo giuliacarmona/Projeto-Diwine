@@ -79,3 +79,48 @@ h3 {
   font-family: Cormorant;
 }
 
+.beneficios-content {
+  background-color: #D9D9D9;
+  height: 1000vh;
+}
+
+.beneficios-content:target {
+    position: sticky;
+    top: 0;
+}
+
+.beneficios-title {
+  display:flex;
+  padding-top: 10vh;
+  align-items: center;
+  justify-content: center;
+  color: #DDB247;
+  letter-spacing: 0.96px;
+  font-size: 6vh;
+}
+
+.beneficios-title2 {
+  display:flex;
+  padding-top: 0.5vh;
+  align-items: center;
+  justify-content: center;
+  color: #DDB247;
+  letter-spacing: 0.96px;
+  font-size: 6vh;
+}
+
+.unicaColor {
+  color:  #5E2424;
+  margin: 0 10px;
+  font-style: italic;
+  letter-spacing: 0.96px;
+  font-size: 6vh;
+}
+
+.vector {
+  width: 5vw;
+  display: flex;
+  margin: 5vh 25vw;
+  justify-content: flex-end;
+  align-items: center;
+}
