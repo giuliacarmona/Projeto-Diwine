@@ -1,7 +1,10 @@
+@font-face{
+  font-family: Inter;
+  scr:;
+}
 * {
   margin: 0;
   padding: 0;
-  font-family: Helvetica;
 }
 
 header {
@@ -79,6 +82,9 @@ h3 {
   font-family: Cormorant;
 }
 
+.solucao-container {
+  background-color: #D9D9D9;
+}
 .beneficios-content {
   background-color: #D9D9D9;
   height: 1000vh;
@@ -97,6 +103,7 @@ h3 {
   color: #DDB247;
   letter-spacing: 0.96px;
   font-size: 6vh;
+  background-color: #D9D9D9;
 }
 
 .beneficios-title2 {
@@ -107,10 +114,11 @@ h3 {
   color: #DDB247;
   letter-spacing: 0.96px;
   font-size: 6vh;
+  background-color: #D9D9D9;
 }
 
 .unicaColor {
-  color:  #5E2424;
+  color: #5E2424;
   margin: 0 10px;
   font-style: italic;
   letter-spacing: 0.96px;
@@ -118,9 +126,80 @@ h3 {
 }
 
 .vector {
-  width: 5vw;
   display: flex;
-  margin: 5vh 25vw;
-  justify-content: flex-end;
+  width: 5vw;
+  height: 11vh;
+  margin-top: 5vh;
+  margin-left: 32vw;
   align-items: center;
+}
+
+.solucao-content {
+  align-items: center;
+  justify-content: center;
+  background-color: #D9D9D9;
+}
+
+.solucao-align {
+  display:inline-block;
+  vertical-align:top;
+}
+
+.solucao-title {
+  display: block;
+  display: inline-block;
+  margin: 6vh 1.5vw;
+  height: 11vh;
+}
+
+.title-option {
+  font-size: 1.25vw;
+  color: #5E2424;
+  font-weight: bold;
+  line-height: 4vh;
+}
+
+.title-sub {
+  font-size: 1vw;
+  font-weight: bold;
+  line-height: 2.5vh;
+  color: #626262;
+  background-color: #D9D9D9;
+}
+
+.rent-beneficios {
+  display:inline-block;
+  vertical-align:top;
+  margin-top: -4vh;
+  width: 100%;
+  background-color: #D9D9D9;
+}
+
+.tempo-beneficios {
+  background-color: #D9D9D9;
+}
+
+.solucao-title-rent {
+  display: block;
+  display: inline-block;
+  margin: 4.5vh 1.5vw;
+  height: 11vh;
+  background-color: #D9D9D9;
+}
+
+.solucao-title-tempo {
+  display: block;
+  display: inline-block;
+  margin: 4vh 1.5vw;
+  height: 11vh;
+  background-color: #D9D9D9;
+}
+
+.div-line{
+  margin: 10vh 15%;
+  background-color: #DDB247;
+  width: 70%;
+  height: 2px;
+  border-radius: 3px;
+  display: center;
 }
