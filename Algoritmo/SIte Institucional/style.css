@@ -1,10 +1,11 @@
 @font-face{
   font-family: Inter;
-  scr:;
+  src: url('./font/Inter-Bold.ttf')
 }
 * {
   margin: 0;
   padding: 0;
+  font-family: 'Inter';
 }
 
 header {
