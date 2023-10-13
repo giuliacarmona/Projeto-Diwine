@@ -15,7 +15,14 @@ body{
     min-height: 100vh;
 }
 
-.card .container{
+.cardCad .container{
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cardLogin .container{
     padding-top: 100px;
     display: flex;
     flex-direction: column;
@@ -95,16 +102,31 @@ body{
 }
 
 
- .card .campos{
+ .cardCad .campos{
     width: 80%;
     
 }
 
-.card{
+.cardLogin .campos{
+    width: 80%;
+    
+}
+
+.cardCad{
     margin-top: 50px;
     border-radius: 25px;
     width: 588px;
     height: 810px;
+    background-color: #5E2424;
+
+    filter: drop-shadow(0px 4px 40px rgba(221, 178, 71 0.62));
+}
+
+.cardLogin{
+    margin-top: 50px;
+    border-radius: 25px;
+    width: 588px;
+    height: 650px;
     background-color: #5E2424;
 
     filter: drop-shadow(0px 4px 40px rgba(221, 178, 71 0.62));
