@@ -3,7 +3,7 @@
 
 
 body{
-    background-image: url(Plano\ de\ Fundo.jpeg);
+    background-image: url(./img/background.jpeg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -78,25 +78,25 @@ body{
 }
 
 .userIcon{
-    background-image: url(userIcon.svg);
+    background-image: url(./icons/userIcon.svg);
     background-repeat: no-repeat;
     background-position: center;
 }
 
 .mailIcon{
-    background-image: url(mailIcon.svg);
+    background-image: url(./icons/mailIcon.svg);
     background-repeat: no-repeat;
     background-position: center;
 }
 
 .avatarIcon{
-    background-image: url(avatarIcon.svg);
+    background-image: url(./icons/avatarIcon.svg);
     background-repeat: no-repeat;
     background-position: center;
 }
 
 .passwordIcon{
-    background-image: url(passwordIcon.svg);
+    background-image: url(./icons/passwordIcon.svg);
     background-repeat: no-repeat;
     background-position: center;
 }
