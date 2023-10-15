@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Diwine</title>
+    <link rel="stylesheet" href="./style/style.css">
+</head>
+<body>
+  <div class="cardLogin">
+    <div class="container">
+      <div class="circulo avatarIcon"></div>
+      <p class="textoSup">ACESSE PARA CONTINUAR</p>
+      
+      
+      <div class="campos">
+       
+       
+      <div class="espLaranja userIcon"></div>
+      <input type="text" placeholder="EMAIL" class="caixaDeTexto"id="EMAIL"> 
+   
+      <div class="espLaranja passwordIcon"></div>
+      <input type="password" placeholder="SENHA" class="caixaDeTexto"id="SENHA"> 
+
+   </div>
+
+    <button class="btCadastrar" onclick="botaoCadastrar()">LOGIN</button>
+   
+    <p>NÃO POSSUI CADASTRO?</p>
+    <button class="btLogin" onclick="botaoLogin()" >CADASTRAR-SE</button>
+    </div>
+  </div>
+</body>
+</html>
+
+<script>
+  function btLogin() {
+  var EMAIL = email.value;
+  var SENHA =senha.value;
+  
+  if ( EMAIL == "isabella@sptech.school" && SENHA == "Isa123") 
+     {alert('Carregando...') 
+    } else if (EMAIL == "Luca@gmail.com" && SENHA == "Luca1234")
+     {alert('Carregando...') 
+    }else if (EMAIL == "Karen@hotmail.com" && SENHA == "Karen1234")
+    {alert('Carregando...') }
+    else {alert ('Email ou senha inválidos!')}
+  }
+   
+    </script>
