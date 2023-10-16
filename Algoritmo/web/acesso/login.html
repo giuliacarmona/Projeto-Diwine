@@ -17,32 +17,32 @@
        
        
       <div class="espLaranja userIcon"></div>
-      <input type="text" placeholder="EMAIL" class="caixaDeTexto"id="EMAIL"> 
+      <input type="text" placeholder="EMAIL" class="caixaDeTexto" id="input_email"> 
    
       <div class="espLaranja passwordIcon"></div>
-      <input type="password" placeholder="SENHA" class="caixaDeTexto"id="SENHA"> 
+      <input type="password" placeholder="SENHA" class="caixaDeTexto" id="input_senha"> 
 
    </div>
+   <button class="btLogin" onclick="botaoLogin()">LOGIN</button>
+    
+   <p>NÃO POSSUI CADASTRO?</p>
 
-    <button class="btCadastrar" onclick="botaoCadastrar()">LOGIN</button>
-   
-    <p>NÃO POSSUI CADASTRO?</p>
-    <button class="btLogin" onclick="botaoLogin()" >CADASTRAR-SE</button>
+    <button class="btCadastrar" onclick="window.location.href='cadastro.html';">CADASTRAR-SE</button>
     </div>
   </div>
 </body>
-</html>
+</html> 
 
 <script>
-  function btLogin() {
-  var EMAIL = email.value;
-  var SENHA =senha.value;
+  function botaoLogin() {
+  var email = input_email.value;
+  var senha = input_senha.value;
   
-  if ( EMAIL == "isabella@sptech.school" && SENHA == "Isa123") 
+  if (email == "isabella@sptech.school" && senha == "Isa123") 
      {alert('Carregando...') 
-    } else if (EMAIL == "Luca@gmail.com" && SENHA == "Luca1234")
+    } else if (email == "luca@gmail.com" && senha == "Luca1234")
      {alert('Carregando...') 
-    }else if (EMAIL == "Karen@hotmail.com" && SENHA == "Karen1234")
+    }else if (email == "karen@hotmail.com" && senha == "Karen1234")
     {alert('Carregando...') }
     else {alert ('Email ou senha inválidos!')}
   }

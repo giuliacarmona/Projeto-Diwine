@@ -55,11 +55,33 @@ header container navbar li a {
   color: #5E2424;
   padding: 10px 22px;
   border-radius: 20px;
-  border: none;
+  border: 2px solid #DDB247;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.acesso:hover{
+  background-color: transparent;
+  border: 2px solid #DDB247;
+  color: #DDB247;
 }
 
 .saibaMais {
+  background-color: #DDB247;
+  color: #5E2424;
+  padding: 10px 25px;
+  border: 3px solid #DDB247;
+  border-radius: 50px; 
   margin-top: 20px;
+  font-size: 20px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.saibaMais:hover{
+  background-color: #5E2424;
+  border: 3px solid #5E2424;
+  color: #DDB247;
 }
 
 .section-home {
@@ -88,7 +110,7 @@ header container navbar li a {
 
 h3 {
   font-size: 1.5vw;
-  color: #5E2424;
+  color: #5e2424;
   font-family: Cormorant;
 }
 
@@ -107,7 +129,7 @@ h3 {
 
 .info-title {
   display:flex;
-  padding-top: 20vh;
+  padding-top: 16vh;
   align-items: center;
   justify-content: center;
   color: #DDB247;
@@ -201,18 +223,34 @@ h3 {
   display: block;
   display: inline-block;
   margin: 4vh 1.5vw;
-  margin-bottom: 22vh;
+  margin-bottom: 12vh;
   height: 11vh;
   background-color: #D9D9D9;
 }
 
 .div-line {
-  margin: 0;
+  margin: 0 auto;
   background-color: #DDB247;
-  width: 100%;
+  width: 60%;
   height: 2px;
   border-radius: 3px;
   display: center;
+}
+
+.aboutText{
+  background-color: #D9D9D9;
+  width: 100%;
+  height: 45vh;
+}
+
+p {
+  margin: 0 auto;
+  padding: 6vh 20vw 2vh 20vw;
+  text-align: center;
+  font-size: 18px;
+  font-style: italic;
+  line-height: 3vh;
+  color: #5E2424;
 }
 
 .section-sensores{
@@ -231,12 +269,13 @@ h3 {
   flex-wrap: wrap;
 }
 
+
 .plans-container .card{
   display: flex;
-  width: 250px;
-  padding: 20px;
+  width: 500px;
+  padding: 15px;
   margin: 20px;
-  margin-top: 22vh;
+  margin-top: 30vh;
   justify-content: center;
   align-items: center;
   flex-direction:column;
@@ -244,7 +283,7 @@ h3 {
   border-radius: 5px;
   transition: 0.5s;
   cursor: pointer;
-  font-family: "",
+  font-family: Inter;
 }
 
 .plans-container .card:hover{
@@ -253,37 +292,27 @@ h3 {
 }
 
 .plans-container .card p{
-  font-size: 22px;
-  font-weight: 500;
+  font-size: 30px;
   color: rgba(221, 178, 71);
   margin: 0;
+  margin-top: -20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.plans-container .card h4{
+  font-size: 20px;
+  color: #5E2424;
+  margin: 10px;
+  margin-bottom: 20px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .plans-container .card img{
-  width: 20px;
-  margin: 15px 0px 10px 0px;
-}
-
-.plans-container .card p:nth-child(3){
-  font-size: 19px;
-  margin-top: 0px;
-
-}
-
-.plans-container .card p:nth-child(4){
-  font-size: 17px;
-  margin-top: 5px;
-}
-
-.plans-container .card p:nth-child(5){
-  font-size: 16px;
-  margin-top: 12px;
-}
-
-.plans-container .card p:nth-child(6){
-  font-size: 15px;
-  margin-top: 5px;
-  font-style: italic;
+  width: 10vh;
+  margin: 12px 1px;
 }
 
 /* section contact */
@@ -297,12 +326,12 @@ h3 {
   flex-direction: column;
   font-size: 50px;
   color: #DDB247;
-  padding-top: 10vh;
+  padding-top: 14vh;
 }
 
 .registro {
   flex-direction: column;
-  margin-top: 5vh;
+  margin-top: 4vh;
   margin-left: 20vw;
 }
 
@@ -380,7 +409,7 @@ h3 {
 .footer {
   background-color: #5E2424;
   width: 100%;
-  height: 250px;
+  height: 30vh;
   position: static;
 }
 
