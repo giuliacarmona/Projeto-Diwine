@@ -162,6 +162,15 @@ p{
     font-style: normal;
     font-weight: 600;
     line-height: normal;
+
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.btCadastrar:hover{
+    background-color: transparent;
+    border: 2px solid #DDB247;
+    color: #DDB247;
 }
 
 .btLogin{
@@ -182,6 +191,16 @@ p{
     font-style: normal;
     font-weight: 600;
     line-height: normal;
+
+    transition-duration: 0.4s;
+    cursor: pointer;
+    
+}
+
+.btLogin:hover{
+    background-color: transparent;
+    border: 2px solid #DDB247;
+    color: #DDB247;
 }
 
 .textoSup{

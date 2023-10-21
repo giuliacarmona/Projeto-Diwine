@@ -159,8 +159,8 @@ h3 {
 
 .vector {
   display: flex;
-  width: 5vw;
-  height: 11vh;
+  width: 110px;
+  height: 100px;
   margin-top: 5vh;
   margin-left: 32vw;
   align-items: center;
@@ -322,6 +322,7 @@ p {
 }
 
 .paragrafo {
+  justify-content: space-between;
   text-align: center;
   flex-direction: column;
   font-size: 50px;
@@ -330,9 +331,14 @@ p {
 }
 
 .registro {
-  flex-direction: column;
-  margin-top: 4vh;
-  margin-left: 20vw;
+  margin: 40px 0 0 18% ;
+  width: 25%;
+}
+
+.container-map {
+  margin: 40px 0 0 18% ;
+  width: 25%;
+  display: flex;
 }
 
 .input {
@@ -409,52 +415,82 @@ p {
 .footer {
   background-color: #5E2424;
   width: 100%;
-  height: 30vh;
-  position: static;
+  height: 250px;
+  position: center;
+  align-items: center;
 }
 
-.logoFooter {
+.footer container {
+  flex-direction: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  display: flex;
+  margin: 0 auto;
+}
+
+.footer container .logoFooter {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding: 5vh 0;
+  padding: 10px 0;
+  margin: 18px;
 }
 
-.linhaAmarela {
-  margin-top: 2vh;
-  width: 200px;
-  height: 2px;
-  background-color: #DDB247;
+.footer container .logoFooter .logotipo {
+  display: flex;
+  align-items: center;
+  width: 125px;
+  justify-content: center;
+  flex-direction: column;
+  padding: 5px 0;
 }
 
-.fraseFooter {
-  padding-top: 15px;
+
+.footer container .logoFooter .fraseFooter {
+  margin-top: 20px;
   text-align: center;
   width: 300px;
-  height: 50px;
+  height: 25px;
   color: #b3a8a8;
 }
 
-.redes {
-  margin-left: 70%;
-  font-weight: 10px;
-  width: 250px;
+.linhaAmarela {
+  margin-top: 12px;
+  width: 200px;
+  height: 1px;
+  background-color: #DDB247;
+}
+
+.footer container .redes {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-top: -134px;
+  padding: 10px 0;
 }
 
-.redesSociais {
+.footer container .redes span {
   color: #DDB247;
-  font-size: 20;
-  font-weight: 50px;
+  text-align: center;
+  margin: 50px 10px 10px;
+  height: 25px;
+  font-size: 25px;
 }
 
-.redesSociaisImagem {
+.footer container .redes .imgSociais {
   justify-content: space-between;
+  flex-direction: row;
+}
+
+.footer container .redes .imgSociais img{
+  width: 60px;
+  height: 60px;
+  padding: 0 3px;
+  margin-top: 18px;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
 }
 
 .copy {
