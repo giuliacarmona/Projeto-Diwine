@@ -5,16 +5,15 @@
 
 body{
     background-color: #D9D9D9;
-    font-family: I;
 }
 
 .header{
-    border: 1px solid red;
+
     height: 420px;
 }
 
 .header .container{
-    border: 1px solid red;
+
     width: 80%;
     height: 100%;
     display: flex;
@@ -23,7 +22,7 @@ body{
 }
 
 .header .container .photo{
-    border: 1px solid red;
+
     width: 250px;
     height: 250px;
     display: flex;
@@ -37,7 +36,7 @@ body{
 }
 
 .header .container .info{
-    border: 1px solid red;
+
     height: 100%;
     width: 73%;
     display: flex;
@@ -45,27 +44,41 @@ body{
 }
 
 .header .container .info .nome{
-    border: 1px solid red;
+
     width: 920px;
     height: 60px;
     margin-top: 140px;
     margin-right: 20px;
+
+    color: #000;
+    font-family: Inter;
+    font-size: 65px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
 }
 
 .header .container .info .identificador{
-    border: 1px solid red;
+
     width: 300px;
     height: 60px;
+
+    color: rgba(221, 165, 20, 0.62);
+    font-family: Inter;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
 }
 
 .footer{
-    border: 1px solid red;
+
     width: 100%;
     height: 465px;
 }
 
 .footer .container-footer{
-    border: 1px solid red;
+
     width: 80%;
     height: 100%;
     display: flex;
@@ -74,36 +87,80 @@ body{
 }
 
 .footer .container-footer .container-empresa-pessoal{
-    border: 1px solid red;
+
     width: 50%;
     height: 465px;
 }
 
 .footer .container-footer .container-empresa-pessoal .titulo-empresa{
-    border: 1px solid red;
+
     width: 530px;
     height: 60px;
     margin-left: 80px;
+    border-bottom: 1px solid #5E2424;
+
+    color: #DDB247;
+    font-family: Inter;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
 }
 
 .footer .container-footer .container-empresa-pessoal .titulo-pessoal{
-    border: 1px solid red;
+
     width: 530px;
     height: 60px;
+    border-bottom: 1px solid #5E2424;
+
+    color: #DDB247;
+    font-family: Inter;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
 }
 
 .footer .container-footer .container-empresa-pessoal .info-empresa{
-    border: 1px solid red;
+
     width: 400px;
     height: 200px;
     margin-top: 40px;
     margin-left: 80px;
+    display: flex;
+    flex-direction: column;
 }
 
 
 .footer .container-footer .container-empresa-pessoal .info-pessoal{
-    border: 1px solid red;
+
     width: 400px;
     height: 200px;
     margin-top: 40px;
+}
+
+.footer .container-footer .container-empresa-pessoal .info-empresa .card-id{
+
+    width: 300px;
+    height: 45px;
+
+    color: #DDB247;
+    font-family: Inter;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.footer .container-footer .container-empresa-pessoal .info-pessoal .card-id{
+
+    width: 300px;
+    height: 45px;
+
+    color: #DDB247;
+    font-family: Inter;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
 }
