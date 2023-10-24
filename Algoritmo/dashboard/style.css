@@ -1,0 +1,158 @@
+*{
+    /* overflow: hidden; */
+    margin:0;
+    padding: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+}
+
+body{
+    display: inline-block;
+    background-color: #D9D9D9;
+}
+
+
+.container{
+    display: flex;
+    /* background-color:red; */
+    border: 1px solid cyan;
+    margin-left: 120px;
+    margin-top: 0;
+    width: 93vw;
+    justify-content: space-between;
+    flex-direction: row;
+    height: fit-content;        
+}
+
+.container .metricas {
+    display: flex;
+    width: 30%;
+    flex-direction: column;
+}
+
+.container .metricas .title {
+    display: flex;
+    width: 90%;
+    margin-bottom: 10vh;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.base {
+    display: flex;
+    width: 30%;
+    margin-bottom: 20px;
+}
+
+.id {
+    font-size: 20px;
+}
+
+.setor {
+    font-size: 40px;
+}
+
+.atual {
+
+}
+
+.container .metricas .grafico{
+    display: absolute;
+    padding: 2vh 0 10vh 2vw;
+    position: relative;
+    width: 70vw;
+    height: 70vh;
+}
+
+.container .info {
+    display: flex;
+    width: 100px;
+    padding: 1vh 20vh;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.container .info-top {
+    flex-direction: column;
+    flex-wrap: wrap;
+    bottom: 0;
+    height: auto;
+}
+
+.sidebar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 120px;
+    height: 100vh;
+    color: #DDB247;
+    overflow: hidden;
+    background: #5E2424;
+}
+
+.logo{
+    height: 0px;
+    padding: 0px;
+}
+
+.menu{
+    height: 95%;
+    position: relative;
+    list-style: none;
+    padding: 0;
+}
+
+.menu li{
+   
+    transition: all 0.2s ease-in-out;
+}
+
+.menu li:hover{
+    background: #DDB247;
+}
+
+.menu a:hover{
+    color: #5E2424;
+}
+
+.active{
+    background-color: #DDB247;
+    color:#5E2424
+}
+
+
+.menu a {
+    color: #DDB247;
+    font-size: 14px;
+    padding-left: 47px;
+    padding-right: 30px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.menu a span {
+    overflow: hidden;
+}
+
+.menu a i{
+    font-size: 1.6rem;
+}
+
+.sidebar .bottom-icon{
+    /* border: 1px solid cyan; */
+    position: fixed;
+    bottom: 0;
+    height: auto;
+    width: 120px;
+}
+
+
+.umidadeIcon, .temperaturaIcon, .menuIcon, .loteIcon, .logoutIcon, .perfilIcon{
+    /* border: 1px solid red; */
+    padding: 20px
+}
+
