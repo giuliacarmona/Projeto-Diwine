@@ -1,0 +1,104 @@
+*{
+    /* overflow: hidden; */
+    margin:0;
+    padding: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+}
+
+body{
+    display: inline-block;
+    background-color: #D9D9D9;
+}
+
+
+.container{
+    display: absolute;
+    /* background-color:red; */
+    border: 1px solid cyan;
+    margin-left: 120px;
+    margin-top: 0;
+    width: 1200px;
+    height:fit-content;
+}
+
+.sidebar{
+    position: sticky;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 120px;
+    height: 100vh;
+    color: #DDB247;
+    overflow: hidden;
+    background: #5E2424;
+}
+
+.logo{
+    height: 0px;
+    padding: 0px;
+}
+
+.menu{
+    height: 95%;
+    position: relative;
+    list-style: none;
+    padding: 0;
+}
+
+.menu li{
+   
+    transition: all 0.2s ease-in-out;
+}
+
+.menu li:hover{
+    background: #DDB247;
+}
+
+.menu a:hover{
+  
+    color: #5E2424;
+}
+
+.active{
+    background-color: #DDB247;
+    color:#5E2424
+}
+
+
+.menu a {
+    color: #DDB247;
+    font-size: 14px;
+    padding-left: 47px;
+    padding-right: 30px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.menu a span {
+    overflow: hidden;
+}
+
+.menu a i{
+    font-size: 1.6rem;
+}
+
+
+
+.sidebar .bottom-icon{
+    /* border: 1px solid cyan; */
+    position: fixed;
+    bottom: 0;
+    height: auto;
+    width: 120px;
+}
+
+
+.umidadeIcon, .temperaturaIcon, .menuIcon, .loteIcon, .logoutIcon, .perfilIcon{
+    /* border: 1px solid red; */
+    padding: 20px
+}
+
