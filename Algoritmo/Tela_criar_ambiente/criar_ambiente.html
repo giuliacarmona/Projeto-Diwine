@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar ambiente - Diwine</title>
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="criar_ambiente.css">
+</head>
+<body>
+    <div class="container_header">
+    <a href="" class="button_voltar">
+        <div class="voltar">
+            <i class="fa-solid fa-arrow-left"></i>VOLTAR
+        </div>
+    </a>
+    </div>
+    <div class="container_body">
+        <div id="div_foto" class="div_addFoto" onclick="exibirURL()">
+            <i class="fa-solid fa-plus"></i>
+            ADICIONAR FOTO DE CAPA
+        </div>
+        <div class="container_input_link" id="container_input_link">
+            <span class="URL">URL:</span><input id="input_addFoto" type="url" class="input_linkFoto" onkeyup="exibir()">
+        </div>
+        <div class="container_nomeAmbiente">
+            <span class="nome_titulos">Nome do Ambiente:</span><input type="text" id="input_nomeAmbiente" class="input_nomeAmbiente">
+        </div>
+        <div class="container_config">
+            <div class="container_tempo">
+                <span class="nome_titulos">Tempo de maturação</span>
+                <div class="container_buttonTempo">
+                <select class="buttonSelect_dia" id="buttonSelect_dia">
+                    <option value="1">01</option>
+                    <option value="2">02</option>
+                    <option value="3">03</option>
+                    <option value="4">04</option>
+                    <option value="5">05</option>
+                    <option value="6">06</option>
+                    <option value="7">07</option>
+                    <option value="8">08</option>
+                    <option value="9">09</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                    <option value="25">25</option>
+                    <option value="26">26</option>
+                    <option value="27">27</option>
+                    <option value="28">28</option>
+                    <option value="29">29</option>
+                    <option value="30">30</option>
+                    <option value="31">31</option>
+                </select>
+                <select class="buttonSelect_mes" id="buttonSelect_mes">
+                    <option value="01">Janeiro</option>
+                    <option value="02">Fevereiro</option>
+                    <option value="03">Março</option>
+                    <option value="04">Abril</option>
+                    <option value="05">Maio</option>
+                    <option value="06">Junho</option>
+                    <option value="07">Julho</option>
+                    <option value="08">Agosto</option>
+                    <option value="09">Setembro</option>
+                    <option value="10">Outubro</option>
+                    <option value="11">Novembro</option>
+                    <option value="12">Dezembro</option>
+                </select>
+                <select class="buttonSelect_ano" id="buttonSelect_ano">
+                    <option value="2024">2024</option>
+                    <option value="2025">2025</option>
+                    <option value="2026">2026</option>
+                    <option value="2027">2027</option>
+                    <option value="2028">2028</option>
+                    <option value="2029">2029</option>
+                    <option value="2030">2030</option>
+                </select>
+                </div>
+            </div>
+            <div class="container_att">
+                <span class="nome_titulos">Tempo de Atualização</span>
+                <select class="buttonSelect_tempoAtt" id="buttonSelect_tempoAtt">
+                    <option>Selecione...</option>
+                    <option value="10 minutos" class="optionMinutos">10 Minutos</option>
+                    <option value="15 minutos" class="optionMinutos">15 Minutos</option>
+                    <option value="30 minutos" class="optionMinutos">30 Minutos</option>
+                </select>
+            </div>
+            <div class="container_tipoBarril">
+                <span class="nome_titulos">Tipo de barril</span>
+                <select class="buttonSelect_tpBarril" id="buttonSelect_tpBarril">
+                    <option>Selecione...</option>
+                    <option value="barris de carvalho" class="optionBarril">Barril de Carvalho</option>
+                    <option value="tanques de aço" class="optionBarril">Tanque de Aço</option>
+                    <option value="ovos de concreto" class="optionBarril">Ovo de Concreto</option>
+                </select>
+            </div>   
+        </div>
+        <div class="container_footer">
+            <button id="button_criarAmbiente" class="button_criarAmbiente" onclick="criarAmbiente()">CRIAR</button>
+        </div>
+    </div>
+
+</body>
+</html>
+
+<script>
+
+    function exibirURL() {
+        document.getElementById('container_input_link').style.display='flex';
+    }
+
+    function exibir() {
+        var foto = input_addFoto.value;
+        div_foto.innerHTML = `<img src="${foto}" style="width: 1092px; height: 265px; border-radius:20px">`;
+    }
+
+    function criarAmbiente() {
+
+        var nome = input_nomeAmbiente.value;
+        var foto = input_addFoto.value;
+        var dia = buttonSelect_dia.value;
+        var mes = buttonSelect_mes.value;
+        var ano = buttonSelect_ano.value;
+        var tempoAtt = buttonSelect_tempoAtt.value;
+        var tipoBarril = buttonSelect_tpBarril.value;
+
+        alert(`Ambiente criado com sucesso! No ambiente ${nome} terá a maturação de vinho feita em ${tipoBarril}, possuindo o controle de temperatura e umidade atualizado a cada ${tempoAtt}, e terá o fim da maturação em ${dia}/${mes}/${ano}`);
+    }
+    
+</script>
