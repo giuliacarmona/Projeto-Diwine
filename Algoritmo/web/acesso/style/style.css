@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;600&display=swap');
+
+
+body{
+    background-image: url(./img/background.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+    transform: scale (0.5);
+    transform-origin: 0 0;
+}
+
+.cardCad .container{
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cardLogin .container{
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.circulo{
+    background-color: rgba(221,165,20, 0.64);
+    backdrop-filter: blur(10px);
+    transform: translate(0px, -180px);
+    border-radius: 100%;
+    position: absolute;
+    width: 175px;
+    height: 175px;
+}
+
+.caixaDeTexto {
+    background-color: #BFBFBF;
+    transform: translate(67px);
+    display: flex;
+    justify-content: center;
+    width: 400px;
+    height: 65px;
+    margin: 0;
+    margin-bottom: 20px;
+    border: none;
+    outline: none; 
+    border-radius: 0 16px 16px 0;
+
+    color: #606060;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    padding-left: 10px;
+}
+       
+
+
+.campos .espLaranja{
+    
+    border-radius: 16px 0px 0px 16px;
+    display: flex;
+    position: absolute;
+    width: 67px;
+    height: 67px;
+    background-color: #DDB247;
+    
+}
+
+.userIcon{
+    background-image: url(./icons/userIcon.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.mailIcon{
+    background-image: url(./icons/mailIcon.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.avatarIcon{
+    background-image: url(./icons/avatarIcon.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.passwordIcon{
+    background-image: url(./icons/passwordIcon.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+ .cardCad .campos{
+    width: 80%;
+    
+}
+
+.cardLogin .campos{
+    width: 80%;
+    
+}
+
+.cardCad{
+    margin-top: 50px;
+    border-radius: 25px;
+    width: 588px;
+    height: 810px;
+    background-color: #5E2424;
+
+    filter: drop-shadow(0px 4px 40px rgba(221, 178, 71 0.62));
+}
+
+.cardLogin{
+    margin-top: 50px;
+    border-radius: 25px;
+    width: 588px;
+    height: 650px;
+    background-color: #5E2424;
+
+    filter: drop-shadow(0px 4px 40px rgba(221, 178, 71 0.62));
+}
+
+p{
+    color: #DDB247;
+    justify-content: center;
+    display: flex;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+
+}
+
+.btCadastrar{
+    background-color: #DDB247;
+    margin: 30px;
+    width: 80%;
+    height: 50px;
+    margin: 20px;
+    margin-bottom: 20px;
+    justify-content: center;
+    display: block;
+    border: none;
+    border-radius: 50px;
+    
+    color: #5E2424;
+    text-align: center;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.btCadastrar:hover{
+    background-color: transparent;
+    border: 2px solid #DDB247;
+    color: #DDB247;
+}
+
+.btLogin{
+    background-color: #DDB247;
+    margin: 30px;
+    width: 80%;
+    height: 50px;
+    margin: 10px auto;
+    justify-content: center;
+    display: block;
+    border: none;
+    border-radius: 50px;
+    
+    color: #5E2424;
+    text-align: center;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+
+    transition-duration: 0.4s;
+    cursor: pointer;
+    
+}
+
+.btLogin:hover{
+    background-color: transparent;
+    border: 2px solid #DDB247;
+    color: #DDB247;
+}
+
+.textoSup{
+    margin-bottom: 50px
+}
+
+
+
+::placeholder{
+    color: #606060;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    padding: 0px;
+}

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>DIWINE</title>
+</head>
+
+<body>
+  <header>
+    <container>
+      <img src="img/logo.png" href="#div-line" class="logotipo">
+      <navbar>
+        <ul>
+          <li><a href="#section-home">HOME</a></li>
+          <li><a href="#section-info">SOBRE NÓS</a></li>
+          <li><a href="#section-calculator">FINANCEIRO</a></li>
+          <li><a href="#section-sensores">SENSORES</a></li>
+          <li><a href="#section-contact">CONTATO</a></li>
+          <li><a href="#section-team">EQUIPE</a></li>
+          <li><a href="../acesso/login.html" class="acesso">ACESSO A CLIENTES</a></li>
+        </ul>
+      </navbar>
+    </container>
+  </header>
+
+  <section class="section-home" id="section-home">
+    <container>
+      <h1 class="home-title">CONTROLE A <br>MATURAÇÃO DO<br>VINHO COMO<br>NUNCA ANTES</h1>
+      <div class="home-text">
+        <h3>É essencial preservar o vinho contra a oxidação e contaminação de microorganismos. Assim, o enchimento é um
+          procedimento essencial para proteger o vinho da oxidação e para manter o nível de SO2 dentro da barrica nos
+          valores desejados.</h3>
+        <br>
+        <a href="#section-info"><button class="acesso saibaMais"> SAIBA MAIS</button></a>
+      </div>
+    </container>
+  </section>
+
+  <section class="section-info" id="section-info">
+    <container>
+      <h1 class="info-title">DIWINE, UMA FERRAMENTA </h1>
+      <h1 class="info-title2"><span class="unicaColor">ÚNICA</span>PARA OS ENÓLOGOS </h1>
+    </container>
+    <container>
+      <div class="solucao-align">
+        <img class="vector" src="img/vectorWine.png">
+      </div>
+      <div class="solucao-title">
+        <span class="title-option">REDUÇÃO DO DESPERDÍCIO NA ADEGA</span><br>
+        <span class="title-sub">Com o Sistema de Monitorização da Maturação da DIWINE,<br>
+          esse desperdício pode ser reduzido em até 80%</span>
+      </div>
+      <div class="rent-info">
+        <div class="solucao-align">
+          <img class="vector" src="img/vectorCash.png">
+        </div>
+
+        <div class="solucao-title-rent">
+          <span class="title-option">AUMENTO DA RENTABILIDADE</span><br>
+          <span class="title-sub"> O Sistema permite uma redução nos custos de<br>
+            monitorização quer a nível de investimento quer<br>a nível de custos recorrentes.</span>
+        </div>
+      </div>
+      <div class="tempo-info">
+        <div class="solucao-align">
+          <img class="vector" src="img/vectorClock.png">
+        </div>
+
+        <div class="solucao-title-tempo">
+          <span class="title-option">OTIMIZAÇÃO DE TEMPO</span><br>
+          <span class="title-sub"> Com o sistema instalado, não é necessária a habitual <br>
+            fiscalização, todas as tarefas associadas a este <br> processo de monitorização manual são
+            automatizadas</span>
+        </div>
+
+        <div class="div-line"></div>
+
+        <div class="aboutText">
+          <p> A DIWINE desenvolve e fornece soluções remotas e em tempo real totalmente integradas<br>
+            para a monitorização inteligente do processo de maturação.</p>
+          <p> Através de tecnologia proprietária, composta por Hardware (sensores) e Plataforma de<br>
+            Visualização, a DIWINE providencia soluções precisas e exatas para um acompanhamento<br>
+            com impacto relevante na eficiência operacional, assim como para que o enólogo possa<br>
+            conduzir a vinificação precisamente como deseja.</p>
+        </div>
+      </div>
+
+    </container>
+  </section>
+
+  <section class="section-sensores" id="section-sensores">
+    <container>
+      <div class="plans-container">
+        <div class="card">
+          <img src="./img/vectorTemp.png">
+          <p>TEMPERATURA</p>
+          <h4>Altas temperaturas podem danificar o vinho, baixas
+            podem congelá-lo, assim como
+            as variações frequentes podem comprometer sua qualidade</h4>
+        </div>
+
+        <div class="card">
+          <img src="./img/vectorUmi.png">
+          <p>UMIDADE</p>
+          <h4>A umidade também é importante para o amarzenamento do vinho.
+            O ideal é mantê-la entre 50% e 80%. Caso contrário o vinho pode
+            evaporar ou envelhecer prematuramente
+          </h4>
+        </div>
+      </div>
+  </section>
+
+  <section class="section-contact" id="section-contact">
+    <h1 class="paragrafo">CONTATE-NOS</h1>
+    <container>
+      <div class="registro">
+        <input type="text" id="inputNome" placeholder="Nome*" class="input" required> <br>
+        <input type="text" id="inputEmail" placeholder="Email*" class="input" required> <br>
+        <input type="text" id="inputCelular" placeholder="Celular*" class="input" required> <br>
+        <input type="text" id="inputEmpresa" placeholder="Nome da Empresa" class="input"> <br>
+        <input type="text" id="inputCNPJ" placeholder="CNPJ" class="input"> <br>
+
+        <h3 class="subtitulo">Qual tipo de organização representa?</h3>
+
+        <select name="organizacao" class="selectOption"> Selecione...
+          <option class="option">Selecione...</option>
+          <option value="uniAcad" class="option">Universidades/Academias</option>
+          <option value="produtores" class="option">Produtores de vinho</option>
+          <option value="vendedor" class="option">Vendedor/Distribuidor de produtos</option>
+          <option value="media" class="option">Media/Imprensa</option>
+          <option value="outros" class="option">Outros...</option>
+        </select>
+
+        <h3 class="subtitulo">Mensagem</h3>
+        <input type="textarea" id="inputMensagem" class="inputMensagem"> <br>
+        <button onclick="enviar()" class="botao">ENVIAR</button>
+      </div>
+      
+      <!-- <div class="container-map">
+        TESTE
+      </div> -->
+
+    </container>
+  </section>
+
+  <section class="footer">
+    <container>
+      <div class="logoFooter">
+        <img src="img/logo.png" href="#" class="logotipo">
+        <div class="linhaAmarela"></div>
+        <div class="fraseFooter">TENHA O CONTROLE DA<br>
+          MATURAÇÃOS DOS SEUS VINHOS <br> COMO NUNCA ANTES!
+        </div>
+      </div>
+
+      <div class="redes">
+        <span>REDES SOCIAIS</span>
+        <div class="linhaAmarela"></div>
+
+        <div class="imgSociais">
+          <img src="img/facebook.png">
+          <img src="img/instagram.png">
+          <img src="img/whatsapp.png">
+          <img src="img/twitter.png">
+        </div>
+
+    </container>
+  </section>
+
+  <div class="copy">Copyright © 2023 por DIWINE. Todos os direitos reservados</div>
+
+</body>
+</html>

@@ -1,0 +1,506 @@
+@font-face{
+  font-family: Inter;
+  src: url('./font/Inter-Bold.ttf')
+}
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter';
+}
+
+header {
+  top: 0;
+  position: fixed;
+  background-color: #5E2424;
+  width: 100%;
+  height: 75px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.logotipo {
+  color: #DDB247;
+  width: 12vh;
+  margin-top: -10px;
+  cursor: pointer;
+  display: fixed;
+}
+
+header container {
+  width: 80%;
+  height: 100%;
+  margin: 0 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+header container li {
+  display: inline;
+  padding: 0 20px;
+  font-size: 14px;
+}
+
+header container navbar li a {
+  text-decoration: none;
+  color: #DDB247;
+  transition: 0.5;
+}
+
+.acesso {
+  background-color: #DDB247;
+  color: #5E2424;
+  padding: 10px 22px;
+  border-radius: 20px;
+  border: 2px solid #DDB247;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.acesso:hover{
+  background-color: transparent;
+  border: 2px solid #DDB247;
+  color: #DDB247;
+}
+
+.saibaMais {
+  background-color: #DDB247;
+  color: #5E2424;
+  padding: 10px 25px;
+  border: 3px solid #DDB247;
+  border-radius: 50px; 
+  margin-top: 20px;
+  font-size: 20px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.saibaMais:hover{
+  background-color: #5E2424;
+  border: 3px solid #5E2424;
+  color: #DDB247;
+}
+
+.section-home {
+    background-size: cover;
+  background-image: url(./img/garrafaVermelha.jpg);
+  width: 100%;
+  height: 100vh;
+}
+
+.home-title {
+  padding: 20vh 8vw;
+  padding-bottom: 1vh;
+  font-size: 8vh;
+  font-family: Cormorant;
+  color: #5E2424;
+  font-style: italic;
+  letter-spacing: 0.96px;
+}
+
+.home-text {
+  padding: 2vh 8vw;
+  padding-rigth: 20vw;
+  width: 90vh;
+  word-break: break-word;
+}
+
+h3 {
+  font-size: 1.5vw;
+  color: #5e2424;
+  font-family: Cormorant;
+}
+
+.section-info {
+  background-color: #D9D9D9;
+}
+.info-content {
+  background-color: #D9D9D9;
+  height: 1000vh;
+}
+
+.info-content:target {
+    position: sticky;
+    top: 0;
+}
+
+.info-title {
+  display:flex;
+  padding-top: 16vh;
+  align-items: center;
+  justify-content: center;
+  color: #DDB247;
+  letter-spacing: 0.96px;
+  font-size: 6vh;
+  background-color: #D9D9D9;
+}
+
+.info-title2 {
+  display:flex;
+  padding-top: 0.5vh;
+  align-items: center;
+  justify-content: center;
+  color: #DDB247;
+  letter-spacing: 0.96px;
+  font-size: 6vh;
+  background-color: #D9D9D9;
+}
+
+.unicaColor {
+  color: #5E2424;
+  margin: 0 10px;
+  font-style: italic;
+  letter-spacing: 0.96px;
+  font-size: 6vh;
+}
+
+.vector {
+  display: flex;
+  width: 110px;
+  height: 100px;
+  margin-top: 5vh;
+  margin-left: 32vw;
+  align-items: center;
+}
+
+.solucao-content {
+  align-items: center;
+  justify-content: center;
+  background-color: #D9D9D9;
+}
+
+.solucao-align {
+  display:inline-block;
+  vertical-align:top;
+}
+
+.solucao-title {
+  display: block;
+  display: inline-block;
+  margin: 6vh 1.5vw;
+  height: 11vh;
+}
+
+.title-option {
+  font-size: 1.25vw;
+  color: #5E2424;
+  font-weight: bold;
+  line-height: 4vh;
+}
+
+.title-sub {
+  font-size: 1vw;
+  font-weight: bold;
+  line-height: 2.5vh;
+  color: #626262;
+  background-color: #D9D9D9;
+}
+
+.rent-info {
+  display:inline-block;
+  vertical-align:top;
+  margin-top: -4vh;
+  width: 100%;
+  background-color: #D9D9D9;
+}
+
+.tempo-info {
+  background-color: #D9D9D9;
+}
+
+.solucao-title-rent {
+  display: block;
+  display: inline-block;
+  margin: 4.5vh 1.5vw;
+  height: 11vh;
+  background-color: #D9D9D9;
+}
+
+.solucao-title-tempo {
+  display: block;
+  display: inline-block;
+  margin: 4vh 1.5vw;
+  margin-bottom: 12vh;
+  height: 11vh;
+  background-color: #D9D9D9;
+}
+
+.div-line {
+  margin: 0 auto;
+  background-color: #DDB247;
+  width: 60%;
+  height: 2px;
+  border-radius: 3px;
+  display: center;
+}
+
+.aboutText{
+  background-color: #D9D9D9;
+  width: 100%;
+  height: 45vh;
+}
+
+p {
+  margin: 0 auto;
+  padding: 6vh 20vw 2vh 20vw;
+  text-align: center;
+  font-size: 18px;
+  font-style: italic;
+  line-height: 3vh;
+  color: #5E2424;
+}
+
+.section-sensores{
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(./img/garrafaVerde.jpg);
+  width: 100%;
+  height: 100vh;
+}
+
+.plans-container{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+
+.plans-container .card{
+  display: flex;
+  width: 500px;
+  padding: 15px;
+  margin: 20px;
+  margin-top: 30vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction:column;
+  background-color: #D9D9D9;
+  border-radius: 5px;
+  transition: 0.5s;
+  cursor: pointer;
+  font-family: Inter;
+}
+
+.plans-container .card:hover{
+  transition: 0.5s;
+  box-shadow: 5px 5px 5px rgba(221, 178, 71, 0.5);
+}
+
+.plans-container .card p{
+  font-size: 30px;
+  color: rgba(221, 178, 71);
+  margin: 0;
+  margin-top: -20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.plans-container .card h4{
+  font-size: 20px;
+  color: #5E2424;
+  margin: 10px;
+  margin-bottom: 20px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.plans-container .card img{
+  width: 10vh;
+  margin: 12px 1px;
+}
+
+/* section contact */
+
+.section-contact{
+  background-color: #d9d9d9;
+}
+
+.paragrafo {
+  justify-content: space-between;
+  text-align: center;
+  flex-direction: column;
+  font-size: 50px;
+  color: #DDB247;
+  padding-top: 14vh;
+}
+
+.registro {
+  margin: 40px 0 0 18% ;
+  width: 25%;
+}
+
+.container-map {
+  margin: 40px 0 0 18% ;
+  width: 25%;
+  display: flex;
+}
+
+.input {
+  margin-bottom: 2vh;
+  padding: 5px;
+  background-color: transparent;
+  border: 0;
+  padding-inline: 2px;
+  padding-inline-end: 100px;
+  border-bottom: 1px solid;
+  font-weight: bolder;
+  width: 35vh;
+  color: #5E2424;
+}
+
+.subtitulo {
+  width: 300px;
+  font-size: 18px;
+  color: #5E2424;
+  font-weight: 50;
+  padding-top: 10px;
+}
+
+.selectOption {
+  padding: 1vh;
+  padding-top: 1.2vh;
+  background-color: transparent;
+  border: 0;
+  border-bottom: 1px solid;
+  color: #5E2424;
+  border-bottom: 2px solid;
+  font-weight: 20px;
+  width: 50vh;
+  padding-inline: 2px;
+  padding-inline-end: 100px;
+  cursor: pointer;
+}
+
+.option {
+  background-color: #b3a8a8;
+  color: #5E2424;
+  border: 0;
+}
+
+.inputMensagem {
+  margin-top: 1vh;
+  border: 0;
+  border-bottom: 1px solid;
+  border-bottom-color: #5E2424;
+  width: 50vh;
+  height: 120px;
+  background-color: transparent;
+}
+
+.botao {
+  margin-top: 2vh;
+  margin-bottom: 15vh;  
+  padding: 5px;
+  background-color: transparent;
+  border: 0;
+  background-color: #5E2424;
+  color: #DDB247;
+  width: 50vh;
+  height: 35px;
+  border-radius: 3px;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  cursor: pointer;
+}
+
+/* FOOTER */
+
+.footer {
+  background-color: #5E2424;
+  width: 100%;
+  height: 250px;
+  position: center;
+  align-items: center;
+}
+
+.footer container {
+  flex-direction: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  display: flex;
+  margin: 0 auto;
+}
+
+.footer container .logoFooter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px 0;
+  margin: 18px;
+}
+
+.footer container .logoFooter .logotipo {
+  display: flex;
+  align-items: center;
+  width: 125px;
+  justify-content: center;
+  flex-direction: column;
+  padding: 5px 0;
+}
+
+
+.footer container .logoFooter .fraseFooter {
+  margin-top: 20px;
+  text-align: center;
+  width: 300px;
+  height: 25px;
+  color: #b3a8a8;
+}
+
+.linhaAmarela {
+  margin-top: 12px;
+  width: 200px;
+  height: 1px;
+  background-color: #DDB247;
+}
+
+.footer container .redes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px 0;
+}
+
+.footer container .redes span {
+  color: #DDB247;
+  text-align: center;
+  margin: 50px 10px 10px;
+  height: 25px;
+  font-size: 25px;
+}
+
+.footer container .redes .imgSociais {
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.footer container .redes .imgSociais img{
+  width: 60px;
+  height: 60px;
+  padding: 0 3px;
+  margin-top: 18px;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.copy {
+  background-color: #DDB247;
+  color: #5E2424;
+  margin-bottom: 0;
+  width: 100%;
+  height: 6vh;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

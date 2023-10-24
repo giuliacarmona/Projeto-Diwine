@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastre-se | Diwine</title>
+    <link rel="stylesheet" href="./style/style.css">
+</head>
+<body>
+  <div class="cardCad">
+    <div class="container">
+      <div class="circulo avatarIcon"></div>
+      <p class="textoSup">ACESSE PARA CONTINUAR</p>
+      
+      
+      <div class="campos">
+       
+       
+      <div class="espLaranja userIcon"></div>
+      <input type="text" placeholder="NOME COMPLETO" class="caixaDeTexto" id="ipt_user"> 
+   
+      <div class="espLaranja mailIcon"></div>
+      <input type="text" placeholder="INSIRA SEU E-MAIL" class="caixaDeTexto" id="ipt_email"> 
+   
+      <div class="espLaranja passwordIcon"></div>
+      <input type="password" placeholder="SENHA" class="caixaDeTexto" id="ipt_senha"> 
+   
+      <div class="espLaranja passwordIcon"></div>
+      <input type="password" placeholder="CONFIRME SUA SENHA" class="caixaDeTexto" id="ipt_confirme"> 
+                 
+
+   </div>
+    <button class="btCadastrar" onclick="btCadastrar()">CADASTRAR-SE</button>
+   
+    <p>JÁ POSSUI UMA CONTA:</p>
+    <button class="btLogin" onclick="window.location.href='login.html';">LOGIN</button>
+    </div>
+  </div>
+</body>
+</html>
+
+<script>
+function btCadastrar() {
+ 
+    var email = ipt_email.value
+    var senha = ipt_senha.value
+    var user = ipt_user.value
+    var confirme = ipt_confirme.value
+
+    if (email.indexOf('@') >= 0) { }
+        else alert("E-mail inválido!")
+
+        if (email.endsWith('.com') || email.endsWith('.br') || email.endsWith('.school')) { }
+        else alert("Seu e-mail precisa terminar com '.com', '.br' ou '.school'!")
+
+        var possui_especial =
+            senha.indexOf('#') >= 0 ||
+            senha.indexOf('@') >= 0 ||
+            senha.indexOf('!') >= 0 ||
+            senha.indexOf('%') >= 0 ||
+            senha.indexOf('?') >= 0 ||
+            senha.indexOf('-') >= 0 ||
+            senha.indexOf('+') >= 0 ||
+            senha.indexOf('*') >= 0 ||
+            senha.indexOf('_') >= 0;
+
+        if (senha.length >= 8) { }
+        else alert("Sua senha deve ter no mínimo 8 dígitos!")
+
+        if (possui_especial) { }
+        else alert("A senha deve ter pelo menos 1 caractere especial!")
+
+        if (confirme != senha) {alert("As senhas não coincidem!")}
+
+        if ( (email.indexOf('@') >= 0 && (email.endsWith('.com') || email.endsWith('.br') || email.endsWith('.school')))
+          && (senha.length >= 8 && possui_especial && confirme == senha)) { 
+            alert("Olá, " + user + "! Estamos finalizando o seu cadastro!")
+}
+}
+</script>
