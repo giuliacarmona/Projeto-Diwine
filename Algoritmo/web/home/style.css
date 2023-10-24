@@ -159,29 +159,30 @@ h3 {
 
 .vector {
   display: flex;
-  width: 110px;
+  width: 100px;
   height: 100px;
-  margin-top: 5vh;
+  margin-top: 3vh;
   margin-left: 32vw;
   align-items: center;
 }
 
 .solucao-content {
   align-items: center;
-  justify-content: center;
+  justify-content: column;
   background-color: #D9D9D9;
 }
 
 .solucao-align {
-  display:inline-block;
-  vertical-align:top;
+  display: inline-block;
+  vertical-align: top;
+  margin-bottom: 10vh;
 }
 
 .solucao-title {
   display: block;
   display: inline-block;
   margin: 6vh 1.5vw;
-  height: 11vh;
+  height: 5vh;
 }
 
 .title-option {
@@ -214,7 +215,7 @@ h3 {
 .solucao-title-rent {
   display: block;
   display: inline-block;
-  margin: 4.5vh 1.5vw;
+  margin: 4vh 1.5vw;
   height: 11vh;
   background-color: #D9D9D9;
 }
