@@ -3,7 +3,7 @@ Somos uma empresa especializada na automação do processo de maturação dos ma
 
 ## Tecnologias Utilizadas
   <div align="center">
-    <a href="https://trello.com/b/EutqBM1B/projeto-diwine">
+    <a href="https://trello.com/w/projetodepigrupo5">
       <img src="https://img.shields.io/badge/Trello-%23026AA7.svg?style=for-the-badge&logo=Trello&logoColor=white">
      <a/>
     &nbsp;&nbsp;&nbsp;&nbsp;
