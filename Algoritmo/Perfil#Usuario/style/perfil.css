@@ -143,6 +143,7 @@ body{
 
 .pencilIcon{
     padding-left: 370px;
+    cursor: pointer;
 }
 
 .footer .container-footer .container-empresa-pessoal .info-empresa{
