@@ -10,12 +10,12 @@ body{
 }
 
 .header{
-    border: 1px solid red;
+
     height: 420px;
 }
 
 .header .container{
-    border: 1px solid red;
+
     width: 80%;
     height: 100%;
     display: flex;
@@ -24,7 +24,7 @@ body{
 }
 
 .header .container .photo{
-    border: 1px solid red;
+
     width: 250px;
     height: 250px;
     display: flex;
@@ -56,7 +56,7 @@ body{
 }
 
 .header .container .info{
-    border: 1px solid red;
+
     height: 100%;
     width: 73%;
     display: flex;
@@ -64,7 +64,7 @@ body{
 }
 
 .header .container .info .nome{
-    border: 1px solid red;
+
     width: 920px;
     height: 60px;
     margin-top: 140px;
@@ -79,7 +79,7 @@ body{
 }
 
 .header .container .info .identificador{
-    border: 1px solid red;
+
     width: 600px;
     height: 60px;
 
@@ -92,13 +92,13 @@ body{
 }
 
 .footer{
-    border: 1px solid red;
+
     width: 100%;
     height: 465px;
 }
 
 .footer .container-footer{
-    border: 1px solid red;
+
     width: 80%;
     height: 100%;
     display: flex;
@@ -107,13 +107,13 @@ body{
 }
 
 .footer .container-footer .container-empresa-pessoal{
-    border: 1px solid red;
+
     width: 50%;
     height: 465px;
 }
 
 .footer .container-footer .container-empresa-pessoal .titulo-empresa{
-    border: 1px solid red;
+
     width: 600px;
     height: 60px;
     margin-left: 80px;
@@ -128,7 +128,7 @@ body{
 }
 
 .footer .container-footer .container-empresa-pessoal .titulo-pessoal{
-    border: 1px solid red;
+
     width: 600px;
     height: 60px;
     border-bottom: 1px solid #5E2424;
@@ -146,7 +146,7 @@ body{
 }
 
 .footer .container-footer .container-empresa-pessoal .info-empresa{
-    border: 1px solid red;
+
     width: 600px;
     height: 200px;
     margin-top: 40px;
@@ -157,14 +157,14 @@ body{
 
 
 .footer .container-footer .container-empresa-pessoal .info-pessoal{
-    border: 1px solid red;
+
     width: 600px;
     height: 200px;
     margin-top: 40px;
 }
 
 .footer .container-footer .container-empresa-pessoal .info-empresa .card-id{
-    border: 1px solid red;
+
     width: 600px;
     height: 45px;
 
@@ -177,7 +177,7 @@ body{
 }
 
 .footer .container-footer .container-empresa-pessoal .info-pessoal .card-id{
-    border: 1px solid red;
+
     width: 600px;
     height: 45px;
 
@@ -192,3 +192,80 @@ body{
 .dado{
     color: #5E2424;
 }
+
+.sidebar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 120px;
+    height: 100vh;
+    color: #DDB247;
+    overflow: hidden;
+    background: #5E2424;
+}
+
+.logo{
+    height: 0px;
+    padding: 0px;
+}
+
+.menu{
+    height: 95%;
+    position: relative;
+    list-style: none;
+    padding: 0;
+}
+
+.menu li{
+   
+    transition: all 0.2s ease-in-out;
+}
+
+.menu li:hover{
+    background: #DDB247;
+}
+
+.menu a:hover{
+    color: #5E2424;
+}
+
+.active{
+    background-color: #DDB247;
+    color:#5E2424
+}
+
+
+.menu a {
+    color: #DDB247;
+    font-size: 14px;
+    padding-left: 47px;
+    padding-right: 30px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.menu a span {
+    overflow: hidden;
+}
+
+.menu a i{
+    font-size: 1.6rem;
+}
+
+.sidebar .bottom-icon{
+    /* border: 1px solid cyan; */
+    position: fixed;
+    bottom: 0;
+    height: auto;
+    width: 120px;
+}
+
+
+.umidadeIcon, .temperaturaIcon, .menuIcon, .loteIcon, .logoutIcon, .perfilIcon{
+    /* border: 1px solid red; */
+    padding: 20px
+}
+
