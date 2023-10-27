@@ -18,7 +18,6 @@ body {
 .container {
     display: flex;
     /* background-color:red; */
-    border: 1px solid cyan;
     margin-left: 120px;
     margin-top: 0;
     width: 93vw;
