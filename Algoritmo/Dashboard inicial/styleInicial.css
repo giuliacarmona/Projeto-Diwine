@@ -1,0 +1,364 @@
+*{
+    /* overflow: hidden; */
+    margin:0;
+    padding: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+}
+
+body{
+    display: inline-block;
+    background-color: #D9D9D9;
+}
+
+.ambientes{
+    display: flex;
+    flex-wrap: wrap;
+    /* border: 1px solid red; */
+    margin: 1px 1px;
+    
+}
+
+.retangulos .rectangle-13{
+    
+    background-image: url(rectangle-13.png);
+    background-size: cover;
+    width: 500px;
+    height: 300px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.retangulos .rectangle-15{
+    
+    background-image: url(rectangle-15.png);
+    background-size: cover;
+    width: 500px;
+    height: 300px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.retangulos .rectangle-14{
+    
+    background-image: url(rectangle-14.png);
+    background-size: cover;
+    width: 500px;
+    height: 300px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.retangulos{
+    /* border: 1px solid green; */
+    width: 500px;
+    height: 370px;
+    margin: 1vh 2vw;
+}
+
+.setorDesc{
+    /* border: 1px solid green; */
+    width:fit-content
+}
+
+.idDesc{
+    /* border: 1px solid green; */
+    width:fit-content
+}
+
+.retangulos .legenda{
+    display: flex;
+    width: 450px;
+    width: auto;
+    justify-content: space-between;
+   
+}
+.retangulos .legenda2{
+    display: flex;
+    width: 450px;
+    width: auto;
+    justify-content: space-between;
+   
+}
+.retangulos .legenda3{
+    display: flex;
+    width: 450px;
+    width: auto;
+    justify-content: space-between;
+}
+
+.container{
+    display: flex;
+    /* background-color:red; */
+    /* border: 1px solid cyan; */
+    margin-left: 200px;
+    margin-top: 0;
+    width: 90vw;
+    justify-content: space-between;
+    flex-direction: row;
+    height: fit-content;        
+}
+
+.container .metricas {
+    display: flex;
+    width: 30%;
+    flex-direction: column;
+}
+
+.container .metricas .title {
+    display: flex;
+    width: 90%;
+    margin-bottom: 10vh;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.base {
+    display: flex;
+    width: 30%;
+    margin-bottom: 20px;
+}
+
+.id {
+    font-size: 20px;
+}
+
+.setor {
+    font-size: 40px;
+}
+
+.container .metricas .grafico{
+    display: absolute;
+    padding: 2vh 0 10vh 2vw;
+    position: relative;
+    width: 70vw;
+    height: 70vh;
+}
+
+.container .info {
+    display: flex;
+    width: 100px;
+    padding: 1vh 20vh;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.container .info-top {
+    flex-direction: column;
+    flex-wrap: wrap;
+    bottom: 0;
+    height: auto;
+}
+
+.sidebar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 120px;
+    height: 100vh;
+    color: #DDB247;
+    overflow: hidden;
+    background: #5E2424;
+}
+
+.logo{
+    height: 0px;
+    padding: 0px;
+}
+
+.menu{
+    height: 95%;
+    position: relative;
+    list-style: none;
+    padding: 0;
+}
+
+.menu li{
+   
+    transition: all 0.2s ease-in-out;
+}
+
+.menu li:hover{
+    background: #DDB247;
+}
+
+.menu a:hover{
+    color: #5E2424;
+}
+
+.active{
+    background-color: #DDB247;
+    color:#5E2424
+}
+
+
+.menu a {
+    color: #DDB247;
+    font-size: 14px;
+    padding-left: 47px;
+    padding-right: 30px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.menu a span {
+    overflow: hidden;
+}
+
+.menu a i{
+    font-size: 1.6rem;
+}
+
+.sidebar .bottom-icon{
+    /* border: 1px solid cyan; */
+    position: fixed;
+    bottom: 0;
+    height: auto;
+    width: 120px;
+}
+
+
+.umidadeIcon, .temperaturaIcon, .menuIcon, .loteIcon, .logoutIcon, .perfilIcon{
+    /* border: 1px solid red; */
+    padding: 20px
+}
+
+.rectangle-33, .rectangle-33 * {
+    box-sizing: border-box;
+    }
+    .rectangle-33 {
+    background: #d9d9d9;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    }
+
+    .exit, .exit * {
+        box-sizing: border-box;
+        position: flex;
+        right: 5%;
+        top: 0%;
+        }
+
+
+        .exit {
+        position: relative;
+        overflow: visible;
+        }
+        
+
+    .oi, .oi * {
+        box-sizing: border-box;
+        }
+        .oi {
+        color: #ddb247;
+        text-align: left;
+        font: 600 50px 'Inter', sans-serif;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start}
+
+        .selecione, .selecione * {
+            box-sizing: border-box;
+            }
+            .selecione {
+            color: #ddb247;
+            text-align: left;
+            font: 700 50px  sans-serif;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start}
+
+            .rectangle-13, .rectangle-13 * {
+             box-sizing: border-box;
+             }
+            .rectangle-13 {
+            border-radius: 20px;
+            width: 500px;
+            height: 300px;
+            position: relative;
+            cursor: pointer;
+            }
+
+            .rectangle-15, .rectangle-15 * {
+            box-sizing: border-box;
+            }
+            .rectangle-15 {
+            border-radius: 20px;
+            width: 500px;
+            height: 300px;
+            position: relative;
+            }
+            
+            .rectangle-14, .rectangle-14 * {
+                box-sizing: border-box;
+                }
+                .rectangle-14 {
+                border-radius: 20px;
+                width: 500px;
+                height: 300px;
+                position: relative;
+                }
+
+                .rectangle-13, .rectangle-13 * {
+                    box-sizing: border-box;
+                    }
+                    .rectangle-13 {
+                    background: rgba(196, 196, 196, 0.96);
+                    border-radius: 20px;
+                    width: 500px;
+                    height: 300px;
+                    position: relative;
+                    }
+
+                    .vector, .vector * {
+                        box-sizing: border-box;
+                        }
+                        .vector {
+                        position: center;
+                        overflow: visible;
+                        }
+                            
+
+                            .cinza, .cinza * {
+                                box-sizing: border-box;
+                                }
+                                .cinza {
+                                background: rgba(196, 196, 196, 0.96);
+                                border-radius: 20px;
+                                width: 500px;
+                                height: 300px;
+                                position: relative;
+                                }
+
+                                .criar-novo-ambiente, .criar-novo-ambiente * {
+                                    box-sizing: border-box;
+                                    margin: 5vh 5vh;
+                                    }
+                                    .criar-novo-ambiente {
+                                    color: #5e2424;
+                                    text-align: center;
+                                    font: 600 20px 'Inter', sans-serif;
+                                    position: relative;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    flex-direction: column;
+                                    cursor: pointer;
+                                }
+
+                                    .vector, .vector * {
+                                        box-sizing: border-box;
+                                        }
+                                        .vector {
+    
+                                        position: relative;
+                                        overflow: visible;
+                                        }
+                                        
