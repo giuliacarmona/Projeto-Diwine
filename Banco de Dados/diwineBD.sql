@@ -18,10 +18,10 @@ idAmbiente		int primary key auto_increment					-- Identificação do Ambiente
 -- *** CRIANDO TABELA 'SENSOR' E INSERINDO DADOS ***--
 create table sensor (
 idSensor 		int primary key auto_increment,					-- Identificação do Ambiente
-tipoSensor	 	varchar(100),									-- Umidade, Temperatura e Luminosidade
+tipoSensor	 	varchar(100),									-- Umidade e Temperatura
 atualizacao		varchar(40),									-- A cada 10, 15 ou 30 Minutos
-min				char(2),										-- Temp. ou Umid. Minima (No caso da Lumi., 0)
-max				char(3),										-- Temp. ou Umid. Máxima (No caso da Lumi., 1)
+min				char(2),										-- Temp. ou Umid. Minima
+max				char(3),										-- Temp. ou Umid. Máxima
 media			varchar(5)										-- Armazena a média de Temp. e Umid.
 );
 
@@ -57,7 +57,7 @@ insert into funcionario values
     
     
 -- *** INSERINDO UMA COLUNA NA TABELA 'LOTE' ***--
-alter table lote add column tipoBarril varchar(40) not null; 	-- Barril de Carvalaho, Ovo de Concreto ou Tanque de Aço
+alter table lote add column tipoBarril varchar(40) not null; 	-- Barril de Carvalho, Ovo de Concreto ou Tanque de Aço
 desc lote;
 
 
