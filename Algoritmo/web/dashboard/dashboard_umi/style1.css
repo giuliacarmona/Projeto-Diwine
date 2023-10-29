@@ -180,7 +180,7 @@ body {
 }
 
 .info {
-   
+
     width: 400px;
     height: 880px;
     display: flex;
@@ -189,7 +189,6 @@ body {
 }
 
 .info-right {
-   
 
     width: 385px;
     height: 88px;
@@ -213,15 +212,15 @@ body {
 }
 
 .header-right {
-   
+
     width: 400px;
-    height: 480px;
+    height: 440px;
 }
 
 .distance {
-   
+
     width: 400px;
-    height: 469px;
+    height: 344px;
     margin-top: 83px;
     display: flex;
     flex-direction: column;
@@ -229,9 +228,9 @@ body {
 }
 
 .footer-right {
-   
+
     width: 400px;
-    height: 400px;
+    height: 440px;
 
 }
 
