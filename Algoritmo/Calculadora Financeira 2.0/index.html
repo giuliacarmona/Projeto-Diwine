@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+<body>
+Quantos litros possui o barril: <input type="number" id="input_litro"> <br>
+Quantos barrils terão por lote: <input type="number" id="input_qtdBarril"> <br>
+Quanto será cobrado por litro?   <input type="number" id="input_valorLitro"> <br>
+    <button onclick="exibir()">Gerar Resultado</button>
+    <div id="div_mensagem"></div>
+</body>
+
+<script>
+    function exibir() {
+
+        div_mensagem.innerHTML = ``
+
+       var litro = Number(input_litro.value);
+       var qtdBarril = Number(input_qtdBarril.value);
+       var valorLitro = Number(input_valorLitro.value);
+       var total = litro * qtdBarril;
+
+
+       if (litro > 0 && qtdBarril > 0 && valorLitro > 0) {
+       var perda = (litro - (litro * 0.08) ) * qtdBarril
+
+       div_mensagem.innerHTML += `O total de litros: ${perda}L <br>
+                                    O valor final: ${perda * valorLitro} <br> <br>
+                                O total de litros: ${litro * qtdBarril}L <br>
+                                O valor final: ${litro * qtdBarril * valorLitro} <br> <br>`
+       
+        } else {
+            alert('Preencha todos os campos!')
+        }
+    }
+</script>
+</html>
