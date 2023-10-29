@@ -25,9 +25,9 @@ max				char(3),										-- Temp. ou Umid. Máxima
 media			varchar(5)										-- Armazena a média de Temp. e Umid.
 );
 
-insert into Sensor values
-	(null, 'Temperatura', 15, 12, 18, '0'),
-	(null, 'Umidade', 30, 65, 75, '0');
+insert into Sensor values										
+	(null, 'Temperatura', 15, 12, 18, '0'),						-- Inserindo dados de Temperatura
+	(null, 'Umidade', 30, 65, 75, '0');							-- Inserindo dados de Umidade
 
 
 -- *** CRIANDO TABELA 'EMPRESA' E INSERINDO DADOS ***--
@@ -36,7 +36,8 @@ idEmpresa		int primary key	auto_increment,					-- Identificação da Empresa
 nomeFantasia	varchar(40),									-- Nome da Empresa
 CNPJ			varchar(18) not null							-- CNPJ da Empresa
 );
-insert into empresa values
+
+insert into empresa values										-- Inserindo algumas empresas (ficticio)
 	(null, 'Empresa A', '30.395.080/0001-40'),
 	(null, 'Empresa B', '45.395.000/0001-39'),
 	(null, 'Empresa C', '26.495.100/0001-39'),
