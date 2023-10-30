@@ -9,15 +9,19 @@
 Quantos litros possui o barril: <input type="number" id="input_litro"> <br>
 Quantos barrils terão por lote: <input type="number" id="input_qtdBarril"> <br>
 Quanto será cobrado por litro?   <input type="number" id="input_valorLitro"> <br>
-    <button onclick="exibir()">Gerar Resultado</button>
+
+
+    <button onclick="cenario1()">Calcular Cenário 1</button>
+    <button onclick="cenario2()">Calcular Cenário 2</button>
     <div id="div_mensagem"></div>
 </body>
 
 <script>
-    function exibir() {
+    function cenario1() {
 
         div_mensagem.innerHTML = ``
 
+      
        var litro = Number(input_litro.value);
        var qtdBarril = Number(input_qtdBarril.value);
        var valorLitro = Number(input_valorLitro.value);
@@ -26,15 +30,49 @@ Quanto será cobrado por litro?   <input type="number" id="input_valorLitro"> <b
 
        if (litro > 0 && qtdBarril > 0 && valorLitro > 0) {
        var perda = (litro - (litro * 0.08) ) * qtdBarril
-
-       div_mensagem.innerHTML += `O total de litros: ${perda}L <br>
-                                    O valor final: ${perda * valorLitro} <br> <br>
+       
+       div_mensagem.innerHTML += ` <b> Cenário de perda: </b> <br> 
+                                O total de litros: ${perda}L <br>
+                                O valor final: R$ ${perda * valorLitro} <br> <br>
+                                <b> Cenário de Ganho: </b>  <br>  
+                                    
                                 O total de litros: ${litro * qtdBarril}L <br>
-                                O valor final: ${litro * qtdBarril * valorLitro} <br> <br>`
+                                O valor final: R$ ${total * valorLitro} <br> <br>`
        
         } else {
             alert('Preencha todos os campos!')
         }
     }
+    
+    function cenario2() {
+
+        div_mensagem.innerHTML = ``
+
+      
+       var litro = Number(input_litro.value);
+       var qtdBarril = Number(input_qtdBarril.value);
+       var valorLitro = Number(input_valorLitro.value);
+       var total = litro * qtdBarril;
+
+
+       if (litro > 0 && qtdBarril > 0 && valorLitro > 0) {
+       
+       var perda = (litro - (litro * 0.02) ) * qtdBarril
+
+       
+       div_mensagem.innerHTML += `
+                                <b> Cenário de perda: </b> <br> 
+                                O total de litros: ${perda}L <br>
+                                    O valor final: R$ ${perda * valorLitro} <br> <br>
+                                <b> Cenário de Ganho: </b> <br>  
+                                    
+                                O total de litros: ${litro * qtdBarril}L <br>
+                                O valor final: R$ ${total * valorLitro} <br> <br>`
+       
+        } else {
+            alert('Preencha todos os campos!')
+        }
+    }
+    
 </script>
 </html>
