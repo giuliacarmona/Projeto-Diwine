@@ -8,10 +8,10 @@
 body{
     background-image: url(background.jpg);
     background-repeat: no-repeat;
-    background-size: auto;
+    background-size: cover;
 }
 .container{
-   margin-top: 10%; 
+   margin-top: 13%; 
     justify-content: center;
     display: flex;
 }
@@ -120,7 +120,7 @@ input{
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    position: fixed;
+    position: absolute;
     bottom: 0;
     /* background-color: #00ff00; */
     /* width: 100%; */
@@ -137,6 +137,7 @@ input{
     font-family: Inter;
     font-weight: 700;
     border: none;
+
 }
 
 .calcular:hover{
