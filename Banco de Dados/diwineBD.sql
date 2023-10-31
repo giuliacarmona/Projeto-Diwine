@@ -1,86 +1,94 @@
 -- *** CRIANDO E USANDO BANCO DE DADOS ***--
-create database diwineBD;
-use diwineBD;
+CREATE DATABASE diwineBD;
+USE diwineBD;
 
--- *** CRIANDO TABELA 'LOTE' ***--
-create table lote (
-idLote			int primary key auto_increment, 				-- Identificação do Lote
-tipoVinho		varchar(40) not null,							-- Branco, Tinto, Rosé
-tempoMaturacao 	char(2),										-- 5, 10, 20 anos
-dataIncio		DATE											-- EX: 03-05-2018
+-- *** CRIANDO TABELA 'EMPRESA' E INSERINDO DADOS ***--
+CREATE TABLE empresa (
+idEmpresa		INT PRIMARY KEY AUTO_INCREMENT, 				-- Identificação da Empresa
+nomeFantasia	VARCHAR(40),									-- Nome da Empresa
+CNPJ			VARCHAR(18) NOT NULL							-- CNPJ da Empresa
 );
+
+INSERT INTO empresa VALUES										-- Inserindo algumas empresas (ficticio)
+	(NULL, 'Empresa A', '30.395.080/0001-40'),
+	(NULL, 'Empresa B', '45.395.000/0001-39'),
+	(NULL, 'Empresa C', '26.495.100/0001-39'),
+	(NULL, 'Empresa D', '46.375.009/0001-39');
+
+-- *** CRIANDO TABELA 'FUNCIONARIO E INSERINDO DADOS' ***--
+CREATE TABLE funcionario (
+idFunc			INT PRIMARY KEY AUTO_INCREMENT,					-- Identificação do funcionário Responsável
+nomeFunc		VARCHAR(60),									-- Nome Completo
+CPF				VARCHAR(14) NOT NULL,							-- CPF
+cargo			VARCHAR(40),									-- Cargo que ele ocupa na empresa
+email			VARCHAR(40) NOT NULL,							-- E-mail cadastro e utilizado para realizar o login
+celular			VARCHAR(14),									-- Telefone para contato
+fkEmpresa		INT,											
+	CONSTRAINT fkEmpresa FOREIGN KEY (fkEmpresa)
+		REFERENCES empresa(idEmpresa)
+)AUTO_INCREMENT = 100; 
+
+INSERT INTO funcionario VALUES									-- Inserindo um funcionário
+	(NULL, 'José Silva', '555.555.555-55', 'Técnico de Manutenção', 'jose.silva@empresab.com', '(11)94002-8922', 1);
 
 -- *** CRIANDO TABELA 'AMBIENTE' ***--
 create table ambiente (
-idAmbiente		int primary key auto_increment					-- Identificação do Ambiente
+idAmbiente		INT PRIMARY KEY AUTO_INCREMENT,					-- Identificação do Ambiente
+fkEmpresa		INT,
+	CONSTRAINT fkEmpresaAmbiente FOREIGN KEY (fkEmpresa)
+		REFERENCES empresa(idEmpresa)
 );
-
--- *** CRIANDO TABELA 'SENSOR' E INSERINDO DADOS ***--
-create table sensor (
-idSensor 		int primary key auto_increment,					-- Identificação do Ambiente
-tipoSensor	 	varchar(100),									-- Umidade e Temperatura
-atualizacao		varchar(40),									-- A cada 10, 15 ou 30 Minutos
-min				char(2),										-- Temp. ou Umid. Minima
-max				char(3),										-- Temp. ou Umid. Máxima
-media			varchar(5)										-- Armazena a média de Temp. e Umid.
-);
-
-insert into Sensor values										
-	(null, 'Temperatura', 15, 12, 18, '0'),						-- Inserindo dados de Temperatura
-	(null, 'Umidade', 30, 65, 75, '0');							-- Inserindo dados de Umidade
-
-
--- *** CRIANDO TABELA 'EMPRESA' E INSERINDO DADOS ***--
-create table empresa (
-idEmpresa		int primary key	auto_increment,					-- Identificação da Empresa
-nomeFantasia	varchar(40),									-- Nome da Empresa
-CNPJ			varchar(18) not null							-- CNPJ da Empresa
-);
-
-insert into empresa values										-- Inserindo algumas empresas (ficticio)
-	(null, 'Empresa A', '30.395.080/0001-40'),
-	(null, 'Empresa B', '45.395.000/0001-39'),
-	(null, 'Empresa C', '26.495.100/0001-39'),
-	(null, 'Empresa D', '46.375.009/0001-39');
-
-
--- *** CRIANDO TABELA 'FUNCIONARIO E INSERINDO DADOS' ***--
-create table funcionario (
-idFunc			int primary key auto_increment,					-- Identificação do funcionário Responsável
-nomeFunc		varchar(60),									-- Nome Completo
-CPF				varchar(14) not null,							-- CPF
-cargo			varchar(40),									-- Cargo que ele ocupa na empresa
-email			varchar(40) not null,							-- E-mail cadastro e utilizado para realizar o login
-celular			varchar(14)										-- Telefone para contato
-);
-insert into funcionario values
-	(null, 'José Silva', '555.555.555-55', 'Técnico de Manutenção', 'jose.silva@empresab.com', '(11)94002-8922');
-    
-    
--- *** INSERINDO UMA COLUNA NA TABELA 'LOTE' ***--
-alter table lote add column tipoBarril varchar(40) not null; 	-- Barril de Carvalho, Ovo de Concreto ou Tanque de Aço
-desc lote;
-
-
--- *** INSERINDO DADOS NA TABELA 'LOTE' ***--
-insert into lote values
-	(null, 'tinto', '10', '2018-03-05', 'Barril de Carvalho');
-
 
 -- *** INSERINDO DUAS COLUNA NA TABELA 'ambiente' ***--
-alter table ambiente add column nomeAmbiente varchar(40);		-- Nome que o usuário deseja dar ao ambiente
-alter table ambiente add column alertaMensagem varchar(100);	-- Mensagem de Alerta caso a temperatura ou umidade ultrapsse o limite máximo
-desc ambiente;
+ALTER TABLE ambiente ADD COLUMN nomeAmbiente VARCHAR(40);		-- Nome que o usuário deseja dar ao ambiente
+ALTER TABLE ambiente ADD COLUMN alertaMensagem VARCHAR(100);	-- Mensagem de Alerta caso a temperatura ou umidade ultrapsse o limite máximo
+DESC ambiente;
 
 -- *** INSERINDO DADOS NA TABELA 'AMBIENTE' ***--
-insert into ambiente values
-	(null, 'Setor 1 - Tinto', '0'),
-    (null, 'Setor 2 - Branco', '0'),
-    (null, 'Setor 3 - Rosé', '0');
+INSERT INTO ambiente VALUES
+	(NULL, 1, 'Setor 1 - Tinto', '0'),
+    (NULL, 1, 'Setor 2 - Branco', '0'),
+    (NULL, 2, 'Setor 3 - Rosé', '0');
 
+
+-- *** CRIANDO TABELA 'LOTE' ***--
+create table lote (
+idLote			INT PRIMARY KEY AUTO_INCREMENT,	 				-- Identificação do Lote
+tipoVinho		VARCHAR(40) NOT NULL,							-- Branco, Tinto, Rosé
+tempoMaturacao 	CHAR(2),										-- 5, 10, 20 anos
+dataIncio		DATE,											-- EX: 03-05-2018
+fkAmbiente		INT,
+	CONSTRAINT fkAmbienteLote FOREIGN KEY (fkAmbiente)
+		REFERENCES ambiente(idAmbiente)
+);
+   
+-- *** INSERINDO UMA COLUNA NA TABELA 'LOTE' ***--
+ALTER TABLE lote ADD COLUMN tipoBarril VARCHAR(40) NOT NULL; 	-- Barril de Carvalho, Ovo de Concreto ou Tanque de Aço
+DESC lote;
+
+-- *** INSERINDO DADOS NA TABELA 'LOTE' ***--
+INSERT INTO lote VALUES
+	(NULL, 'tinto', '10', '2018-03-05', 3, 'Barril de Carvalho');
+
+-- *** CRIANDO TABELA 'SENSOR' E INSERINDO DADOS ***--
+CREATE TABLE sensor (
+idSensor 		INT PRIMARY KEY AUTO_INCREMENT,					-- Identificação do Ambiente
+tipoSensor	 	VARCHAR(100),									-- Umidade e Temperatura
+atualizacao		VARCHAR(40),									-- A cada 10, 15 ou 30 Minutos
+dtRegistro		DATE,											-- Data do registro
+media			VARCHAR(5),										-- Armazena a média de Temp. e Umid.
+fkAmbiente		INT,
+	CONSTRAINT fkAmbienteSensor FOREIGN KEY (fkAmbiente)
+		REFERENCES ambiente(idAmbiente)
+);
+
+INSERT INTO Sensor VALUES										
+	(NULL, 'Temperatura', 15, '2019-12-12', 18, 1),				-- Inserindo dados de Temperatura
+	(NULL, 'Umidade', 30, '2021-12-12', 65, 1);					-- Inserindo dados de Umidade
+  
 -- *** SELECT * FROM DAS TABELAS ***--
-select * from ambiente;
-select * from lote;
-select * from empresa;
-select * from funcionario;
-select * from sensor;
+SELECT * FROM empresa;
+SELECT * FROM funcionario;
+SELECT * FROM ambiente;
+SELECT * FROM lote;
+SELECT * FROM sensor;
