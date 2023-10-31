@@ -105,7 +105,7 @@
       
 
       if (litro > 0 && qtdBarril > 0 && valorLitro > 0 && umi > 0 && temp > 0) {
-        var perda = total - total * (mediaPercentual / 100);
+        var perda = qtdBarril - qtdBarril * (mediaPercentual / 100);
           // if(temp > 11 && temp < 16 && umi > 64 && umi < 81){
           //   div_mensagem.innerHTML = `<p class="titulo">Não há perdas</p> `
           // } else {
@@ -113,12 +113,14 @@
             div_mensagem.innerHTML = `
                                     <p class="titulo">Cenário de perda: ${percentualTemp} e ${percentualUmi}</p> 
                                     <p class="textoDireita">
-                                    O percentual de perda será: ${mediaPercentual}% <br>
-                                    O total de litros: ${perda}L <br> <br></p>
-                                    <p class="valor1">O valor final: R$ ${(perda * valorLitro).toFixed(2)} </p>`;
+                                    > O percentual de perda será de: ${mediaPercentual}% <br>
+                                    O total de barricas: ${Math.round(perda)} barricas <br>
+                                    O total de litros: ${litro * perda}L <br> <br> </p>
+                                    <p class="valor1">O valor final: R$ ${(Math.round(perda) * valorLitro).toFixed(2)} </p>`;
     
             div_mensagem2.innerHTML = `<p class="titulo"> Cenário sem perdas: </p>
                                     <p class="textoDireita">
+                                    O total de barricas: ${qtdBarril} <br>
                                     O total de litros: ${litro * qtdBarril}L <br> <br> </p>
                                     <p class="valor2">O valor final: R$ ${(total * valorLitro).toFixed(2)} </p>`;
           // }
