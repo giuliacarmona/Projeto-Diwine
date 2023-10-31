@@ -58,8 +58,6 @@ body {
     font-size: 40px;
 }
 
-.atual {}
-
 .container .metricas .grafico {
     display: absolute;
     padding: 2vh 0 10vh 2vw;
