@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <p class="calcFin">CALCULADORA<br>FINANCEIRA</p>
+      <div class="leftColumn">
+        <div class="dadosTop">
+          <div class="caixa">
+            <p class="textoEsquerda">Quantos litros possui o barril:</p>
+            <input type="number" id="input_litro" />
+          </div>
+
+          <div class="caixa">
+            <p class="textoEsquerda">Quantos barrils terão por lote:</p>
+            <input type="number" id="input_qtdBarril" />
+          </div>
+
+          <div class="caixa">
+            <p class="textoEsquerda">Quanto será cobrado por litro?</p>
+            <input type="number" id="input_valorLitro" />
+          </div>
+        </div>
+
+        <div class="dadosBottom">
+          <div class="caixa">
+            <p class="textoEsquerda">Média temperatura: </p>
+            <input type="number" id="input_temp" />
+          </div>
+          
+          <div class="caixa">
+            <p class="textoEsquerda">Média umidade: </p>
+            <input type="number" id="input_umi" />
+          </div>
+        </div>
+      </div>
+
+      <div class="rightColumn">
+        <div class="resultadoTop">
+          <div id="div_mensagem">
+            <p class="titulo">Como funciona: </p> 
+                <p class="textoDireita">
+                                  Para que a maturação seja realizada da forma adequada, a temperatura deve estar constantemente entre 12ºC e 15ºC,
+                                  enquanto a umidade deve estar entre 65% e 80%.<br> <br>
+                                  Para a simulação do cenário de perda é pedido uma média hipotética de temperatura e umidade, considerando
+                                  que a maior perda é de 8% e a menor é de 2% por barrica (caso os dados estejam fora do ideal), baseando-se
+                                  diferença entre o ideal e a média será definida a porcentagem de perda.<p>
+          </div>
+        </div>
+
+        <div class="resultadoBottom">
+          <div id="div_mensagem2"></div>
+        </div>
+      </div>
+      <div class="bottom">
+        <button class="calcular" onclick="calcular()">Calcular</button>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    function calcular() {
+      var litro = Number(input_litro.value);
+      var qtdBarril = Number(input_qtdBarril.value);
+      var valorLitro = Number(input_valorLitro.value);
+
+      var umi = Number(input_umi.value);
+      var temp = Number(input_temp.value);
+
+      var percentualUmi = 0;
+      var percentualTemp = 0;
+      var mediaPercentual = 0;
+
+      var total = litro * qtdBarril;
+
+      if ((umi > 62 && umi < 65) || (umi > 80 && umi < 83)) {
+        percentualUmi = 2;
+      } else if ((umi > 59 && umi < 63) || (umi > 82 && umi < 86)) {
+        percentualUmi = 5;
+      } else if (umi > 85 || umi < 60) {
+        percentualUmi = 8;
+      }
+
+      if ((temp > 9 && temp < 12) || (temp > 15 && temp < 18)) {
+        percentualTemp = 2;
+      } else if ((temp > 8 && temp < 10) || (temp > 17 && temp < 19)) {
+        percentualTemp = 5;
+      } else if (temp > 18 || temp < 9) {
+        percentualTemp = 8;
+      }
+
+      if (percentualTemp != 0 && percentualUmi == 0) {
+        mediaPercentual = percentualTemp;
+      } else if (percentualTemp == 0 && percentualUmi != 0) {
+        mediaPercentual = percentualUmi;
+      } else if (percentualTemp != 0 && percentualUmi != 0) {
+        mediaPercentual = (percentualUmi + percentualTemp) / 2;
+      }
+
+      
+
+      if (litro > 0 && qtdBarril > 0 && valorLitro > 0 && umi > 0 && temp > 0) {
+        var perda = total - total * (mediaPercentual / 100);
+          // if(temp > 11 && temp < 16 && umi > 64 && umi < 81){
+          //   div_mensagem.innerHTML = `<p class="titulo">Não há perdas</p> `
+          // } else {
+            
+            div_mensagem.innerHTML = `
+                                    <p class="titulo">Cenário de perda: ${percentualTemp} e ${percentualUmi}</p> 
+                                    <p class="textoDireita">
+                                    O percentual de perda será: ${mediaPercentual}% <br>
+                                    O total de litros: ${perda}L <br> <br></p>
+                                    <p class="valor1">O valor final: R$ ${(perda * valorLitro).toFixed(2)} </p>`;
+    
+            div_mensagem2.innerHTML = `<p class="titulo"> Cenário sem perdas: </p>
+                                    <p class="textoDireita">
+                                    O total de litros: ${litro * qtdBarril}L <br> <br> </p>
+                                    <p class="valor2">O valor final: R$ ${(total * valorLitro).toFixed(2)} </p>`;
+          // }
+      } else {
+        alert("Preencha todos os campos!");
+      }
+    }
+  </script>
+</html>

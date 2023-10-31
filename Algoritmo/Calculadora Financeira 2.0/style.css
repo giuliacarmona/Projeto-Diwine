@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0
+}
+
+body{
+    background-image: url(background.jpg);
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+.container{
+   margin-top: 10%; 
+    justify-content: center;
+    display: flex;
+}
+
+.container .leftColumn{
+    margin-right: 5px;
+    padding:20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    background-color: #5E2424;
+    width: 210px;
+    height: 350px;
+    border-radius: 20px 0px 0px 20px;
+}
+
+.container .leftColumn .caixa{
+    
+    margin:  10px 5px 10px 5px;
+    height: 50px;
+    width: 200px;
+    /* background-color: aqua; */
+}
+
+.container .leftColumn .dadosTop{
+    
+    /* background-color: green; */
+    width: fit-content;
+    height: fit-content;
+}
+
+.container .rightColumn{
+    margin-left: 5px;
+    padding:20px;
+    display: flex;
+    /* align-items: center; */
+    justify-content: space-around;
+    flex-direction: column;
+    background-color: #5E2424;
+    width: 300px;
+    height: 350px;
+    border-radius: 0px 20px 20px 0px;
+}
+
+.textoEsquerda{
+    color: #DDB247;
+    font-weight: 600;
+    font-family: Inter;
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+.textoDireita{
+    color: #DDB247;
+    font-weight: 500;
+    font-family: Inter;
+    font-size: 13px;
+    margin-bottom: 5px;
+    margin-left: 10px;
+}
+
+.titulo{
+    /* background-color: aqua; */
+    color: #f2f2f2;
+    font-weight: 600;
+    font-family: Inter;
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+input{
+    background-color: #BFBFBF;
+    width: 180px;
+    height: 20px;
+    border: none;
+    border-radius: 4px;
+}
+
+.resultadoTop{
+    margin-left: 20px;
+
+}
+.resultadoBottom{
+    margin-left: 20px;
+}
+
+.valor1{
+    color: red;
+    font-weight: 600;
+    font-family: Inter;
+    font-size: 15px;
+    margin-bottom: 5px;
+    margin-left: 15px;
+}
+.valor2{
+    color: #00ff00;
+    font-weight: 600;
+    font-family: Inter;
+    font-size: 15px;
+    margin-bottom: 5px;
+    margin-left: 15px;
+}
+
+.bottom{
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+    /* background-color: #00ff00; */
+    /* width: 100%; */
+    margin: 0 auto;
+}
+
+.calcular{
+    width: 400px;
+    height: 100px;
+    background-color: #5E2424;
+    border-radius: 30px 30px 0px 0px;
+    font-size: 30px;
+    color: #DDB247;
+    font-family: Inter;
+    font-weight: 700;
+    border: none;
+}
+
+.calcular:hover{
+    background-color: #5e3535;
+}
+
+.calcFin{
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    color: #5E2424;
+    font-family: Inter;
+    font-size: 50px;
+    font-weight: 900;   
+    margin: 30px auto;
+    text-align: center;
+}
