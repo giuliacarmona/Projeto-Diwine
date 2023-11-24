@@ -23,7 +23,7 @@ html {
 .logotipo {
   color: #DDB247;
   width: 12vh;
-  margin-top: -10px;
+  margin-bottom: 10px;
   cursor: pointer;
   display: fixed;
 }
@@ -85,7 +85,7 @@ header container navbar li a {
 }
 
 .section-home {
-    background-size: cover;
+  background-size: cover;
   background-image: url(./img/garrafaVermelha.jpg);
   width: 100%;
   height: 100vh;
@@ -504,4 +504,158 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+
+
+
+
+
+
+.section-calculator{
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  background-image: url(img/background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.section-calculator .leftColumn{
+  display: flex;
+  margin: 100px;
+  padding: 20px;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  background-color: #5E2424;
+  width: 210px;
+  height: 350px;
+  border-radius: 20px 0px 0px 20px;
+}
+
+.section-calculator .leftColumn .caixa{
+   
+   margin: 10px 5px 10px 5px;
+   height: 50px;
+   width: 200px;
+   /* background-color: aqua; */
+}
+
+.section-calculator .leftColumn .dadosTop{
+   
+   /* background-color: green; */
+   width: fit-content;
+   height: fit-content;
+}
+
+.section-calculator .rightColumn{
+   margin-left: 5px;
+   padding:20px;
+   display: flex;
+   /* align-items: center; */
+   justify-content: space-around;
+   flex-direction: column;
+   background-color: #5E2424;
+   width: 300px;
+   height: 350px;
+   border-radius: 0px 20px 20px 0px;
+}
+
+.textoEsquerda{
+   color: #DDB247;
+   font-weight: 600;
+   font-family: Inter;
+   font-size: 13px;
+   margin-bottom: 5px;
+}
+
+.textoDireita{
+   color: #DDB247;
+   font-weight: 500;
+   font-family: Inter;
+   font-size: 13px;
+   margin-bottom: 5px;
+   margin-left: 10px;
+}
+
+.titulo{
+   background-color: aqua;
+   color: #f2f2f2;
+   font-weight: 600;
+   font-family: Inter;
+   font-size: 25px;
+   margin-bottom: 10px;
+}
+
+.inputCalc{
+   background-color: #BFBFBF;
+   width: 180px;
+   height: 20px;
+   border: none;
+   border-radius: 4px;
+}
+
+.resultadoTop{
+   margin-left: 20px;
+
+}
+.resultadoBottom{
+   margin-left: 20px;
+}
+
+.valor1{
+   color: red;
+   font-weight: 600;
+   font-family: Inter;
+   font-size: 15px;
+   margin-bottom: 5px;
+   margin-left: 15px;
+}
+.valor2{
+   color: #00ff00;
+   font-weight: 600;
+   font-family: Inter;
+   font-size: 15px;
+   margin-bottom: 5px;
+   margin-left: 15px;
+}
+
+.bottom{
+   flex-direction: row;
+   align-items: center;
+   justify-content: center;
+   bottom: 0;
+   /* background-color: #00ff00; */
+   /* width: 100%; */
+   margin: 0 auto;
+}
+
+.calcular{
+   width: 40px;
+   height: 100px;
+   background-color: #5E2424;
+   border-radius: 30px 30px 0px 0px;
+   font-size: 30px;
+   color: #DDB247;
+   font-family: Inter;
+   font-weight: 700;
+   border: none;
+}
+
+.calcular:hover{
+   background-color: #5e3535;
+}
+
+.calcFin{
+  height: 20vh;
+   align-items: center;
+   justify-content: center;
+   top: 0;
+   color: #5E2424;
+   font-family: Inter;
+   font-size: 40px;
+   font-weight: 1000;   
+   margin: 3px auto;
+   text-align: center;
 }

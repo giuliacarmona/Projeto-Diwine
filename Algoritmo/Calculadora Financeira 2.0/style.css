@@ -10,13 +10,13 @@ body{
     background-repeat: no-repeat;
     background-size: auto;
 }
-.container{
+.section-calculator{
    margin-top: 10%; 
     justify-content: center;
     display: flex;
 }
 
-.container .leftColumn{
+.section-calculator .leftColumn{
     margin-right: 5px;
     padding:20px;
     display: flex;
@@ -29,7 +29,7 @@ body{
     border-radius: 20px 0px 0px 20px;
 }
 
-.container .leftColumn .caixa{
+.section-calculator .leftColumn .caixa{
     
     margin:  10px 5px 10px 5px;
     height: 50px;
@@ -37,14 +37,14 @@ body{
     /* background-color: aqua; */
 }
 
-.container .leftColumn .dadosTop{
+.section-calculator .leftColumn .dadosTop{
     
     /* background-color: green; */
     width: fit-content;
     height: fit-content;
 }
 
-.container .rightColumn{
+.section-calculator .rightColumn{
     margin-left: 5px;
     padding:20px;
     display: flex;

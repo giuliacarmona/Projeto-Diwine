@@ -76,15 +76,15 @@ idSensor 		INT PRIMARY KEY AUTO_INCREMENT,					-- Identificação do Ambiente
 tipoSensor	 	VARCHAR(100),									-- Umidade e Temperatura
 atualizacao		VARCHAR(40),									-- A cada 10, 15 ou 30 Minutos
 dtRegistro		DATE,											-- Data do registro
-media			VARCHAR(5),										-- Armazena a média de Temp. e Umid.
+localizacao		VARCHAR(30),									-- Localização do Sensor
 fkAmbiente		INT,
 	CONSTRAINT fkAmbienteSensor FOREIGN KEY (fkAmbiente)
 		REFERENCES ambiente(idAmbiente)
 );
 
 INSERT INTO Sensor VALUES										
-	(NULL, 'Temperatura', 15, '2019-12-12', 18, 1),				-- Inserindo dados de Temperatura
-	(NULL, 'Umidade', 30, '2021-12-12', 65, 1);					-- Inserindo dados de Umidade
+	(NULL, 'Temperatura', 15, '2019-12-12', 'Noroeste', 1),				-- Inserindo dados de Temperatura
+	(NULL, 'Umidade', 30, '2021-12-12', 'Sul', 1);					-- Inserindo dados de Umidade
   
 -- *** SELECT * FROM DAS TABELAS ***--
 SELECT * FROM empresa;
