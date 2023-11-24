@@ -115,7 +115,7 @@
                                     <p class="textoDireita">
                                     > O percentual de perda será de: ${mediaPercentual}% <br>
                                     O total de barricas: ${Math.round(perda)} barricas <br>
-                                    O total de litros: ${litro * perda}L <br> <br> </p>
+                                    O total de litros: ${(litro * perda).toFixed(2)}L <br> <br> </p>
                                     <p class="valor1">O valor final: R$ ${(Math.round(perda) * valorLitro).toFixed(2)} </p>`;
     
             div_mensagem2.innerHTML = `<p class="titulo"> Cenário sem perdas: </p>
