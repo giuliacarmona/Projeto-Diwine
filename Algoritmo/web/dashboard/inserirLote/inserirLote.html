@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styleLote.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <title>Lotes | Diwine</title>
+</head>
+
+<body>
+  <div class="sideBar">
+    <ul class="menu">
+
+      <div class="top-icon">
+        <li class="active">
+          <a href="../paginaInicial/dashboardInicial.html" class="menuIcon">
+            <i class="fas fa-bars active"></i></a>
+        </li> <!-- active -->
+
+        <li class="temperatura">
+          <a href="../dashboard_temp/dashteste.html" class="temperaturaIcon">
+            <i class="fas fa-temperature-three-quarters"></i></a>
+        </li> <!-- temperatura -->
+
+        <li class="umidade">
+          <a href="../dashboard_umi/dashboardUmi.html" class="umidadeIcon">
+            <i class="fas fa-droplet"></i></a>
+        </li> <!-- umidade -->
+
+        <li class="lote">
+          <a href="../inserirLote/lote.html" class="loteIcon">
+            <i class="fas fa-wine-bottle"></i></a>
+        </li> <!-- lote -->
+      </div> <!-- top-icon -->
+
+      <div class="bottom-icon">
+        <div class="space"></div> <!-- space -->
+
+        <li class="logout">
+          <a href="../../acesso/login.html" class="logoutIcon">
+            <i class="fas fa-right-from-bracket"></i></a>
+        </li> <!-- logout -->
+
+        <li class="perfil">
+          <a href="../perfilUsuario/Perfil_Usuario.html" class="perfilIcon">
+            <i class="fas fa-circle-user"></i></a>
+        </li> <!-- perfil -->
+      </div><!-- bottom-icon -->
+    </ul> <!-- menu -->
+  </div> <!-- sidebar -->
+
+  <div class="container">
+    <div class="content-inserir">
+      <span class="titleInserir">INSERIR LOTE</span>
+
+      <div class="loteForm">
+        <div class="form-tipoVinho">
+          <span class="titleInfo">Tipo de vinho</span>
+          <select id="selectTipoVinho" class="form-select" placeholder="Selecione o tipo de vinho">
+            <option value="0">selecione ...</option>
+            <option value="branco">Branco</option>
+            <option value="tinto">Tinto</option>
+            <option value="rose">Rose</option>
+          </select> <!-- selectTipoVinho -->
+        </div><!-- form-tipoVinho -->
+
+        <div class="form-idLote">
+          <span class="titleInfo">Apelido/ Identificação</span>
+          <input type="text" id="iptApelidoLote" class="apelidoLote">
+          <br>
+
+          <div class="form-infoLote">
+            <div class="form-dataLote">
+              <span class="titleInfo">Data de Início</span>
+
+              <div class="dataSelect">
+                <select id="diaIncio" class="form-select diaData">
+                  <option value="0">Dia</option>
+                  <option value="1">01</option>
+                  <option value="2">02</option>
+                  <option value="3">03</option>
+                  <option value="4">04</option>
+                  <option value="5">05</option>
+                  <option value="6">06</option>
+                  <option value="7">07</option>
+                  <option value="8">08</option>
+                  <option value="9">09</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                  <option value="13">13</option>
+                  <option value="14">14</option>
+                  <option value="15">15</option>
+                  <option value="16">16</option>
+                  <option value="17">17</option>
+                  <option value="18">18</option>
+                  <option value="19">19</option>
+                  <option value="20">20</option>
+                  <option value="21">21</option>
+                  <option value="22">22</option>
+                  <option value="23">23</option>
+                  <option value="24">24</option>
+                  <option value="25">25</option>
+                  <option value="26">26</option>
+                  <option value="27">27</option>
+                  <option value="28">28</option>
+                  <option value="29">29</option>
+                  <option value="30">30</option>
+                  <option value="31">31</option>
+                </select> <!-- select Dia-->
+
+                <select id="mesInicio" class="form-select mesData">
+                  <option value="0">Mês</option>
+                  <option value="1">Janeiro</option>
+                  <option value="2">Fevereiro</option>
+                  <option value="3">Março</option>
+                  <option value="4">Abril</option>
+                  <option value="5">Maio</option>
+                  <option value="6">Junho</option>
+                  <option value="7">Julho</option>
+                  <option value="8">Agosto</option>
+                  <option value="9">Setembro</option>
+                  <option value="10">Outubro</option>
+                  <option value="11">Novembro</option>
+                  <option value="12">Dezembro</option>
+                </select> <!-- select Mês-->
+
+                <select id="anoInicio" class="form-select anoData">
+                  <option value="0">Ano</option>
+                  <option value="2010">2010</option>
+                  <option value="2011">2011</option>
+                  <option value="2012">2012</option>
+                  <option value="2013">2013</option>
+                  <option value="2014">2014</option>
+                  <option value="2015">2015</option>
+                  <option value="2016">2016</option>
+                  <option value="2017">2017</option>
+                  <option value="2018">2018</option>
+                  <option value="2019">2019</option>
+                  <option value="2020">2020</option>
+                  <option value="2021">2021</option>
+                  <option value="2022">2022</option>
+                  <option value="2023">2023</option>
+                  <option value="2024">2024</option>
+                  <option value="2025">2025</option>
+                  <option value="2026">2026</option>
+                  <option value="2027">2027</option>
+                  <option value="2028">2028</option>
+                  <option value="2029">2029</option>
+                  <option value="2030">2030</option>
+                </select> <!-- select Ano-->
+              </div> <!-- dataSelect-->
+
+            </div> <!--form-dataLote-->
+
+            <div class="form-timeLote">
+              <span class="titleInfo">Tempo de Maturação</span>
+              <div class="timeSelect">
+                <select id="mesMaturacao" class="form-select mesTime">
+                  <option value="0">Mês</option>
+                  <option value="1">Janeiro</option>
+                  <option value="2">Fevereiro</option>
+                  <option value="3">Março</option>
+                  <option value="4">Abril</option>
+                  <option value="5">Maio</option>
+                  <option value="6">Junho</option>
+                  <option value="7">Julho</option>
+                  <option value="8">Agosto</option>
+                  <option value="9">Setembro</option>
+                  <option value="10">Outubro</option>
+                  <option value="11">Novembro</option>
+                  <option value="12">Dezembro</option>
+                </select> <!-- select Mês-->
+
+                <select id="anoMaturacao" class="form-select anoTime">
+                  <option value="0">Ano</option>
+                  <option value="2010">2010</option>
+                  <option value="2011">2011</option>
+                  <option value="2012">2012</option>
+                  <option value="2013">2013</option>
+                  <option value="2014">2014</option>
+                  <option value="2015">2015</option>
+                  <option value="2016">2016</option>
+                  <option value="2017">2017</option>
+                  <option value="2018">2018</option>
+                  <option value="2019">2019</option>
+                  <option value="2020">2020</option>
+                  <option value="2021">2021</option>
+                  <option value="2022">2022</option>
+                  <option value="2023">2023</option>
+                  <option value="2024">2024</option>
+                  <option value="2025">2025</option>
+                  <option value="2026">2026</option>
+                  <option value="2027">2027</option>
+                  <option value="2028">2028</option>
+                  <option value="2029">2029</option>
+                  <option value="2030">2030</option>
+                </select> <!-- select Ano-->
+              </div> <!-- timeSelect -->
+            </div> <!-- form-timeLote -->
+
+            <div class="form-qtdLote">
+              <span class="titleInfo">Quantidade</span>
+              <select id="qtdLote" class="form-select qtdLote">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <option value="24">24</option>
+                <option value="25">25</option>
+                <option value="26">26</option>
+                <option value="27">27</option>
+                <option value="28">28</option>
+                <option value="29">29</option>
+                <option value="30">30</option>
+              </select> <!-- select qtdLote-->
+            </div> <!-- form-qtdLote -->
+          </div> <!-- form-infoLote -->
+
+        </div> <!-- form-idLote -->
+
+      </div> <!-- loteForm -->
+
+      <div class="btnInserir">
+        <a href="lote.html">INSERIR</a>
+      </div>
+      </div> <!-- content-inserir -->
+    </div> <!-- container -->
+</body>
+
+</html>

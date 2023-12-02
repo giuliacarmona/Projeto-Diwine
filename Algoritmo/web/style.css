@@ -86,7 +86,7 @@ header container navbar li a {
 
 .section-home {
   background-size: cover;
-  background-image: url(./img/garrafaVermelha.jpg);
+  background-image: url("./assets/garrafaVermelha.jpg");
   width: 100%;
   height: 100vh;
 }
@@ -257,7 +257,7 @@ p {
 .section-sensores{
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url(./img/garrafaVerde.jpg);
+  background-image: url("./assets/garrafaVerde.jpg");
   width: 100%;
   height: 100vh;
 }
@@ -506,12 +506,6 @@ p {
   justify-content: center;
 }
 
-
-
-
-
-
-
 .section-calculator{
   display: flex;
   height: 100vh;
@@ -535,7 +529,6 @@ p {
 }
 
 .section-calculator .leftColumn .caixa{
-   
    margin: 10px 5px 10px 5px;
    height: 50px;
    width: 200px;
@@ -543,7 +536,6 @@ p {
 }
 
 .section-calculator .leftColumn .dadosTop{
-   
    /* background-color: green; */
    width: fit-content;
    height: fit-content;
