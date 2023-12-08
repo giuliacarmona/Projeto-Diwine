@@ -73,7 +73,7 @@ dht11_temperatura 	DECIMAL,										-- Temperatura DHT11
 momento 			DATETIME,
 fkAmbiente			INT,
 	FOREIGN KEY (fkAmbiente) REFERENCES ambiente(idAmbiente)
-);
+) AUTO_INCREMENT = 1;
   
 -- *** SELECT * FROM DAS TABELAS ***--
 SELECT * FROM empresa;
