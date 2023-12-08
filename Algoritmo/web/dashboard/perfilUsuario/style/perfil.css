@@ -96,7 +96,7 @@ body{
 .footer{
 
     width: 100%;
-    height: 465px;
+    height: 350px;
 }
 
 .footer .container-footer{
@@ -109,9 +109,37 @@ body{
 }
 
 .footer .container-footer .container-empresa-pessoal{
-
     width: 50%;
-    height: 465px;
+    height: 350px;
+}
+
+.feedback{
+    margin-left: 121px;
+    width: 90%;
+    height: 130px;
+
+}
+
+.feedback >h2{
+    margin-top: 10px;
+    margin-left: 760px;
+}
+
+.btn_star{
+
+    width: 300px;
+    margin-left: 695px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.starFeedback{
+    margin-top: 25px;
+    width: 50px;
+    background-color: #00000000;
+    border: none;
+    cursor: pointer;
 }
 
 .footer .container-footer .container-empresa-pessoal .titulo-empresa{
@@ -144,8 +172,10 @@ body{
 }
 
 .pencilIcon{
-    padding-left: 370px;
     cursor: pointer;
+    margin-left: 370px;
+    background-color: #00000000;
+    border: none;
 }
 
 .footer .container-footer .container-empresa-pessoal .info-empresa{
@@ -191,6 +221,8 @@ body{
     font-weight: 600;
     line-height: normal;
 }
+
+
 
 .dado{
     color: #5E2424;
@@ -271,4 +303,3 @@ body{
     /* border: 1px solid red; */
     padding: 20px
 }
-
