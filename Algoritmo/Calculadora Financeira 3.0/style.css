@@ -25,7 +25,7 @@ body{
     flex-direction: column;
     background-color: #5E2424;
     width: 210px;
-    height: 350px;
+    height: 470px;
     border-radius: 20px 0px 0px 20px;
 }
 
@@ -52,8 +52,8 @@ body{
     justify-content: space-around;
     flex-direction: column;
     background-color: #5E2424;
-    width: 300px;
-    height: 350px;
+    width: 350px;
+    height: 470px;
     border-radius: 0px 20px 20px 0px;
 }
 
@@ -79,7 +79,15 @@ body{
     color: #f2f2f2;
     font-weight: 600;
     font-family: Inter;
-    font-size: 25px;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.tituloPrincipal {
+    color: #f2f2f2;
+    font-weight: 600;
+    font-family: Inter;
+    font-size: 30px;
     margin-bottom: 10px;
 }
 
@@ -89,6 +97,7 @@ input{
     height: 20px;
     border: none;
     border-radius: 4px;
+    text-align: center;
 }
 
 .resultadoTop{
@@ -114,6 +123,11 @@ input{
     font-size: 15px;
     margin-bottom: 5px;
     margin-left: 15px;
+}
+.valor3 {
+    color: #00ff00;
+    font-weight: 600;
+    font-family: Inter;
 }
 
 .bottom{

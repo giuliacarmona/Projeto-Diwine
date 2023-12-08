@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculadora</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css"/>
   </head>
   <body>
-    <div class="container">
+    <div class="section-calculator">
       <p class="calcFin">CALCULADORA<br>FINANCEIRA</p>
       <div class="leftColumn">
         <div class="dadosTop">
@@ -43,7 +43,7 @@
       <div class="rightColumn">
         <div class="resultadoTop">
           <div id="div_mensagem">
-            <p class="titulo">Como funciona: </p> 
+            <p class="tituloPrincipal">Como funciona: </p> 
                 <p class="textoDireita">
                                   Para que a maturação seja realizada da forma adequada, a temperatura deve estar constantemente entre 12ºC e 15ºC,
                                   enquanto a umidade deve estar entre 65% e 80%.<br> <br>
@@ -105,24 +105,31 @@
       
 
       if (litro > 0 && qtdBarril > 0 && valorLitro > 0 && umi > 0 && temp > 0) {
-        var perda = qtdBarril - qtdBarril * (mediaPercentual / 100);
+        var perda = qtdBarril * (mediaPercentual / 100);
+        var valorFinal1 = (total * valorLitro - ((Math.round(perda + 5) * total))).toFixed(2);
+        var valorFinal2 = (total * valorLitro - ((Math.round(5) * total))).toFixed(2);
           // if(temp > 11 && temp < 16 && umi > 64 && umi < 81){
           //   div_mensagem.innerHTML = `<p class="titulo">Não há perdas</p> `
           // } else {
+
             
             div_mensagem.innerHTML = `
-                                    <p class="titulo">Cenário de perda: ${percentualTemp} e ${percentualUmi}</p> 
+                                    <p class="titulo">Cenário atual:</p>
                                     <p class="textoDireita">
-                                    > O percentual de perda será de: ${mediaPercentual}% <br>
-                                    O total de barricas: ${Math.round(perda)} barricas <br>
-                                    O total de litros: ${(litro * perda).toFixed(2)}L <br> <br> </p>
-                                    <p class="valor1">O valor final: R$ ${(Math.round(perda) * valorLitro).toFixed(2)} </p>`;
+                                    > Com o cenário atual, possuindo a média de temperatura de ${temp}°C e a média de umidade de ${umi}%,
+                                    haverá uma perda de ${mediaPercentual}% por não possuir a temperatura e/ou umidade adequada. Acarretando na perda de ${Math.round(perda)} barricas e de ${(litro * perda).toFixed(2)} litros <br></p>
+                                    <p class="valor1">O valor final: R$ ${valorFinal1} </p>
+                                    `;
     
-            div_mensagem2.innerHTML = `<p class="titulo"> Cenário sem perdas: </p>
+            div_mensagem2.innerHTML = `<p class="titulo"> Cenário utilizando sensores Diwine:</p>
                                     <p class="textoDireita">
-                                    O total de barricas: ${qtdBarril} <br>
-                                    O total de litros: ${litro * qtdBarril}L <br> <br> </p>
-                                    <p class="valor2">O valor final: R$ ${(total * valorLitro).toFixed(2)} </p>`;
+                                    > Em um cenário com os sensores Diwine, a temperatura e a umidade estará, respectivamente, entre 12 e 15 graus e 65% e 80%, onde caso uma destas métricas sejam violadas, um alerta será exibido para que seja definido a temperatura e a umidade ideal novamente.<br>
+                                    Possuindo no total: ${qtdBarril - ((qtdBarril * 5) / 100)} barricas e ${litro * qtdBarril - ((litro * qtdBarril * 5) / 100)} litros<br></p>
+                                    <p class="valor2">O valor final: R$ ${valorFinal2}</p><br>
+                                    <p class="textoDireita">
+                                    Havendo uma diferença de <span class="valor3">R$${valorFinal2 - valorFinal1}</span> do valor final anterior.</p>
+                                    <p class="textoDireita">
+                                    (Considerando que nos dois cenários, há uma média de 5% de perda do total por motivos como vazamentos ou problemas estruturais)</p>`;
           // }
       } else {
         alert("Preencha todos os campos!");
