@@ -21,7 +21,7 @@ function autenticar(req, res) {
                     console.log(`Resultados: ${JSON.stringify(resultadoAutenticar)}`); // transforma JSON em String
 
                     if (resultadoAutenticar.length == 1) {
-                        console.log(resultadoAutenticar);
+                        console.log(resultadoAutenticar + 'estou aqui');
 
                         res.json(resultadoAutenticar[0]);
 
@@ -49,7 +49,7 @@ function cadastrar(req, res) {
     var senha = req.body.senhaServer;
     var nome = req.body.nomeServer;
     var empresa = req.body.empresaServer;
-    var numero = req.body.numeroServer;
+  
     
     // Faça as validações dos valores
     if (nome == undefined) {
@@ -60,12 +60,12 @@ function cadastrar(req, res) {
         res.status(400).send("Sua senha está undefined!");
     } else if ( empresa == undefined) {
         res.status(400).send("Sua empresa está undefined!");
-    }else if (numero == undefined) {
-        res.status(400).send("Seu numero está undefined!");
+    }else if (celular == undefined) {
+        res.status(400).send("Seu celular está undefined!");
     } else {
 
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        usuarioModel.cadastrar(nome, email, senha, numero , empresa)
+        usuarioModel.cadastrar(nome, email, senha, empresa)
             .then(
                 function (resultado) {
                     res.json(resultado);

@@ -27,7 +27,7 @@
         
      <div class="campo">
        <div class="espLaranja phoneIcon"></div>
-       <input type="text" placeholder=" INSIRA SEU NÚMERO" maxlength="11" class="caixaDeTexto" id="ipt_numero"> 
+       <input type="text" placeholder=" INSIRA SEU NÚMERO" maxlength="11" class="caixaDeTexto" id="ipt_celular"> 
      </div>
       
      <div class="campo">
@@ -63,7 +63,7 @@ function cadastrar(){
     var emailVar = ipt_email.value
     var senhaVar = ipt_senha.value
     var nomeVar = ipt_nome.value
-    var numeroVar = ipt_numero.value
+    var celularVar = ipt_celular.value
     var empresaVar = ipt_empresaDiwine.value
     var confirmeVar = ipt_confirme.value
 
@@ -113,7 +113,7 @@ if(contador == 6){
        senhaServer: senhaVar,
        nomeServer: nomeVar,
        empresaServer: empresaVar,
-       numeroServer: numeroVar,
+       celularServer: celularVar,
 
       }),
     })

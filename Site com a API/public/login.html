@@ -79,7 +79,11 @@
             console.log(JSON.stringify(json));
             sessionStorage.EMAIL_USUARIO = json.email;
             sessionStorage.NOME_USUARIO = json.nome;
-            sessionStorage.NUMERO_USUARIO = json.numero;
+            sessionStorage.NUMERO_USUARIO = json.celular;
+            sessionStorage.CNPJ_USUARIO = json.CNPJ;
+            sessionStorage.NOME_FANTASIA_USUARIO = json.nomeFantasia;
+            sessionStorage.ID_USUARIO = json.idUsuario;
+
 
             setTimeout(function () {
               // alert('salve')

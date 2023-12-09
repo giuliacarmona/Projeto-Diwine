@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="style/perfil.css">
 </head>
 
-<body>
+<body onload="validarSessao()">
 
     <div class="header">
         <div class="container">
@@ -19,11 +19,11 @@
             </div>
 
             <div class="info">
-                <div class="nome">
-                    José da Silva
+                <div class="nome" id="nomeUsuario">
+                   Carregando...
                 </div>
                 <div class="identificador">
-                    ID: 105
+                    ID: <b class="dado" id="identificador">Carregando...</b>
                 </div>
             </div>
         </div>
@@ -41,11 +41,11 @@
                     <!-- </div> -->
 
                     <div class="card-id">
-                        Nome fantasia: <b class="dado">EMPRESA A</b>
+                        Nome fantasia: <b class="dado" id="nomeEmpresa">Carregando...</b>
                     </div>
 
                     <div class="card-id">
-                        CNPJ: <b class="dado">25798482000106</b>
+                        CNPJ: <b class="dado" id="cnpjEmpresa">Carregando...</b>
                     </div>
                 </div>
             </div>
@@ -58,11 +58,11 @@
                 <div class="info-pessoal">
                   
                      <div class="card-id">
-                        E-mail:<b class="dado"> jose.silva@diwine.com</b>
+                        E-mail: <b class="dado" id="emailUsuario">Carregando...</b>
                     </div>
 
                     <div class="card-id">
-                        Celular: <b class="dado"><span id="numeroTelefone"></span></b>
+                        Celular: <b class="dado" id="celularUsuario">Carregando...</b>
                     </div>
                 </div>
             </div>
@@ -99,7 +99,7 @@
             <div class="bottom-icon">
                 <!-- <div class="space"></div> -->
                 <li class="logout">
-                    <a href="../../acesso/login.html" class="logoutIcon">
+                    <a href="../../login.html" class="logoutIcon">
                         <i class="fas fa-right-from-bracket"></i>
                         <!-- <span>Logout</span> -->
                     </a>
@@ -117,19 +117,35 @@
 
 <script>
 
+
+
+
 function validarSessao() {
+    
     var email = sessionStorage.EMAIL_USUARIO;
+    var idUsuario = sessionStorage.ID_USUARIO;
     var nome = sessionStorage.NOME_USUARIO;
     var numero = sessionStorage.NUMERO_USUARIO;
+    var cnpj = sessionStorage.CNPJ_USUARIO;
+    var nomeFantasia = sessionStorage.NOME_FANTASIA_USUARIO;
+
+
+    nomeUsuario.innerHTML = nome;
+    identificador.innerHTML = idUsuario;
+    nomeEmpresa.innerHTML = nomeFantasia;
+    cnpjEmpresa.innerHTML = cnpj;
+    emailUsuario.innerHTML = email;
+    celularUsuario.innerHTML = `(${numero[0]}${numero[1]}) ${numero[2]} ${numero[3]}${numero[4]}${numero[5]}${numero[6]}-${numero[7]}${numero[8]}${numero[9]}${numero[10]}`;
+    
+    
 
     numeroTelefone.innerHTML = numero
     
 
-    if (email != null && nome != null) {
-        b_usuario.innerHTML = nome;
-    } else {
-        window.location = "../login.html";
+    if (email == null && nome == null) {
+        window.location = "../login.html"
     }
+    
 }
 
 </script>
