@@ -18,6 +18,7 @@ var empresasRouter = require("./src/routes/empresas");
 var empresasDiwineRouter = require("./src/routes/empresasDiwine");
 var dashDadosRouter = require("./src/routes/dashDados");
 
+var lotesRouter = require("./src/routes/lotes");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -35,6 +36,7 @@ app.use("/empresas", empresasRouter);
 app.use("/empresasDiwine", empresasDiwineRouter);
 app.use("/dashDados", dashDadosRouter);
 
+app.use("/lotes", lotesRouter);
 
 app.listen(PORTA, function () {
     console.log(`Servidor do seu site já está rodando! Acesse o caminho a seguir para visualizar: http://localhost:${PORTA} \n

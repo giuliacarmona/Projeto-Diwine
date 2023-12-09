@@ -9,7 +9,7 @@
   <title>Lote | Diwine</title>
 </head>
 
-<body>
+<body onload="listar()">
   <div class="sideBar">
     <ul class="menu">
 
@@ -63,38 +63,8 @@
         <h1 class="title-ambiente">SETOR 1 - VINHO BRANCO</h1>
       </div> <!-- title-lote -->
 
-      <div class="content-lote">
-        <div class="info-lote">
-          <h1 class="info-content-lote grey">ID: 010102</h1>
-          <h1 class="info-content-lote"><span>APELIDO:</span>LOTE JAPÃO</h1>
-          <h1 class="info-content-lote"><span>TIPO:</span>VINHO TINTO</h1>
-          <h1 class="info-content-lote"><span>TEMPO DA MATURAÇÃO:</span>10 ANOS</h1>
-          <h1 class="info-content-lote"><span>DESDE:</span>17/08/2017</h1>
-        </div> <!-- info-lote -->
-
-        <div class="info-lote">
-          <h1 class="info-content-lote grey">ID: 010102</h1>
-          <h1 class="info-content-lote"><span>APELIDO:</span>LOTE JAPÃO</h1>
-          <h1 class="info-content-lote"><span>TIPO:</span>VINHO TINTO</h1>
-          <h1 class="info-content-lote"><span>TEMPO DA MATURAÇÃO:</span>10 ANOS</h1>
-          <h1 class="info-content-lote"><span>DESDE:</span>17/08/2017</h1>
-        </div> <!-- info-lote -->
-
-        <div class="info-lote">
-          <h1 class="info-content-lote grey">ID: 010102</h1>
-          <h1 class="info-content-lote"><span>APELIDO:</span>LOTE JAPÃO</h1>
-          <h1 class="info-content-lote"><span>TIPO:</span>VINHO TINTO</h1>
-          <h1 class="info-content-lote"><span>TEMPO DA MATURAÇÃO:</span>10 ANOS</h1>
-          <h1 class="info-content-lote"><span>DESDE:</span>17/08/2017</h1>
-        </div> <!-- info-lote -->
-
-        <div class="info-lote">
-          <h1 class="info-content-lote grey">ID: 010102</h1>
-          <h1 class="info-content-lote"><span>APELIDO:</span>LOTE JAPÃO</h1>
-          <h1 class="info-content-lote"><span>TIPO:</span>VINHO TINTO</h1>
-          <h1 class="info-content-lote"><span>TEMPO DA MATURAÇÃO:</span>10 ANOS</h1>
-          <h1 class="info-content-lote"><span>DESDE:</span>17/08/2017</h1>
-        </div> <!-- info-lote -->
+      <div class="content-lote" id="containerLote">
+        
 
       </div> <!-- content-lote -->
     </div> <!-- exibir-lote -->
@@ -121,3 +91,43 @@
 </body>
 
 </html>
+
+<script>
+   function listar() {
+    fetch("/lotes/listar", {
+      method: "GET",
+    })
+      .then(function (resposta) {
+        resposta.json().then((lotes) => {
+          lotes.forEach((lote) => {
+            
+            var data = new Date(lote.dataIncio);
+
+            var dia = data.getDate();
+            var mes = data.getMonth() + 1;
+            var ano = data.getFullYear();
+            
+
+
+            containerLote.innerHTML += `
+            <div class="info-lote">
+                <h1 class="info-content-lote grey">ID:${lote.idLote}</h1>
+                <h1 class="info-content-lote"><span>APELIDO:</span>${lote.apelido}</h1>
+                <h1 class="info-content-lote"><span>TIPO:</span>${lote.tipoVinho}</h1>
+                <h1 class="info-content-lote"><span>TEMPO DA MATURAÇÃO:</span>${lote.tempoMes}/${lote.tempoAno}</h1>
+                <h1 class="info-content-lote"><span>DESDE:</span>${dia}/${mes}/${ano}</h1>
+            </div>
+            `;
+          });
+        });
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+      });
+  }
+
+  function sumirMensagem() {
+    cardErro.style.display = "none";
+      
+}
+</script>
