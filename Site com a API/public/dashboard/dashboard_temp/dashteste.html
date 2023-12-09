@@ -24,15 +24,23 @@
                 </div>
 
                 <div class="base-temp">
-                    Temperatura Atual: <span id="tempSpan"></span> °C
+                    Temperatura Atual: <span id="tempSpan"></span>°C
+                </div>
+                <div class="status-info" >
+                    Status: <span id="statusSpan"></span>
                 </div>
 
             </div>
 
+            <div class="containerGrafico"> 
             <div class="grafico">
+                <span class="descGraficT">Umidade</span>
                 <canvas id="myChartLine"></canvas>
+                <div class="descGraficB">Tempo</div>
+            </div>
             </div>
         </div>
+
 
         <div class="info">
             <div class="header-right">
@@ -52,7 +60,7 @@
                     <div class="info-right">
                         Tipo do Vinho <br>
                         <b class="dados">BRANCO</b>
-                        <div class="info-right">
+                    <div class="info-right" style="margin-top: 10px;">
                             Temperatura ideal: <br>
                             <b class="dados">Entre 12º e 15ºC </b>
                         </div>
@@ -248,27 +256,32 @@ fetch(`/medidas/tempo-real`, { cache: 'no-store' }).then(function (response) {
                 // apagar o primeiro de umidade
                 // dados.datasets[0].data.push(novoRegistro[0].umidade); 
                 // incluir uma nova medida de umidade
-                var TempAtual = novoRegistro[0].temperatura
+                var tempAtual = novoRegistro[0].temperatura
                 // TempAtual -= 10
 
-                tempSpan.innerHTML = TempAtual;
+                tempSpan.innerHTML = tempAtual;
 
-                if(TempAtual > 35){
-                    alert('Estado Crítico! A temperatura está acima de 35°C')
-                } else if (TempAtual > 25) {
-                    alert('Estado de alerta! A temperatura está acima de 25°C')
-                } else if (TempAtual > 20) {
-                    alert('Estado de alerta! A temperatura está acima de 20°C')
-                }  else if (TempAtual < 8) {
-                    alert('Estado de alerta! A temperatura está abaixo de 8°C')
-                }  else if (TempAtual > 2) {
-                    alert('Estado de alerta! A temperatura está abaixo de 2°C')
-                }  else if (TempAtual > -8) {
-                    alert('Estado Crítico! A temperatura está abaixo de -8°C')
-                }
 
+                if (tempAtual <= 45) {
+                    statusSpan.innerHTML = '<b style="color: red">CRÍTICO</b>';
+                } else if (tempAtual > 45 && tempAtual <= 55) {
+                    statusSpan.innerHTML = '<b style="color: orange">EMERGÊNCIA</b>';
+                } else if (tempAtual > 55 && tempAtual <= 60) {
+                    statusSpan.innerHTML = '<b style="color: #DDB247">ALERTA</b>';
+                } else if (tempAtual > 60 && tempAtual <= 65) {
+                    statusSpan.innerHTML = '<b style="color: green">IDEAL</b>';
+                } else if (tempAtual > 65 && tempAtual <= 80) {
+                    statusSpan.innerHTML = '<b style="color: green">IDEAL</b>';
+                } else if (tempAtual > 80 && tempAtual <= 85) {
+                    statusSpan.innerHTML = '<b style="color: #DDB247">ALERTA</b>';
+                } else if (tempAtual > 85 && tempAtual <= 90) {
+                    statusSpan.innerHTML = '<b style="color: orange">EMERGÊNCIA</b>';
+                } else {
+                    statusSpan.innerHTML = '<b style="color: red">CRÍTICO</b>';
+                    }
+             
                 dados.datasets[0].data.shift();  // apagar o primeiro de temperatura
-                dados.datasets[0].data.push(TempAtual);
+                dados.datasets[0].data.push(tempAtual);
                                
                 myChart.update();
             }

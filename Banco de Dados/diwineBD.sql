@@ -2,6 +2,8 @@
 CREATE DATABASE diwineBD;
 USE diwineBD;
 
+-- drop database diwineBD;
+
 -- *** CRIANDO TABELA 'EMPRESA' E INSERINDO DADOS ***--
 CREATE TABLE empresa (
 idEmpresa		INT PRIMARY KEY AUTO_INCREMENT, 				-- Identificação da Empresa
@@ -26,8 +28,8 @@ fkEmpresa		INT,
 	FOREIGN KEY (fkEmpresa) REFERENCES empresa(idEmpresa)
 ) AUTO_INCREMENT = 100; 
 
-INSERT INTO usuario VALUES										-- Inserindo um funcionário
-	(NULL, 'José Silva', 'jose.silva@empresab.com', 'joseEmpresa22@', '11962063620',1);
+-- INSERT INTO usuario VALUES										-- Inserindo um funcionário
+	-- (NULL, 'José Silva', 'jose.silva@empresab.com', 'joseEmpresa22@', '11962063620',1);
 
 -- *** CRIANDO TABELA 'AMBIENTE' ***--
 create table ambiente (

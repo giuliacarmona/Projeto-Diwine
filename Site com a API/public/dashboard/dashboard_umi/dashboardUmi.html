@@ -26,10 +26,18 @@
                 <div class="base-temp" >
                     Umidade Atual: <span id="umidadeSpan"></span>%
                 </div>
+               
+                <div class="status-info" >
+                    Status: <span id="statusSpan"></span>
+                </div>
             </div>
-
+            
+            <div class="containerGrafico"> 
             <div class="grafico">
+                <span class="descGraficT">Umidade</span>                
                 <canvas id="myChartLine"></canvas>
+                <div class="descGraficB">Tempo</div>
+            </div>
             </div>
         </div>
 
@@ -46,7 +54,7 @@
                     </div>
                     <div class="info-right">
                         Tempo de Atualização <br>
-                        <b class="dados">30 Minutos</b>
+                        <b class="dados">5 Segundo</b>
                     </div>
                     <div class="info-right">
                         Tipo do Vinho <br>
@@ -290,31 +298,37 @@ fetch(`/medidas/tempo-real`, { cache: 'no-store' }).then(function (response) {
                 // apagar o primeiro de umidade
                 // dados.datasets[0].data.push(novoRegistro[0].umidade); 
                 // incluir uma nova medida de umidade
-                var UmidAtual = novoRegistro[0].umidade;
+                var umidAtual = novoRegistro[0].umidade;
 
-                umidadeSpan.innerHTML = UmidAtual;
+                umidadeSpan.innerHTML = umidAtual;
+              
                 
-                // if(umidAtual >= 100){
-                //     alert('Estado Crítico! A umidade está acima de 95%')
-                // } else if (umidAtual > 90) {
-                //     alert('Estado de alerta! A umidade está acima de 90%')
-                // } else if (umidAtual > 85) {
-                //     alert('Estado de alerta! A umidade está acima de 85%')
-                // }  else if (umidAtual < 60) {
-                //     alert('Estado de alerta! A umidade está abaixo de 60%')
-                // }  else if (umidAtual < 55) {
-                //     alert('Estado de alerta! A umidade está abaixo de 55%')
-                // }  else if (umidAtual < 45) {
-                //     alert('Estado Crítico! A umidade está abaixo de 45%')}
+                if (umidAtual <= 45) {
+                    statusSpan.innerHTML = '<b style="color: red">CRÍTICO</b>';
+                } else if (umidAtual > 45 && umidAtual <= 55) {
+                    statusSpan.innerHTML = '<b style="color: orange">EMERGÊNCIA</b>';
+                } else if (umidAtual > 55 && umidAtual <= 60) {
+                    statusSpan.innerHTML = '<b style="color: #DDB247">ALERTA</b>';
+                } else if (umidAtual > 60 && umidAtual <= 65) {
+                    statusSpan.innerHTML = '<b style="color: green">IDEAL</b>';
+                } else if (umidAtual > 65 && umidAtual <= 80) {
+                    statusSpan.innerHTML = '<b style="color: green">IDEAL</b>';
+                } else if (umidAtual > 80 && umidAtual <= 85) {
+                    statusSpan.innerHTML = '<b style="color: #DDB247">ALERTA</b>';
+                } else if (umidAtual > 85 && umidAtual <= 90) {
+                    statusSpan.innerHTML = '<b style="color: orange">EMERGÊNCIA</b>';
+                } else {
+                    statusSpan.innerHTML = '<b style="color: red">CRÍTICO</b>';
+                }
 
                 dados.datasets[0].data.shift();  // apagar o primeiro de temperatura
-                dados.datasets[0].data.push(UmidAtual);
+                dados.datasets[0].data.push(umidAtual);
                                
                 myChart.update();
             }
 
             // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
-            proximaAtualizacao = setTimeout(() => atualizarGrafico(sector, dados, myChart), 5000);
+            proximaAtualizacao = setTimeout(() => atualizarGrafico(sector, dados, myChart), 5000);  
         });
     } else {
         console.error('Nenhum dado encontrado ou erro na API');

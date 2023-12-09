@@ -2,6 +2,7 @@
 
 * {
     /* overflow: hidden; */
+    max-width: 100%;
     margin: 0;
     padding: 0;
     border: none;
@@ -14,22 +15,33 @@ body {
     background-color: #D9D9D9;
 }
 
+.status-info{
+    width: 710px;
+    height: 73px;
+    font-family: "Inter-SemiBold", helvetica;
+    font-weight: 600;
+    color: #5E2424;
+    font-size: 30px;
+}
+
 
 .container {
     display: flex;
     /* background-color:red; */
     margin-left: 120px;
     margin-top: 0;
-    width: 93vw;
+    width: auto;
     justify-content: space-between;
     flex-direction: row;
     height: fit-content;
+    max-width: 100%;
 }
 
 .container .metricas {
     display: flex;
-    width: 30%;
+    width: 60%;
     flex-direction: column;
+    margin-left: 70px;
 }
 
 .container .metricas .title {
@@ -37,8 +49,8 @@ body {
     display: flex;
     width: 1000px;
     height: 215px;
-    margin-left: 100px;
-    margin-top: 50px;
+    /* margin-left: 20px; */
+    margin-top: 30px;
     justify-content: space-between;
     flex-direction: column;
 
@@ -60,7 +72,7 @@ body {
 
 .container .metricas .grafico {
     display: absolute;
-    padding: 2vh 0 10vh 2vw;
+    /* padding: 2vh 0 10vh 2vw; */
     position: relative;
     width: 70vw;
     height: 70vh;
@@ -76,6 +88,22 @@ body {
     color: #DDB247;
     overflow: hidden;
     background: #5E2424;
+}
+
+.descGraficB{
+    font-family: "Inter-SemiBold", helvetica;
+    font-weight: 600;
+    color: #5E2424;
+    font-size: 20px;
+    margin-top: 2px;
+    width: 100%;
+    text-align: end;
+}
+.descGraficT{
+    font-family: "Inter-SemiBold", helvetica;
+    font-weight: 600;
+    color: #5E2424;
+    font-size: 20px;
 }
 
 .logo {
@@ -178,19 +206,17 @@ body {
 }
 
 .info {
-
-    width: 400px;
-    height: 880px;
+    
     display: flex;
     flex-direction: column;
-    margin-right: 75px;
+    align-items: flex-start;
 }
 
 .info-right {
 
     width: 385px;
     height: 88px;
-
+    margin-bottom: 10px;
     color: #DDB247;
     text-align: right;
     font-family: inter;

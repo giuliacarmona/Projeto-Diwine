@@ -19,7 +19,7 @@ const serial = async (
             database: 'diwineBD',
             port: 3306,
             user: 'root',
-            password: 'caio'
+            password: '#Gf46526937888'
         }
     ).promise();
 
