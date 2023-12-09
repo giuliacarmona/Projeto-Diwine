@@ -1,0 +1,250 @@
+/* Começo da página, havendo apenas um botão */
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #D9D9D9;
+}
+.container_header {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+}
+a{
+    text-decoration: none;
+}
+.button_voltar {
+    margin-left: 3%;
+}
+.button_voltar .voltar {
+    color: #DDB247;
+    width: 175px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 35px;
+}
+
+/* Div que será substituido por uma foto */
+
+.container_body {
+    width: 100%;
+    padding-top: 50px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.div_addFoto i{
+    font-size: 55px;
+    padding-bottom: 10px;
+}
+.div_addFoto:hover {
+    cursor: pointer;
+}
+.div_addFoto {
+    width: 1092px;
+    height: 265px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 20px;
+    background-color: #BFBFBF;
+    color: #606060;
+    border: 0px;
+    border-radius: 20px;
+    
+}
+
+/* Input onde você inseri a URL da imagem */
+
+.container_input_link {
+    width: 1092px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    display: none;
+}
+.container_input_link .URL {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+}
+.container_input_link .input_linkFoto {
+    width: 900px;
+    height: 20px;
+    background-color: #BFBFBF;
+    border: 0px;
+    border-radius: 10px;
+    padding-left: 3px;
+    padding-right: 5px;
+}
+
+/* Seleção de nome do ambiente */
+
+.container_nomeAmbiente {
+    width: 1092px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+}
+.nome_titulos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    font-size: 22px;
+    width: 250px;
+    height: 30px;
+}
+.container_nomeAmbiente .input_nomeAmbiente {
+    width: 870px;
+    height: 30px;
+    background-color: #BFBFBF;
+    border: 0px;
+    border-radius: 10px;
+}
+
+/* Configurações que serão decididas pelo cliente e salvas no BD */
+
+.container_config {
+    display: flex;
+    justify-content: space-between;
+    width: 1092px;
+    height: 200px;
+}
+
+/* Seleção do tempo de maturação */
+
+.container_tempo {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 33.3%;
+}
+.container_buttonTempo {
+    border: 0;
+    border-radius: 10px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 75%;
+    height: 30px;
+    background-color: #BFBFBF;
+}
+.buttonSelect_dia {
+    border: 0;
+    border-radius: 10px;
+    width: 25%;
+    height: 30px;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: #BFBFBF;
+}
+.buttonSelect_mes {
+    border: 0;
+    border-radius: 10px;
+    width: 45%;
+    height: 30px;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: #BFBFBF;
+}
+.buttonSelect_ano {
+    border: 0;
+    border-radius: 10px;
+    width: 30%;
+    height: 30px;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: #BFBFBF;
+}
+
+/* Seleção do tempo de atualização */
+
+.container_att {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 33.3%;
+}
+.buttonSelect_tempoAtt {
+    border: 0;
+    border-radius: 10px;
+    width: 250px;
+    height: 30px;
+    margin-top: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #606060;
+    background-color: #BFBFBF;
+}
+.buttonSelect_tempoAtt .optionMinutos {
+    font-weight: bold;
+    color: black;
+}
+
+/* Seleção do tipo de barril */
+
+.container_tipoBarril {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 33.3%;
+}
+.buttonSelect_tpBarril {
+    border: 0;
+    border-radius: 10px;
+    width: 250px;
+    height: 30px;
+    margin-top: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #606060;
+    background-color: #BFBFBF;
+}
+.buttonSelect_tpBarril .optionBarril {
+    font-weight: bold;
+    color: black;
+}
+
+/* Parte final da página, havendo apenas um botão, que pegará todos os dados anteriores e enviará no BD */
+
+.container_footer {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+.button_criarAmbiente {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 610px;
+    height: 70px;
+    font-size: 30px;
+    border: 0;
+    border-radius: 20px;
+    font-weight: bold;
+    color: #DDB247;
+    background-color: #5E2424;
+    cursor: pointer;
+}
+.button_criarAmbiente:active {
+    transform: translateY(1px);
+    box-shadow: 0px 3px 3px black;
+    background-color: #4d1e1e;
+    color: #b4923a;
+}

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PERFIL | DIWINE</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style/perfil.css">
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="container">
+            <div class="photo">
+                <img class="addIcon" src="./style/icons/addIcon.svg" alt="">
+                <button class="button-foto"> EDITAR FOTO</button>
+            </div>
+
+            <div class="info">
+                <div class="nome">
+                    José da Silva
+                </div>
+                <div class="identificador">
+                    ID: 105
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="container-footer">
+            <div class="container-empresa-pessoal">
+                <div class="titulo-empresa">
+                    Empresa
+                </div>
+                <div class="info-empresa">
+                    <!-- <div class="card-id"> -->
+                        <!-- ID: <b class="dado">02020203</b> -->
+                    <!-- </div> -->
+
+                    <div class="card-id">
+                        Nome fantasia: <b class="dado">EMPRESA A</b>
+                    </div>
+
+                    <div class="card-id">
+                        CNPJ: <b class="dado">25798482000106</b>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-empresa-pessoal">
+                <div class="titulo-pessoal">
+                    Pessoal
+                    <img class="pencilIcon" src="./style/icons/pencilIcon.svg" alt="">
+                </div>
+                <div class="info-pessoal">
+                  
+                     <div class="card-id">
+                        E-mail:<b class="dado"> jose.silva@diwine.com</b>
+                    </div>
+
+                    <div class="card-id">
+                        Celular: <b class="dado"><span id="numeroTelefone"></span></b>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="sidebar">
+        <ul class="menu">
+            <li class="active">
+                <a href="../paginaInicial/dashboardInicial.html" class="menuIcon">
+                    <i class="fas fa-bars active"></i>
+                    <!-- <span>Menu</span> -->
+                </a>
+            </li>
+            <li class="temperatura">
+                <a href="../dashboard_temp/dashteste.html" class="temperaturaIcon">
+                    <i class="fas fa-temperature-three-quarters"></i>
+                    <!-- <span>Temperatura</span> -->
+                </a>
+            </li>
+            <li class="umidade">
+                <a href="../dashboard_umi/dashboardUmi.html" class="umidadeIcon">
+                    <i class="fas fa-droplet"></i>
+                    <!-- <span>Umidade</span> -->
+                </a>
+            </li>
+            <li class="lote">
+                <a href="../inserirLote/lote.html" class="loteIcon">
+                <i class="fas fa-wine-bottle"></i>
+                    <!-- <span>Lote</span> -->
+                </a>
+            </li>
+
+            <div class="bottom-icon">
+                <!-- <div class="space"></div> -->
+                <li class="logout">
+                    <a href="../../acesso/login.html" class="logoutIcon">
+                        <i class="fas fa-right-from-bracket"></i>
+                        <!-- <span>Logout</span> -->
+                    </a>
+                </li>
+                <li class="perfil">
+                    <a href="../perfilUsuario/Perfil_Usuario.html" class="perfilIcon">
+                        <i class="fas fa-circle-user"></i>
+                        <!-- <span>Perfil</span> -->
+                    </a>
+                </li>
+            </div>
+    </div>
+</body>
+</html>
+
+<script>
+
+function validarSessao() {
+    var email = sessionStorage.EMAIL_USUARIO;
+    var nome = sessionStorage.NOME_USUARIO;
+    var numero = sessionStorage.NUMERO_USUARIO;
+
+    numeroTelefone.innerHTML = numero
+    
+
+    if (email != null && nome != null) {
+        b_usuario.innerHTML = nome;
+    } else {
+        window.location = "../login.html";
+    }
+}
+
+</script>

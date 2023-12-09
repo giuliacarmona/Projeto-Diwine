@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styleInicial.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Tela Inicial | Diwine</title>
+</head>
+
+<body onload="validarSessao()">
+    <div class="container">
+        <div class="rectangle-33">
+
+            <div class="oi"> Olá, <span id="nomeUser"></span> </div>
+            <div class="selecione"> SELECIONE O AMBIENTE </div>
+
+            <div class="ambientes">
+                <div class="retangulos">
+                    <div class="rectangle-13"></div>
+                    <div class="legenda">
+                        <div class="setorDesc"> SETOR 1 - VINHO BRANCO </div>
+                        <div class="idDesc"> ID: 01020304 </div>
+                    </div>
+                </div>
+
+                <div class="retangulos">
+                    <div class="rectangle-15"></div>
+                    <div class="legenda2">
+                        <div class="setorDesc"> SETOR 2 - VINHO TINTO </div>
+                        <div class="idDesc"> ID: 05060708 </div>
+                    </div>
+                </div>
+
+                <div class="retangulos">
+                    <div class="rectangle-14"> </div>
+                    <div class="legenda3">
+                        <div class="setorDesc"> SETOR 2 - VINHO ROSÉ </div>
+                        <div class="idDesc"> ID: 05062410 </div>
+                    </div>
+                </div>
+
+                <a href="../criarAmbiente/criar_ambiente.html">
+                    <div class="retangulos cinza">
+                        <div class="criar-novo-ambiente">
+                            <svg class="vector" width="60" height="60" viewBox="0 0 60 60" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M60 30C60 30.9548 59.6207 31.8705 58.9456 32.5456C58.2705 33.2207 57.3548 33.6 56.4 33.6H33.6V56.4C33.6 57.3548 33.2207 58.2705 32.5456 58.9456C31.8705 59.6207 30.9548 60 30 60C29.0452 60 28.1295 59.6207 27.4544 58.9456C26.7793 58.2705 26.4 57.3548 26.4 56.4V33.6H3.6C2.64522 33.6 1.72955 33.2207 1.05442 32.5456C0.379285 31.8705 0 30.9548 0 30C0 29.0452 0.379285 28.1295 1.05442 27.4544C1.72955 26.7793 2.64522 26.4 3.6 26.4H26.4V3.6C26.4 2.64522 26.7793 1.72955 27.4544 1.05442C28.1295 0.379285 29.0452 0 30 0C30.9548 0 31.8705 0.379285 32.5456 1.05442C33.2207 1.72955 33.6 2.64522 33.6 3.6V26.4H56.4C57.3548 26.4 58.2705 26.7793 58.9456 27.4544C59.6207 28.1295 60 29.0452 60 30Z"
+                                    fill="#5E2424" />
+                            </svg>
+                            CRIAR NOVO AMBIENTE
+                        </div>
+                    </div>
+                </a>
+
+                <div class="sidebar">
+                    <ul class="menu">
+                        <li class="active">
+                            <a href="../paginaInicial/dashboardInicial.html" class="menuIcon">
+                                <i class="fas fa-bars active"></i>
+                                <!-- <span>Menu</span> -->
+                            </a>
+                        </li>
+                        <li class="temperatura">
+                            <a href="../dashboard_temp/dashteste.html" class="temperaturaIcon">
+                                <i class="fas fa-temperature-three-quarters"></i>
+                                <!-- <span>Temperatura</span> -->
+                            </a>
+                        </li>
+                        <li class="umidade">
+                            <a href="../dashboard_umi/dashboardUmi.html" class="umidadeIcon">
+                                <i class="fas fa-droplet"></i>
+                                <!-- <span>Umidade</span> -->
+                            </a>
+                        </li>
+                        <li class="lote">
+                            <a href="../inserirLote/lote.html" class="loteIcon">
+                                <i class="fas fa-wine-bottle"></i>
+                                <!-- <span>Lote</span> -->
+                            </a>
+                        </li>
+
+                        <div class="bottom-icon">
+                            <!-- <div class="space"></div> -->
+                            <li class="logout">
+                                <a href="../../acesso/login.html" class="logoutIcon">
+                                    <i class="fas fa-right-from-bracket"></i>
+                                    <!-- <span>Logout</span> -->
+                                </a>
+                            </li>
+
+                            <li class="question">
+                                <a href="https://diwine.atlassian.net/servicedesk/customer/portal/1" class="logoutIcon">
+                                  <i class="fa-solid fa-question"></i></a>
+                              </li> <!-- logout -->
+
+                            <li class="perfil">
+                                <a href="../perfilUsuario/Perfil_Usuario.html" class="perfilIcon">
+                                    <i class="fas fa-circle-user"></i>
+                                    <!-- <span>Perfil</span> -->
+                                </a>
+                            </li>
+                        </div>
+                </div>
+</body>
+
+</html>
+
+<script>
+    function validarSessao() {
+    var email = sessionStorage.EMAIL_USUARIO;
+    var nome = sessionStorage.NOME_USUARIO;
+
+    nomeUser.innerHTML = nome
+    
+
+    if (email != null && nome != null) {
+        b_usuario.innerHTML = nome;
+    } else {
+        window.location = "../login.html";
+    }
+}
+</script>
