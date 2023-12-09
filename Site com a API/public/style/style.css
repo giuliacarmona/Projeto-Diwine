@@ -43,13 +43,10 @@ body{
 
 .caixaDeTexto {
     background-color: #BFBFBF;
-    transform: translate(67px);
-    display: flex;
-    justify-content: center;
-    width: 400px;
+
+    width: 90%;
     height: 65px;
-    margin: 0;
-    margin-bottom: 20px;
+ 
     border: none;
     outline: none; 
     border-radius: 0 16px 16px 0;
@@ -60,38 +57,17 @@ body{
     font-style: normal;
     font-weight: 600;
     line-height: normal;
-    padding-left: 10px;
+
 }
 
-.caixaDeTexto2 {
-    background-color: #BFBFBF;
-    transform: translate(67px);
-    display: flex;
-    justify-content: center;
-    width: 410px;
-    height: 67px;
-    margin: 0;
-    margin-bottom: 20px;
-    border: none;
-    outline: none; 
-    border-radius: 0 16px 16px 0;
 
-    color: #606060;
-    font-family: Inter;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-    padding-left: 10px;
-}
-       
 
 
 .campos .espLaranja{
     
     border-radius: 16px 0px 0px 16px;
     display: flex;
-    position: absolute;
+    /* position: absolute; */
     width: 67px;
     height: 67px;
     background-color: #DDB247;
@@ -137,18 +113,24 @@ body{
 }
 
 
- .cardCad .campos{
+ .campos{
     width: 80%;
+    display: flex;
+    flex-direction: column;
     
 }
 
-.cardLogin .campos{
-    width: 80%;
-    
+
+
+.campo{
+    display: flex;
+    /* background-color: #00ff2a; */
+    margin-bottom: 10px;
+    width: 100%;
 }
 
 .cardCad{
-    margin-top: 50px;
+    margin: 8% 0;
     border-radius: 25px;
     width: 42%;
     height: fit-content;
@@ -181,13 +163,11 @@ p{
 
 .btCadastrar{
     background-color: #DDB247;
-    margin: 30px;
-    width: 75%;
+    width: 100%;
     height: 50px;
-    margin: 20px;
-    margin-bottom: 20px;
+    margin: 25px 0; 
     justify-content: center;
-    display: block;
+    /* display: block; */
     border: none;
     border-radius: 50px;
     
@@ -211,12 +191,11 @@ p{
 
 .btLogin{
     background-color: #DDB247;
-    margin: 30px;
-    width: 75%;
+    width: 100%;
     height: 50px;
-    margin: 10px auto;
+    margin: 25px 0; 
     justify-content: center;
-    display: block;
+    /* display: block; */
     border: none;
     border-radius: 50px;
     
@@ -241,9 +220,8 @@ p{
 }
 
 .textoSup{
-    margin-bottom: 50px
+    margin-bottom: 20px
 }
-
 
 
 ::placeholder{

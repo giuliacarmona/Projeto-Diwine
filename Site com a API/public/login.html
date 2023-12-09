@@ -1,102 +1,106 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login | Diwine</title>
-    <link rel="stylesheet" href="./style/style.css">
-</head>
-<body>
-  <div class="cardLogin">
-    <div class="container">
-      <div class="circulo avatarIcon"></div>
-      <p class="textoSup">ACESSE PARA CONTINUAR</p>
-      
-      
-      <div class="campos">
-       
-      <div class="espLaranja userIcon"></div>
-      <input type="text" placeholder="EMAIL" class="caixaDeTexto" id="input_email"> 
-   
-      <div class="espLaranja passwordIcon"></div>
-      <input type="password" placeholder="SENHA" class="caixaDeTexto" id="input_senha"> 
+    <link rel="stylesheet" href="./style/style.css" />
+  </head>
+  <body>
+    <div class="cardLogin" style="height: fit-content;">
+      <div class="container" >
+        <div class="circulo avatarIcon"></div>
+        <p class="textoSup">ACESSE PARA CONTINUAR</p>
 
-   </div>
-   <button class="btLogin" onclick="entrar()">LOGIN</button>
-    
-   <p>NÃO POSSUI CADASTRO?</p>
+        <div class="campos">
+          <div class="campo">
+            <div class="espLaranja userIcon"></div>
+            <input
+              type="text"
+              placeholder="EMAIL"
+              class="caixaDeTexto"
+              id="input_email"
+            />
+          </div>
 
-    <button class="btCadastrar" onclick="window.location.href='cadastro.html';">CADASTRAR-SE</button>
+          <div class="campo">
+            <div class="espLaranja passwordIcon"></div>
+            <input
+              type="password"
+              placeholder="SENHA"
+              class="caixaDeTexto"
+              id="input_senha"
+            />
+          </div>
+
+          <button class="btLogin" onclick="entrar()">LOGIN</button>
+
+          <p style="margin: 0;">NÃO POSSUI CADASTRO?</p>
+
+          <button class="btCadastrar" onclick="window.location.href='cadastro.html';" style="margin-bottom: 30px 0;">
+            CADASTRAR-SE
+          </button>
+        </div>
+      </div>
     </div>
-  </div>
-</body>
-</html> 
+  </body>
+</html>
 
 <script>
-   function entrar() {
-        
-        var emailVar = input_email.value;
-        var senhaVar = input_senha.value;
+  function entrar() {
+    var emailVar = input_email.value;
+    var senhaVar = input_senha.value;
 
-        if (emailVar == "" || senhaVar == "") {
-            
-            return false;
-        }
-       
-
-        console.log("FORM LOGIN: ", emailVar);
-        console.log("FORM SENHA: ", senhaVar);
-
-        fetch("/usuarios/autenticar", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                emailServer: emailVar,
-                senhaServer: senhaVar,
-            })
-        }).then(function (resposta) {
-            console.log("ESTOU NO THEN DO entrar()!")
-
-            if (resposta.ok) {
-                console.log(resposta);
-
-                resposta.json().then(json => {
-                    console.log(json);
-                    console.log(JSON.stringify(json));
-                    sessionStorage.EMAIL_USUARIO = json.email;
-                    sessionStorage.NOME_USUARIO = json.nome;
-                    sessionStorage.NUMERO_USUARIO = json.numero;
-                    
-                   
-
-                    setTimeout(function () {
-                        // alert('salve')
-                       window.location = "./dashboard/paginaInicial/dashboardInicial.html";
-                    }, 1000); // apenas para exibir o loading
-
-                });
-
-            } else {
-
-                console.log("Houve um erro ao tentar realizar o login!");
-                alert('Email ou Senha incorrento!')
-
-                resposta.text().then(texto => {
-                    console.error(texto);
-                    finalizarAguardar(texto);
-                });
-            }
-
-        }).catch(function (erro) {
-            console.log(erro);
-        })
-
-        return false;
+    if (emailVar == "" || senhaVar == "") {
+      return false;
     }
 
+    console.log("FORM LOGIN: ", emailVar);
+    console.log("FORM SENHA: ", senhaVar);
 
+    fetch("/usuarios/autenticar", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        emailServer: emailVar,
+        senhaServer: senhaVar,
+      }),
+    })
+      .then(function (resposta) {
+        console.log("ESTOU NO THEN DO entrar()!");
 
-   
-    </script>
+        if (resposta.ok) {
+          console.log(resposta);
+
+          resposta.json().then((json) => {
+            console.log(json);
+            console.log(JSON.stringify(json));
+            sessionStorage.EMAIL_USUARIO = json.email;
+            sessionStorage.NOME_USUARIO = json.nome;
+            sessionStorage.NUMERO_USUARIO = json.numero;
+
+            setTimeout(function () {
+              // alert('salve')
+              window.location =
+                "./dashboard/paginaInicial/dashboardInicial.html";
+            }, 1000); // apenas para exibir o loading
+          });
+        } else {
+          console.log("Houve um erro ao tentar realizar o login!");
+          alert("Email ou Senha incorrento!");
+
+          resposta.text().then((texto) => {
+            console.error(texto);
+            finalizarAguardar(texto);
+          });
+        }
+      })
+      .catch(function (erro) {
+        console.log(erro);
+      });
+
+    return false;
+  }
+</script>

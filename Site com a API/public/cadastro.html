@@ -10,38 +10,47 @@
   <div class="cardCad">
     <div class="container">
       <div class="circulo avatarIcon"></div>
-      <p class="textoSup">ACESSE PARA CONTINUAR</p>
+      <p class="textoSup">CADASTRAR-SE PARA CONTINUAR</p>
       
       
       <div class="campos">
-              
-      <div class="espLaranja userIcon"></div>
-      <input type="text" placeholder="NOME COMPLETO" class="caixaDeTexto" id="ipt_nome"> 
-   
-      <div class="espLaranja mailIcon"></div>
-      <input type="text" placeholder="INSIRA SEU E-MAIL" class="caixaDeTexto" id="ipt_email"> 
-        
-      <div class="espLaranja phoneIcon"></div>
-      <input type="text" placeholder="INSIRA SEU NÚMERO" maxlength="11" class="caixaDeTexto" id="ipt_numero"> 
-      
-      <div class="espLaranja empresaIcon"></div>
-      <select class="caixaDeTexto2" name="empresas" id="ipt_empresaDiwine" >
-        <option value="" disabled selected>SELECIONE UMA EMPRESA</option>
-    </select>
-   
-      <div class="espLaranja passwordIcon"></div>
-      <input type="password" placeholder="SENHA" class="caixaDeTexto" id="ipt_senha"> 
-   
-      <div class="espLaranja passwordIcon"></div>
-      <input type="password" placeholder="CONFIRME SUA SENHA" class="caixaDeTexto" id="ipt_confirme"> 
-                 
 
-   </div>
-    <button class="btCadastrar" onclick="cadastrar()">CADASTRAR-SE</button>
+     <div class="campo">
+       <div class="espLaranja userIcon"></div>
+       <input type="text" placeholder=" NOME COMPLETO" class="caixaDeTexto" id="ipt_nome"> 
+     </div>         
    
-    <p>JÁ POSSUI UMA CONTA:</p>
-    <button class="btLogin" onclick="window.location.href='login.html';">LOGIN</button>
-    </div>
+     <div class="campo">
+       <div class="espLaranja mailIcon"></div>
+       <input type="text" placeholder=" INSIRA SEU E-MAIL" class="caixaDeTexto" id="ipt_email"> 
+     </div>
+        
+     <div class="campo">
+       <div class="espLaranja phoneIcon"></div>
+       <input type="text" placeholder=" INSIRA SEU NÚMERO" maxlength="11" class="caixaDeTexto" id="ipt_numero"> 
+     </div>
+      
+     <div class="campo">
+       <div class="espLaranja empresaIcon"></div>
+       <select class="caixaDeTexto" name="empresas" id="ipt_empresaDiwine" style="height: auto;" >
+         <option value="" disabled selected>SELECIONE UMA EMPRESA</option>
+        </select>
+      </div>
+      
+      <div class="campo">
+        <div class="espLaranja passwordIcon"></div>
+        <input type="password" placeholder=" SENHA" class="caixaDeTexto" id="ipt_senha"> 
+      </div>
+    
+      <div class="campo">
+        <div class="espLaranja passwordIcon"></div>
+        <input type="password" placeholder=" CONFIRME SUA SENHA" class="caixaDeTexto" id="ipt_confirme"> 
+      </div>             
+
+      <button class="btCadastrar" onclick="cadastrar()">CADASTRAR-SE</button>
+          
+      </div>
+   </div>
   </div>
 </body>
 </html>
