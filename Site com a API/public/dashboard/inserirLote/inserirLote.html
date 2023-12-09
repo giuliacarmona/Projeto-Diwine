@@ -81,17 +81,17 @@
               <span class="titleInfo">Data de Início</span>
 
               <div class="dataSelect">
-                <select id="diaIncio" class="form-select diaData">
-                  <option value="0">Dia</option>
-                  <option value="1">01</option>
-                  <option value="2">02</option>
-                  <option value="3">03</option>
-                  <option value="4">04</option>
-                  <option value="5">05</option>
-                  <option value="6">06</option>
-                  <option value="7">07</option>
-                  <option value="8">08</option>
-                  <option value="9">09</option>
+                <select id="diaInicio" class="form-select diaData">
+                  <option value="00">Dia</option>
+                  <option value="01">01</option>
+                  <option value="02">02</option>
+                  <option value="03">03</option>
+                  <option value="04">04</option>
+                  <option value="05">05</option>
+                  <option value="06">06</option>
+                  <option value="07">07</option>
+                  <option value="08">08</option>
+                  <option value="09">09</option>
                   <option value="10">10</option>
                   <option value="11">11</option>
                   <option value="12">12</option>
@@ -117,16 +117,16 @@
                 </select> <!-- select Dia-->
 
                 <select id="mesInicio" class="form-select mesData">
-                  <option value="0">Mês</option>
-                  <option value="1">Janeiro</option>
-                  <option value="2">Fevereiro</option>
-                  <option value="3">Março</option>
-                  <option value="4">Abril</option>
-                  <option value="5">Maio</option>
-                  <option value="6">Junho</option>
-                  <option value="7">Julho</option>
-                  <option value="8">Agosto</option>
-                  <option value="9">Setembro</option>
+                  <option value="00">Mês</option>
+                  <option value="01">Janeiro</option>
+                  <option value="02">Fevereiro</option>
+                  <option value="03">Março</option>
+                  <option value="04">Abril</option>
+                  <option value="05">Maio</option>
+                  <option value="06">Junho</option>
+                  <option value="07">Julho</option>
+                  <option value="08">Agosto</option>
+                  <option value="09">Setembro</option>
                   <option value="10">Outubro</option>
                   <option value="11">Novembro</option>
                   <option value="12">Dezembro</option>
@@ -164,16 +164,16 @@
               <span class="titleInfo">Tempo de Maturação</span>
               <div class="timeSelect">
                 <select id="mesMaturacao" class="form-select mesTime">
-                  <option value="0">Mês</option>
-                  <option value="1">Janeiro</option>
-                  <option value="2">Fevereiro</option>
-                  <option value="3">Março</option>
-                  <option value="4">Abril</option>
-                  <option value="5">Maio</option>
-                  <option value="6">Junho</option>
-                  <option value="7">Julho</option>
-                  <option value="8">Agosto</option>
-                  <option value="9">Setembro</option>
+                  <option value="00">Mês</option>
+                  <option value="01">Janeiro</option>
+                  <option value="02">Fevereiro</option>
+                  <option value="03">Março</option>
+                  <option value="04">Abril</option>
+                  <option value="05">Maio</option>
+                  <option value="06">Junho</option>
+                  <option value="07">Julho</option>
+                  <option value="08">Agosto</option>
+                  <option value="09">Setembro</option>
                   <option value="10">Outubro</option>
                   <option value="11">Novembro</option>
                   <option value="12">Dezembro</option>
@@ -209,16 +209,16 @@
             <div class="form-qtdLote">
               <span class="titleInfo">Quantidade</span>
               <select id="qtdLote" class="form-select qtdLote">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
+                <option value="00">0</option>
+                <option value="01">1</option>
+                <option value="02">2</option>
+                <option value="03">3</option>
+                <option value="04">4</option>
+                <option value="05">5</option>
+                <option value="06">6</option>
+                <option value="07">7</option>
+                <option value="08">8</option>
+                <option value="09">9</option>
                 <option value="10">10</option>
                 <option value="11">11</option>
                 <option value="12">12</option>
@@ -249,10 +249,66 @@
       </div> <!-- loteForm -->
 
       <div class="btnInserir">
-        <a href="lote.html">INSERIR</a>
+        <a onclick="inserirLote()">INSERIR</a>
       </div>
       </div> <!-- content-inserir -->
     </div> <!-- container -->
 </body>
 
 </html>
+
+<script>
+  function inserirLote(){
+
+    
+    var qtdLoteVar =  qtdLote.value
+    var anoMaturacaoVar = anoMaturacao.value
+    var mesMaturacaoVar = mesMaturacao.value        
+    var iptApelidoLoteVar = iptApelidoLote.value
+    var selectTipoVinhoVar = selectTipoVinho.value
+    
+    var diaInicioVar = diaInicio.value
+    var mesInicioVar = mesInicio.value
+    var anoInicioVar = anoInicio.value
+    var dataFormVar = `${anoInicioVar}-${mesInicioVar}-${diaInicioVar}` 
+
+    console.log(dataFormVar)
+
+    
+
+
+    fetch("/inserirLote/inserirLote", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        // crie um atributo que recebe o valor recuperado aqui
+        // Agora vá para o arquivo routes/usuario.js
+        dataFormServer: dataFormVar,
+        qtdLoteServer : qtdLoteVar,
+        anoMaturacaoServer : anoMaturacaoVar,
+        mesMaturacaoServer : mesMaturacaoVar,        
+        diaIncioServer : diaInicioVar,
+        anoInicioServer : anoInicioVar,
+        iptApelidoLoteServer : iptApelidoLoteVar,
+        selectTipoVinhoServer : selectTipoVinhoVar
+
+      }),
+    })
+      .then(function (resposta) {
+        console.log("resposta: ", resposta);
+      
+      })
+      
+      setTimeout(() => {
+              window.location = "./lote.html";
+            }, "2000");
+
+    return false;
+
+
+  }
+
+
+</script>

@@ -17,6 +17,7 @@ var empresasRouter = require("./src/routes/empresas");
 
 var empresasDiwineRouter = require("./src/routes/empresasDiwine");
 var dashDadosRouter = require("./src/routes/dashDados");
+var inserirLoteRouter = require("./src/routes/inserirLote");
 
 var lotesRouter = require("./src/routes/lotes");
 
@@ -35,6 +36,7 @@ app.use("/empresas", empresasRouter);
 
 app.use("/empresasDiwine", empresasDiwineRouter);
 app.use("/dashDados", dashDadosRouter);
+app.use("/inserirLote", inserirLoteRouter);
 
 app.use("/lotes", lotesRouter);
 
