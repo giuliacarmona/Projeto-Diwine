@@ -197,7 +197,7 @@ body {
 
 .base-temp {
 
-    width: 710px;
+    /* width: 710px; */
     height: 73px;
     font-family: "Inter-SemiBold", helvetica;
     font-weight: 600;
@@ -209,7 +209,7 @@ body {
     
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: flex-end;
 }
 
 .info-right {
@@ -245,7 +245,7 @@ body {
 
     width: 400px;
     height: 344px;
-    margin-top: 83px;
+    margin-top: 30px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

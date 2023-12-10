@@ -40,41 +40,39 @@
             </div>
             </div>
         </div>
-
+   
 
         <div class="info">
             <div class="header-right">
                 <div class="distance">
-                    <!-- <div class="info-right">
-                        Em maturação desde <br>
-                        <b class="dados">05/03/2018</b>
-                    </div> -->
+                    
                     <div class="info-right">
                         Tipo do barril <br>
                         <b class="dados">Madeira de Carvalho</b>
                     </div>
+                    
                     <div class="info-right">
                         Tempo de Atualização <br>
                         <b class="dados">30 Minutos</b>
                     </div>
-                    <!-- <div class="info-right">
-                        Tipo do Vinho <br>
-                        <b class="dados">BRANCO</b>
-                    </div> -->
+                    
                     <div class="info-right">
                             Temperatura ideal: <br>
                             <b class="dados">Entre 12º e 15ºC </b>
                         </div>
                     </div>
+                </div>
 
-                    <!-- <div class="footer-right">
-                        <div class="info-right" id="media">
-                            Média de Temperatura <br>
-                            <b class="dados">12°C</b>
-                        </div>
-                    </div> -->
+                <div class="dash-line1-1" >
+                    <div class="canvas-grafico" style="height: fit-content;width: fit-content;">
+                        <canvas id="graficoGen"></canvas>
+                    </div>
+                </div>
+                    
                 </div>
             </div>
+           
+      
 
             <div class="sidebar">
                 <ul class="menu">
@@ -128,6 +126,66 @@
 </body>
 
 </html>
+
+
+<script>
+
+    let meuGrafico;
+
+    var critico = 0
+    var alerta = 0
+    var emergencia = 0
+    var ideal = 0
+    
+    
+    let dataStatus = [0, 0, 0, 0];
+
+
+   
+    
+    window.onload = plotarGrafico2();
+    
+    function plotarGrafico2() {
+        
+        let labelsStatus = ["Crítico", "Alerta", "Emergência", "Ideal"];
+        let colorHexStatus = ["#ff0000", "#ff9d00", "#DDB247", "#25b800"];
+
+        let teste = document.getElementById("graficoGen");
+
+
+
+    meuGrafico = new Chart(teste, {
+        type: "pie",
+        data: {
+            datasets: [
+            {
+                data: dataStatus,
+                backgroundColor: colorHexStatus,
+            },
+            ],
+            labels: labelsStatus,
+        },
+        options: {
+            responsive: true,
+            legend: {
+            position: "bottom",
+            labels: {
+                fontSize: 16,
+                textAlign: "center",
+                padding: 30,
+            },
+            },
+        },
+        });
+    }
+
+</script>
+
+
+
+
+
+
 <script>
 
     window.onload = obterDadosGrafico();
@@ -261,30 +319,48 @@ fetch(`/medidas/tempo-real`, { cache: 'no-store' }).then(function (response) {
                 // TempAtual -= 10
 
                 tempSpan.innerHTML = tempAtual;
+                
+                dataStatus = [];
 
 
-                if (tempAtual <= 45) {
-                    statusSpan.innerHTML = '<b style="color: red">CRÍTICO</b>';
-                } else if (tempAtual > 45 && tempAtual <= 55) {
-                    statusSpan.innerHTML = '<b style="color: orange">EMERGÊNCIA</b>';
-                } else if (tempAtual > 55 && tempAtual <= 60) {
-                    statusSpan.innerHTML = '<b style="color: #DDB247">ALERTA</b>';
-                } else if (tempAtual > 60 && tempAtual <= 65) {
-                    statusSpan.innerHTML = '<b style="color: green">IDEAL</b>';
-                } else if (tempAtual > 65 && tempAtual <= 80) {
-                    statusSpan.innerHTML = '<b style="color: green">IDEAL</b>';
-                } else if (tempAtual > 80 && tempAtual <= 85) {
-                    statusSpan.innerHTML = '<b style="color: #DDB247">ALERTA</b>';
-                } else if (tempAtual > 85 && tempAtual <= 90) {
-                    statusSpan.innerHTML = '<b style="color: orange">EMERGÊNCIA</b>';
-                } else {
-                    statusSpan.innerHTML = '<b style="color: red">CRÍTICO</b>';
-                    }
+                        if(tempAtual <= -8){
+                        	statusSpan.innerHTML = '<b style="color: red">CRÍTICO</b>';
+                            critico++
+                        } else if (tempAtual >= -7 && tempAtual <= 2){
+                        	statusSpan.innerHTML = '<b style="color: orange">EMERGÊNCIA</b>';
+                            emergencia++
+                        } else if (tempAtual >= 1 && tempAtual <= 8){
+                        	statusSpan.innerHTML = '<b style="color: #DDB247">ALERTA</b>';
+                            alerta++
+                        } else if (tempAtual >= 12 && tempAtual <= 15){
+                        	statusSpan.innerHTML = '<b style="color: green">IDEAL</b>';
+                            ideal++
+                        } else if (tempAtual >= 20 && tempAtual <= 24){
+                        	statusSpan.innerHTML = '<b style="color: #DDB247">ALERTA</b>';
+                            alerta++
+                        } else if (tempAtual >= 25 && tempAtual <= 34){
+                        	statusSpan.innerHTML = '<b style="color: orange">EMERGÊNCIA</b>';
+                            emergencia++
+                        } else if (tempAtual >= 35){
+                        	statusSpan.innerHTML = '<b style="color: red">CRÍTICO</b>';
+                            critico++
+                        } else {
+                            statusSpan.innerHTML = '<b style="color: black">ATENÇÃO</b>';
+                        }
+
+                        dataStatus.push(critico)
+                        dataStatus.push(alerta)
+                        dataStatus.push(emergencia)
+                        dataStatus.push(ideal)
+                        	
              
                 dados.datasets[0].data.shift();  // apagar o primeiro de temperatura
                 dados.datasets[0].data.push(tempAtual);
                                
                 myChart.update();
+
+                meuGrafico.data.datasets[0].data = dataStatus
+                meuGrafico.update()
             }
 
             // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar

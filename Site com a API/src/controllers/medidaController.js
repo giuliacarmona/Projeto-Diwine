@@ -1,7 +1,7 @@
 var medidaModel = require("../models/medidaModel");
 
 function buscarUltimasMedidas(req, res) {
-    console.log('aaaa')
+    // console.log('aaaa')
     const limite_linhas = 7;
 
      console.log(`Recuperando as ultimas ${limite_linhas} medidas`);
@@ -21,7 +21,7 @@ function buscarUltimasMedidas(req, res) {
 
 
 function buscarMedidasEmTempoReal(req, res) {
-    console.log('Ele ta entrando no ponto kachow')
+    // console.log('Ele ta entrando no ponto kachow')
 // 
     // var idAmbiente = req.params.idAmbiente;
 
