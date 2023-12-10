@@ -205,6 +205,11 @@ body {
     font-size: 60px;
 }
 
+.dash-line1-1{
+    width: 220px;
+    height: 220px;
+}
+
 .info {
     
     display: flex;
@@ -238,7 +243,7 @@ body {
 .header-right {
 
     width: 400px;
-    height: 440px;
+    height: fit-content;
 }
 
 .distance {

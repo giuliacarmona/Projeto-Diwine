@@ -148,7 +148,7 @@
     function plotarGrafico2() {
         
         let labelsStatus = ["Crítico", "Alerta", "Emergência", "Ideal"];
-        let colorHexStatus = ["#ff0000", "#ff9d00", "#DDB247", "#25b800"];
+        let colorHexStatus = ["#ff0000", "#ff9d00", "#fff200", "#25b800"];
 
         let teste = document.getElementById("graficoGen");
 
@@ -161,6 +161,7 @@
             {
                 data: dataStatus,
                 backgroundColor: colorHexStatus,
+                borderColor: '#DDB247'
             },
             ],
             labels: labelsStatus,
