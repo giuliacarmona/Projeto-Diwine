@@ -54,7 +54,12 @@ body{
     /* border: 1px solid green; */
     width: 500px;
     height: 370px;
-    margin: 1vh 2vw;
+    margin: 20px 20px;
+}
+
+.iconMais{
+    width: 100px;
+    margin: 20px;
 }
 
 .setorDesc{
@@ -251,17 +256,18 @@ body{
         }
         
 
-    .oi, .oi * {
-        box-sizing: border-box;
-        }
-        .oi {
-        color: #ddb247;
+
+        .ola {
+        color: #5E2424;;
         text-align: left;
         font: 600 50px 'Inter', sans-serif;
-        position: relative;
         display: flex;
-        align-items: center;
-        justify-content: flex-start}
+        flex-direction: column;
+        align-items: left;
+        height: fit-content;
+        margin-top: 2%;
+    
+    }
 
         .selecione, .selecione * {
             box-sizing: border-box;
@@ -339,7 +345,7 @@ body{
 
                                 .criar-novo-ambiente, .criar-novo-ambiente * {
                                     box-sizing: border-box;
-                                    margin: 5vh 5vh;
+                                    /* margin: 5vh 5vh; */
                                     }
                                     .criar-novo-ambiente {
                                     color: #5e2424;
@@ -362,3 +368,30 @@ body{
                                         overflow: visible;
                                         }
                                         
+.retanguloCinza{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background: rgba(196, 196, 196, 0.96);
+    border-radius: 20px;
+    width: 500px;
+    height: 300px;
+    position: relative;
+    margin: 20px 20px;
+}
+
+.linkMais{
+    text-decoration: none;
+}
+
+.titulo {
+    color: #DDB247;
+    text-align: left;
+    font: 600 30px 'Inter', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    height: fit-content;
+    margin: 10px 0;
+
+}
