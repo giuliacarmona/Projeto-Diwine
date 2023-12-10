@@ -354,6 +354,7 @@ fetch(`/medidas/tempo-real`, { cache: 'no-store' }).then(function (response) {
                             critico++
                         } else {
                         	statusSpan.innerHTML = '<b style="color: black">ATENÇÃO</b>';
+                            ideal++
                         }
 
                         dataStatus.push(critico)

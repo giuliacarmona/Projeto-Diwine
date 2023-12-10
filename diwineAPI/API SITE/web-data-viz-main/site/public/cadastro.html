@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastre-se | Diwine</title>
+    <link rel="stylesheet" href="./style/style.css">
+</head>
+<body onload="listar()">
+  <div class="cardCad">
+    <div class="container">
+      <div class="circulo avatarIcon"></div>
+      <p class="textoSup">ACESSE PARA CONTINUAR</p>
+      
+      
+      <div class="campos">
+              
+      <div class="espLaranja userIcon"></div>
+      <input type="text" placeholder="NOME COMPLETO" class="caixaDeTexto" id="ipt_nome"> 
+   
+      <div class="espLaranja mailIcon"></div>
+      <input type="text" placeholder="INSIRA SEU E-MAIL" class="caixaDeTexto" id="ipt_email"> 
+        
+      <div class="espLaranja phoneIcon"></div>
+      <input type="text" placeholder="INSIRA SEU NÚMERO" maxlength="11" class="caixaDeTexto" id="ipt_numero"> 
+      
+      <div class="espLaranja empresaIcon"></div>
+      <select class="caixaDeTexto2" name="empresas" id="ipt_empresaDiwine" >
+        <option value="" disabled selected>SELECIONE UMA EMPRESA</option>
+    </select>
+   
+      <div class="espLaranja passwordIcon"></div>
+      <input type="password" placeholder="SENHA" class="caixaDeTexto" id="ipt_senha"> 
+   
+      <div class="espLaranja passwordIcon"></div>
+      <input type="password" placeholder="CONFIRME SUA SENHA" class="caixaDeTexto" id="ipt_confirme"> 
+                 
+
+   </div>
+    <button class="btCadastrar" onclick="cadastrar()">CADASTRAR-SE</button>
+   
+    <p>JÁ POSSUI UMA CONTA:</p>
+    <button class="btLogin" onclick="window.location.href='login.html';">LOGIN</button>
+    </div>
+  </div>
+</body>
+</html>
+
+<script>
+
+function cadastrar(){
+
+    var contador = 0
+    var emailVar = ipt_email.value
+    var senhaVar = ipt_senha.value
+    var nomeVar = ipt_nome.value
+    var numeroVar = ipt_numero.value
+    var empresaVar = ipt_empresaDiwine.value
+    var confirmeVar = ipt_confirme.value
+
+    if (emailVar.indexOf('@') >= 0) { contador++}
+        else alert("E-mail inválido!")
+
+        if (emailVar.endsWith('.com') || emailVar.endsWith('.br') || emailVar.endsWith('.school')) { contador++ }
+        else alert("Seu e-mail precisa terminar com '.com', '.br' ou '.school'!")
+
+        var possui_especial =
+            senhaVar.indexOf('#') >= 0 ||
+            senhaVar.indexOf('@') >= 0 ||
+            senhaVar.indexOf('!') >= 0 ||
+            senhaVar.indexOf('%') >= 0 ||
+            senhaVar.indexOf('?') >= 0 ||
+            senhaVar.indexOf('-') >= 0 ||
+            senhaVar.indexOf('+') >= 0 ||
+            senhaVar.indexOf('*') >= 0 ||
+            senhaVar.indexOf('_') >= 0;
+
+        if (senhaVar.length >= 8) { contador++ }
+        else alert("Sua senha deve ter no mínimo 8 dígitos!")
+
+        if (possui_especial) {contador++ }
+        else alert("A senha deve ter pelo menos 1 caractere especial!")
+
+        if (confirmeVar != senhaVar) {
+          alert("As senhas não coincidem!")}else {contador++}
+
+        if ( (emailVar.indexOf('@') >= 0 && (emailVar.endsWith('.com') || emailVar.endsWith('.br') || emailVar.endsWith('.school')))
+          && (senhaVar.length >= 8 && possui_especial && confirmeVar == senhaVar)) { 
+            alert("Olá, " + nomeVar + "! Estamos finalizando o seu cadastro!")
+            contador++
+}
+
+if(contador == 6){
+  
+  fetch("/usuarios/cadastrar", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        // crie um atributo que recebe o valor recuperado aqui
+        // Agora vá para o arquivo routes/usuario.js
+       emailServer: emailVar,
+       senhaServer: senhaVar,
+       nomeServer: nomeVar,
+       empresaServer: empresaVar,
+       numeroServer: numeroVar,
+
+      }),
+    })
+      .then(function (resposta) {
+        console.log("resposta: ", resposta);
+
+        if (resposta.ok) {
+        
+
+          setTimeout(() => {
+            window.location = "./login.html";
+          }, "2000");
+
+          
+          finalizarAguardar();
+        } 
+      })
+      
+
+    return false;
+  }
+
+}
+
+function listar() {
+    fetch("/empresasDiwine/listar", {
+      method: "GET",
+    })
+      .then(function (resposta) {
+        resposta.json().then((empresas) => {
+          empresas.forEach((empresa) => {
+            ipt_empresaDiwine.innerHTML += `<option value='${empresa.idEmpresa}'>${empresa.nomeFantasia}</option>`;
+          });
+        });
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+      });
+  }
+
+
+
+</script>

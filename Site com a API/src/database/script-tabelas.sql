@@ -2,7 +2,7 @@
 CREATE DATABASE diwineBD;
 USE diwineBD;
 
- -- drop database diwineBD;
+-- drop database diwineBD;
 
 -- *** CRIANDO TABELA 'EMPRESA' E INSERINDO DADOS ***--
 CREATE TABLE empresa (

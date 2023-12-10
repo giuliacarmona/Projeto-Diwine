@@ -182,11 +182,6 @@
 
 </script>
 
-
-
-
-
-
 <script>
 
     window.onload = obterDadosGrafico();
@@ -317,7 +312,7 @@ fetch(`/medidas/tempo-real`, { cache: 'no-store' }).then(function (response) {
                 // dados.datasets[0].data.push(novoRegistro[0].umidade); 
                 // incluir uma nova medida de umidade
                 var tempAtual = novoRegistro[0].temperatura
-                // TempAtual -= 10
+                tempAtual -= 10
 
                 tempSpan.innerHTML = tempAtual;
                 
@@ -347,6 +342,7 @@ fetch(`/medidas/tempo-real`, { cache: 'no-store' }).then(function (response) {
                             critico++
                         } else {
                             statusSpan.innerHTML = '<b style="color: black">ATENÇÃO</b>';
+                            ideal++
                         }
 
                         dataStatus.push(critico)

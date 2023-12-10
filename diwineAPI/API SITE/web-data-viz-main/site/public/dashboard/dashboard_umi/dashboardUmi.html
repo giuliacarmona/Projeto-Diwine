@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Umidade | Diwine</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="metricas">
+            <div class="title">
+
+                <div class="id-superior">
+                    ID:01020304
+                </div>
+
+                <div class="base-setor">
+                    SETOR 1- VINHO BRANCO
+                </div>
+
+                <div class="base-temp">
+                    Umidade Atual: <span id="umidadeSpan"></span>%
+                </div>
+            </div>
+
+            <div class="grafico">
+                <canvas id="myChartLine"></canvas>
+            </div>
+        </div>
+
+        <div class="info">
+            <div class="header-right">
+                <div class="distance">
+                    <div class="info-right">
+                        Em maturação desde <br>
+                        <b class="dados">05/03/2018</b>
+                    </div>
+                    <div class="info-right">
+                        Tipo do barril <br>
+                        <b class="dados">Madeira de Carvalho</b>
+                    </div>
+                    <div class="info-right">
+                        Tempo de Atualização <br>
+                        <b class="dados">30 Minutos</b>
+                    </div>
+                    <div class="info-right">
+                        Tipo do Vinho <br>
+                        <b class="dados">BRANCO</b>
+                    </div>
+                    <div class="info-right">
+                        Umidade ideal: <br>
+                        <b class="dados">Entre 65% e 80%</b>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <div class="footer-right">
+                <div class="info-right" id="media">
+                    Média de Umidade <br>
+                    <b class="dados">63%</b>
+                </div>
+            </div> -->
+        </div>
+    </div>
+
+    <div class="sidebar">
+        <ul class="menu">
+            <li class="active">
+                <a href="../paginaInicial/dashboardInicial.html" class="menuIcon">
+                    <i class="fas fa-bars active"></i>
+                    <!-- <span>Menu</span> -->
+                </a>
+            </li>
+            <li class="temperatura">
+                <a href="../dashboard_temp/dashteste.html" class="temperaturaIcon">
+                    <i class="fas fa-temperature-three-quarters"></i>
+                    <!-- <span>Temperatura</span> -->
+                </a>
+            </li>
+            <li class="umidade">
+                <a href="../dashboard_umi/dashboardUmi.html" class="umidadeIcon">
+                    <i class="fas fa-droplet"></i>
+                    <!-- <span>Umidade</span> -->
+                </a>
+            </li>
+            <li class="lote">
+                <a href="../inserirLote/lote.html" class="loteIcon">
+                    <i class="fas fa-wine-bottle"></i>
+                    <!-- <span>Lote</span> -->
+                </a>
+            </li>
+
+            <div class="bottom-icon">
+                <!-- <div class="space"></div> -->
+                <li class="logout">
+                    <a href="../../acesso/login.html" class="logoutIcon">
+                        <i class="fas fa-right-from-bracket"></i>
+                        <!-- <span>Logout</span> -->
+                    </a>
+                </li>
+                <li class="perfil">
+                    <a href="../perfilUsuario/Perfil_Usuario.html" class="perfilIcon">
+                        <i class="fas fa-circle-user"></i>
+                        <!-- <span>Perfil</span> -->
+                    </a>
+                </li>
+            </div>
+    </div>
+</body>
+
+</html>
+
+<!-- <script>
+    const ctx = document.getElementById('myChartLine');
+
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['13h00', '13h30', '14h00', '14h30', '15h00', '15h30'],
+            datasets: [{
+                label: '',
+                backgroundColor: 'rgba(93, 95, 239, 1)',
+                borderColor: 'rgba(93, 95, 239, 1)',
+                data: [65, 60, 53, 58, 53],
+                borderWidth: 4,
+                tension: 0.15
+            }]
+        },
+        options: {
+            responsive: true,
+            radius: 6,
+            plugins: {
+                legend: {
+                    labels: {
+                        boxWidth: 0
+
+                    }
+                }
+            },
+
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+</script>
+ -->
+
+<script>
+
+    window.onload = obterDadosGrafico();
+
+    function obterDadosGrafico() {
+
+
+        fetch(`/medidas/ultimas`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    resposta.reverse();
+
+
+                    plotarGrafico(resposta);
+
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+    }
+
+    function plotarGrafico(resposta) {
+
+        var umidade = resposta[0].umidade
+
+        const ctx = document.getElementById('myChartLine');
+
+        let labels = [];
+        let data = [];
+
+
+        let dados = {
+            labels: labels,
+            datasets: [{
+                label: '',
+                backgroundColor: 'rgba(93, 95, 239, 1)',
+                borderColor: 'rgba(93, 95, 239, 1)',
+                data: [],
+                borderWidth: 4,
+                tension: 0.15
+            }]
+        }
+
+
+
+
+        console.log('----------------------------------------------')
+        console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
+        console.log(resposta)
+
+        // Inserindo valores recebidos em estrutura para plotar o gráfico
+        for (i = 0; i < resposta.length; i++) {
+            var registro = resposta[i];
+            labels.push(registro.momento_grafico);
+            // dados.datasets[0].data.push(registro.umidade);
+            dados.datasets[0].data.push(registro.umidade);
+        }
+
+        console.log('----------------------------------------------')
+        console.log('O gráfico será plotado com os respectivos valores:')
+        console.log('Labels:')
+        console.log(labels)
+        console.log('Dados:')
+        console.log(dados.datasets)
+        console.log('----------------------------------------------')
+
+        // Criando estrutura para plotar gráfico - config
+        const config = {
+            type: 'line',
+            data: dados,
+        };
+
+        // Adicionando gráfico criado em div na tela
+        let myChart = new Chart(
+            document.getElementById(`myChartLine`),
+            config
+        );
+
+        setTimeout(() => atualizarGrafico(1, dados, myChart), 5000);
+
+
+    }
+
+    function atualizarGrafico(sector, dados, myChart) {
+
+
+
+        console.log(sector);
+        fetch(`/medidas/tempo-real`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (novoRegistro) {
+
+                    // obterdados(sector);
+                    // alertar(novoRegistro, sector);
+                    console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
+                    console.log(`Dados atuais do gráfico:`);
+                    console.log(dados);
+
+                    // let avisoCaptura = document.getElementById(`avisoCaptura${sector}`)
+                    // avisoCaptura.innerHTML = ""
+
+
+
+
+                    if (novoRegistro[0].momento_grafico == dados.labels[dados.labels.length - 1]) {
+                        console.log("---------------------------------------------------------------")
+                        console.log("Como não há dados novos para captura, o gráfico não atualizará.")
+                        // avisoCaptura.innerHTML = "<i class='fa-solid fa-triangle-exclamation'></i> Foi trazido o dado mais atual capturado pelo sensor. <br> Como não há dados novos a exibir, o gráfico não atualizará."
+                        console.log("Horário do novo dado capturado:")
+                        console.log(novoRegistro[0].momento_grafico)
+                        console.log("Horário do último dado capturado:")
+                        console.log(dados.labels[dados.labels.length - 1])
+                        console.log("---------------------------------------------------------------")
+                    } else {
+                        var dtNova = novoRegistro[0].momento_grafico;
+
+                        dtNova = dtNova.slice(0, -3)
+                        // tirando e colocando valores no gráfico
+                        dados.labels.shift(); // apagar o primeiro
+                        dados.labels.push(dtNova); // incluir um novo momento
+
+                        // dados.datasets[0].data.shift();  
+                        // apagar o primeiro de umidade
+                        // dados.datasets[0].data.push(novoRegistro[0].umidade); 
+                        // incluir uma nova medida de umidade
+                        var UmidAtual = novoRegistro[0].umidade;
+
+                        umidadeSpan.innerHTML = UmidAtual;
+
+                        if (UmidAtual > 80) {
+                            alert('AJUSTAR SEGUNDO O ANALITYCS')
+                        }
+
+                        dados.datasets[0].data.shift();  // apagar o primeiro de temperatura
+                        dados.datasets[0].data.push(UmidAtual);
+
+                        myChart.update();
+                    }
+
+                    // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
+                    proximaAtualizacao = setTimeout(() => atualizarGrafico(sector, dados, myChart), 5000);
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+                // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
+                proximaAtualizacao = setTimeout(() => atualizarGrafico(sector, dados, myChart), 5000);
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+
+
+        // grafico dois de umidade
+
+
+
+    }
+
+</script>
