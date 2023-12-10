@@ -1,121 +1,120 @@
--- Arquivo de apoio, caso você queira criar tabelas como as aqui criadas para a API funcionar.
--- Você precisa executar os comandos no banco de dados para criar as tabelas,
--- ter este arquivo aqui não significa que a tabela em seu BD estará como abaixo!
+-- *** CRIANDO E USANDO BANCO DE DADOS ***--
+CREATE DATABASE diwineBD;
+USE diwineBD;
 
-/*
-comandos para mysql - banco local - ambiente de desenvolvimento
-*/
+ -- drop database diwineBD;
 
-CREATE DATABASE aquatech;
-
-USE aquatech;
-
+-- *** CRIANDO TABELA 'EMPRESA' E INSERINDO DADOS ***--
 CREATE TABLE empresa (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	razao_social VARCHAR(50),
-	cnpj CHAR(14)
+idEmpresa		INT PRIMARY KEY AUTO_INCREMENT, 				-- Identificação da Empresa
+nomeFantasia	VARCHAR(40),									-- Nome da Empresa
+CNPJ			VARCHAR(18) NOT NULL							-- CNPJ da Empresa
 );
 
+INSERT INTO empresa VALUES										-- Inserindo algumas empresas (ficticio)
+	(NULL, 'Empresa A', '30.395.080/0001-40'),
+	(NULL, 'Empresa B', '45.395.000/0001-39'),
+	(NULL, 'Empresa C', '26.495.100/0001-39'),
+	(NULL, 'Empresa D', '46.375.009/0001-39');
+
+-- *** CRIANDO TABELA 'FUNCIONARIO E INSERINDO DADOS' ***--
 CREATE TABLE usuario (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	nome VARCHAR(50),
-	email VARCHAR(50),
-	senha VARCHAR(50),
-	fk_empresa INT,
-	FOREIGN KEY (fk_empresa) REFERENCES empresa(id)
+idUsuario		INT PRIMARY KEY AUTO_INCREMENT,					-- Identificação do funcionário Responsável
+nome			VARCHAR(60),									-- Nome Completo
+email			VARCHAR(40) NOT NULL UNIQUE,					-- E-mail cadastro e utilizado para realizar o login
+senha 			VARCHAR(20),									-- Senha cadastro e utilizado para realizar o login
+celular			VARCHAR(14),									-- Telefone para contato
+fkEmpresa		INT,											
+	FOREIGN KEY (fkEmpresa) REFERENCES empresa(idEmpresa)
+) AUTO_INCREMENT = 100; 
+
+-- INSERT INTO usuario VALUES										-- Inserindo um funcionário
+	-- (NULL, 'José Silva', 'jose.silva@empresab.com', 'joseEmpresa22@', '11962063620',1);
+
+-- *** CRIANDO TABELA 'AMBIENTE' ***--
+create table ambiente (
+idAmbiente		INT PRIMARY KEY AUTO_INCREMENT,					-- Identificação do Ambiente
+fkEmpresa		INT,
+	FOREIGN KEY (fkEmpresa) REFERENCES empresa(idEmpresa)
 );
 
-CREATE TABLE aviso (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	titulo VARCHAR(100),
-	descricao VARCHAR(150),
-	fk_usuario INT,
-	FOREIGN KEY (fk_usuario) REFERENCES usuario(id)
-);
+-- *** INSERINDO DUAS COLUNA NA TABELA 'ambiente' ***--
+ALTER TABLE ambiente ADD COLUMN apelido VARCHAR(40);			-- Nome que o usuário deseja dar ao ambiente
+DESC ambiente;
 
-create table aquario (
-/* em nossa regra de negócio, um aquario tem apenas um sensor */
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	descricao VARCHAR(300),
-	fk_empresa INT,
-	FOREIGN KEY (fk_empresa) REFERENCES empresa(id)
-);
+-- *** INSERINDO DADOS NA TABELA 'AMBIENTE' ***--
+INSERT INTO ambiente VALUES
+	(NULL, 1, 'Setor China - Tinto'),
+    (NULL, 1, 'Setor Coreia - Branco'),
+    (NULL, 1, 'Setor Japão - Rosé');
 
-/* esta tabela deve estar de acordo com o que está em INSERT de sua API do arduino - dat-acqu-ino */
+-- *** CRIANDO TABELA 'LOTE' ***--
+create table lote (
+idLote			INT PRIMARY KEY AUTO_INCREMENT,	 				-- Identificação do Lote
+apelido			VARCHAR(100),									-- Apelido do Lote
+tipoVinho		VARCHAR(40),							-- Branco, Tinto, Rosé
+dataIncio		DATE,											-- EX: 03-05-2018
+tempoMes	 	INT,											
+tempoAno		INT,
+quantidade		INT,											-- Quantidade de Lotes
+fkAmbiente		INT,
+	FOREIGN KEY (fkAmbiente) REFERENCES ambiente(idAmbiente)
+) AUTO_INCREMENT = 1;
 
-create table medida (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	dht11_umidade DECIMAL,
-	dht11_temperatura DECIMAL,
-	luminosidade DECIMAL,
-	lm35_temperatura DECIMAL,
-	chave TINYINT,
-	momento DATETIME,
-	fk_aquario INT,
-	FOREIGN KEY (fk_aquario) REFERENCES aquario(id)
-);
+DESC lote;
 
-insert into empresa (razao_social, cnpj) values ('Empresa 1', '00000000000000');
-insert into aquario (descricao, fk_empresa) values ('Aquário de Estrela-do-mar', 1);
+-- *** INSERINDO DADOS NA TABELA 'LOTE' ***--
+INSERT INTO lote VALUES
+	(NULL, 'Barril Coreia - Tinto', 'Tinto', '2018-03-05', 3, 2020, 20, 1);
+    
+INSERT INTO lote VALUES
+	(NULL, 'Barril Coreia - Branco', 'Rranco', '2019-02-03', 3, 2020, 40, 2);
 
-/*
-comando para sql server - banco remoto - ambiente de produção
-*/
 
-CREATE TABLE empresa (
-	id INT PRIMARY KEY IDENTITY(1,1),
-	razao_social VARCHAR(50),
-	cnpj CHAR(14)
-);
+-- *** CRIANDO TABELA 'SENSOR' E INSERINDO DADOS ***--
+CREATE TABLE sensor (
+idSensor 			INT PRIMARY KEY AUTO_INCREMENT,					-- Identificação do Ambiente
+dht11_umidade 		DECIMAL,										-- Umidade DHT11
+dht11_temperatura 	DECIMAL,										-- Temperatura DHT11
+momento 			DATETIME,
+fkAmbiente			INT,
+	FOREIGN KEY (fkAmbiente) REFERENCES ambiente(idAmbiente)
+) AUTO_INCREMENT = 1;
+  
+-- *** SELECT * FROM DAS TABELAS ***--
+SELECT * FROM empresa;
+SELECT * FROM usuario;
+SELECT * FROM ambiente;
+SELECT * FROM lote;
+SELECT * FROM sensor;
 
-CREATE TABLE usuario (
-	id INT PRIMARY KEY IDENTITY(1,1),
-	nome VARCHAR(50),
-	email VARCHAR(50),
-	senha VARCHAR(50),
-	fk_empresa INT FOREIGN KEY REFERENCES empresa(id)
-);
+truncate table sensor;
 
-CREATE TABLE aviso (
-	id INT PRIMARY KEY IDENTITY(1,1),
-	titulo VARCHAR(100),
-	descricao VARCHAR(150),
-	fk_usuario INT FOREIGN KEY REFERENCES usuario(id)
-);
+ insert into sensor values 
+ (null, 65, 9, now(), 1),
+ (null, 65, 9, now(), 1),
+ (null, 64, 10, now(), 1),
+ (null, 63, 11, now(), 1),
+ (null, 62, 14, now(), 1),
+ (null, 61, 10, now(), 1),
+ (null, 59, 10, now(), 1),
+ (null, 57, 9, now(), 1),
+ (null, 54, 8, now(), 1);
 
-create table aquario (
-/* em nossa regra de negócio, um aquario tem apenas um sensor */
-	id INT PRIMARY KEY IDENTITY(1,1),
-	descricao VARCHAR(300),
-	fk_empresa INT FOREIGN KEY REFERENCES empresa(id)
-);
+insert into sensor values 
+ 	(null, 25, 23, now(), 1);
+    
+ -- insert into sensor values 
+	-- (null, 26, 22, now(), 1);
+    
+ -- insert into sensor values 
+ 	-- (null, 20, 45, now(), 1);
+    
+-- INSERT INTO sensores (dht11_umidade, dht11_temperatura, luminosidade, lm35_temperatura, chave) VALUES (23, 5, 4, 5, 6);
 
-/* esta tabela deve estar de acordo com o que está em INSERT de sua API do arduino - dat-acqu-ino */
 
-CREATE TABLE medida (
-	id INT PRIMARY KEY IDENTITY(1,1),
-	dht11_umidade DECIMAL,
-	dht11_temperatura DECIMAL,
-	luminosidade DECIMAL,
-	lm35_temperatura DECIMAL,
-	chave TINYINT,
-	momento DATETIME,
-	fk_aquario INT FOREIGN KEY REFERENCES aquario(id)
-);
+        
 
-insert into empresa (razao_social, cnpj) values ('Empresa 1', '00000000000000');
 
-/*
-comandos para criar usuário em banco de dados azure, sqlserver,
-com permissão de insert + update + delete + select
-*/
 
-CREATE USER [usuarioParaAPIWebDataViz_datawriter_datareader]
-WITH PASSWORD = '#Gf_senhaParaAPIWebDataViz',
-DEFAULT_SCHEMA = dbo;
 
-EXEC sys.sp_addrolemember @rolename = N'db_datawriter',
-@membername = N'usuarioParaAPIWebDataViz_datawriter_datareader';
-
-EXEC sys.sp_addrolemember @rolename = N'db_datareader',
-@membername = N'usuarioParaAPIWebDataViz_datawriter_datareader';
